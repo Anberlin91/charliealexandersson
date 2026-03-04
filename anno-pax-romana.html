@@ -326,6 +326,44 @@
 
     .case-nav .next { margin-left: auto; }
 
+    .case-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .case-links a {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.6rem 1.25rem;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      border-radius: 999px;
+      transition: all 0.2s;
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+
+    .case-links a:hover {
+      border-color: var(--text-secondary);
+      color: var(--text-primary);
+    }
+
+    .case-links a.primary {
+      background: var(--text-primary);
+      color: var(--bg);
+      border: none;
+    }
+
+    .case-links a.primary:hover {
+      background: var(--accent);
+    }
+
     @media (max-width: 640px) {
       .case-two-col { grid-template-columns: 1fr; }
       .case-three-col { grid-template-columns: 1fr; }
@@ -375,6 +413,10 @@
             <span class="tag">System Design</span>
           </div>
         </div>
+      </div>
+
+      <div class="case-links">
+        <a href="https://www.figma.com" target="_blank" class="primary">View on Figma</a>
       </div>
 
       <div class="case-cover">Project Cover Image</div>
