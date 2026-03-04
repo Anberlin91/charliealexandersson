@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Matsvinskollen – Use Case</title>
+  
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
 
@@ -21,7 +22,7 @@
       --max-width: 900px;
       --px: clamp(1.25rem, 5vw, 3rem);
     }
-
+  
     html { scroll-behavior: smooth; }
 
     body {
@@ -373,6 +374,14 @@
       .case-two-col { grid-template-columns: 1fr; }
       .case-meta { gap: 1rem; }
     }
+    .cs-section ul {
+  padding-left: 1.25rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
   </style>
 </head>
 <body>
@@ -418,9 +427,10 @@
           </div>
         </div>
       </div>
+      
 
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/1KUvwmoD0ltvTGiDSiHHoa/Matsvinnskollen?node-id=34-478&p=f&viewport=305%2C792%2C0.12&scaling=scale-down&content-scaling=fixed&starting-point-node-id=34%3A478&embed-host=share" allowfullscreen></iframe>
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 6px; margin-top: 2rem; display:block;"" width="800" height="450" src="https://embed.figma.com/proto/1KUvwmoD0ltvTGiDSiHHoa/Matsvinnskollen?node-id=34-478&p=f&viewport=305%2C792%2C0.12&scaling=scale-down&content-scaling=fixed&starting-point-node-id=34%3A478&embed-host=share" allowfullscreen></iframe>
 
       <img src="Images/Cover_matsvinn.png" alt="Matsvinskollen cover" class="case-cover" style="object-fit:cover;" />
     </div>
@@ -441,12 +451,17 @@
   <section class="case-section">
     <div class="p-container">
       <p class="case-label">Problem</p>
-      <h2>Awareness was not the issue, the gap was knowledge</h2>
-      <p>Most people know food waste is a problem. What they often lack is practical understanding.</p>
-      <p>Through research we noticed that awareness was not the issue. The gap was knowledge.</p>
-      <p>People were unsure about how long food actually lasts, how to store it properly, and which daily decisions make a real difference.</p>
-      <p>Rather than trying to solve large systemic problems, we narrowed the scope. In three weeks we needed something we could realistically test. We chose to focus on awareness through interaction.</p>
-
+      <h2>Awareness was not the issue, it was the human factor that need behavior change</h2>
+      <p>Most people know food waste is a problem. However, they often lack the practical knowledge to address it effectively.</p>
+      <p>Through my research there where a lot of articles that highlighted the importance of repeated conversations about food waste and how effective it is especially to talk about it under lunch in schools.</p>
+      <p>People needed to be reminded and work togethether as a team to change the behaviour, both young and adults. the main issues in terms of knowledge were the uncertainty about how long food actually lasts, how to store it properly, and which daily decisions make a real difference.</p>
+      <p>Rather than trying to solve large systemic problems, we narrowed the scope. In three weeks we needed something we could realistically test. We chose to focus on awareness, and how we could use interaction to drive behavior change.</p>
+      <p>The result was a quiz based mobile concept designed to make food waste knowledge fun and engaging</p>
+      <ul>
+  <li>Första punkten</li>
+  <li>Andra punkten</li>
+  <li>Tredje punkten</li>
+</ul>
       <img src="Images/userstories_matsvinn.png" alt="User stories" class="case-image" style="object-fit:contain;" />
     </div>
   </section>
