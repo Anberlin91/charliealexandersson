@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matsvinskollen – Use Case</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0e0e0e;
+      --surface: #161616;
+      --border: #2a2a2a;
+      --text-primary: #f0ede8;
+      --text-secondary: #888;
+      --accent: #c8f060;
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+      --max-width: 900px;
+      --px: clamp(1.25rem, 5vw, 3rem);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .p-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding-left: var(--px);
+      padding-right: var(--px);
+    }
+
+    .p-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding-block: 1rem;
+    }
+
+    .p-nav .p-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .p-nav-logo {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .p-nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .p-nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .p-nav-links a:hover { color: var(--text-primary); }
+
+    .case-hero {
+      padding-top: clamp(3rem, 10vw, 7rem);
+      padding-bottom: clamp(2rem, 6vw, 4rem);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .case-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      margin-bottom: 2rem;
+      transition: color 0.2s;
+    }
+
+    .case-back:hover { color: var(--text-primary); }
+
+    .case-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .case-hero .case-subtitle {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      max-width: 60ch;
+      margin-bottom: 1.5rem;
+    }
+
+    .case-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .case-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .case-meta-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    .case-meta-value {
+      font-size: 0.85rem;
+      color: var(--text-primary);
+    }
+
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+    .tag {
+      font-size: 0.68rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .case-cover {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #2a4a35;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-top: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-primary);
+      font-size: 0.85rem;
+    }
+
+    .case-section {
+      padding-block: clamp(2.5rem, 6vw, 4rem);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .case-section:last-of-type { border-bottom: none; }
+
+    .case-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+
+    .case-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .case-section p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      max-width: 65ch;
+      margin-bottom: 1rem;
+    }
+
+    .case-section p:last-child { margin-bottom: 0; }
+
+    .case-highlight {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .case-highlight ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .case-highlight li {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .case-highlight li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .case-image {
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+    }
+
+    .case-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .case-two-col .col-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.1rem 1.2rem;
+    }
+
+    .col-block h4 {
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .col-block p {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .p-footer {
+      border-top: 1px solid var(--border);
+      padding-block: 2rem;
+    }
+
+    .p-footer .p-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .p-footer p { font-size: 0.78rem; color: var(--text-secondary); }
+
+    .p-footer-links { display: flex; gap: 1.5rem; list-style: none; }
+
+    .p-footer-links a {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .p-footer-links a:hover { color: var(--text-primary); }
+
+    .case-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-block: 2.5rem;
+    }
+
+    .case-nav a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .case-nav a:hover { color: var(--accent); }
+
+    .case-nav .next { margin-left: auto; }
+
+    @media (max-width: 640px) {
+      .case-two-col { grid-template-columns: 1fr; }
+      .case-meta { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="p-nav">
+    <div class="p-container">
+      <a href="index.html" class="p-nav-logo">Game UX Designer</a>
+      <ul class="p-nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="mailto:hello@example.com">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- CASE HERO -->
+  <section class="case-hero">
+    <div class="p-container">
+      <a href="index.html#work" class="case-back">&larr; Back to all projects</a>
+      <h1>Matsvinskollen</h1>
+      <p class="case-subtitle">A gamified quiz prototype designed to educate individuals and businesses on reducing food waste through awareness-based decision making.</p>
+
+      <div class="case-meta">
+        <div class="case-meta-item">
+          <span class="case-meta-label">Role</span>
+          <span class="case-meta-value">UX Designer</span>
+        </div>
+        <div class="case-meta-item">
+          <span class="case-meta-label">Type</span>
+          <span class="case-meta-value">Mobile App Prototype</span>
+        </div>
+        <div class="case-meta-item">
+          <span class="case-meta-label">Context</span>
+          <span class="case-meta-value">Food Waste Awareness</span>
+        </div>
+        <div class="case-meta-item">
+          <span class="case-meta-label">Skills</span>
+          <div class="tag-list">
+            <span class="tag">UX Design</span>
+            <span class="tag">Prototyping</span>
+            <span class="tag">Mobile</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-cover">Project Cover Image</div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="case-section">
+    <div class="p-container">
+      <p class="case-label">Overview</p>
+      <h2>Gamifying food waste education for real-world impact</h2>
+      <p>Matsvinskollen is a mobile app concept that uses gamified quizzes to raise awareness about food waste. The app targets both individuals and businesses, helping them understand the scale of food waste and discover practical steps they can take to reduce it.</p>
+      <p>The design challenge was to make an educational topic feel engaging and actionable rather than preachy or overwhelming. Gamification mechanics were used to create motivation loops that kept users returning and learning.</p>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="case-section">
+    <div class="p-container">
+      <p class="case-label">Problem</p>
+      <h2>People know food waste is bad — but don't know what to do about it</h2>
+      <p>Research showed that most people are broadly aware that food waste is a problem, but lack specific knowledge about their own contribution to it or what actions would make the biggest difference. Educational content about food waste tends to be either too abstract (global statistics) or too prescriptive (strict meal planning) to create lasting behaviour change.</p>
+      <p>The gap wasn't awareness — it was actionable understanding. People needed to connect abstract knowledge to their own daily decisions in a way that felt achievable, not burdensome.</p>
+
+      <div class="case-highlight">
+        <ul>
+          <li>Existing food waste education feels abstract and disconnected from daily life</li>
+          <li>Users feel overwhelmed rather than empowered by food waste statistics</li>
+          <li>No engaging, low-commitment way to build food waste literacy over time</li>
+          <li>Businesses and individuals have different knowledge needs and motivations</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="case-section">
+    <div class="p-container">
+      <p class="case-label">Process</p>
+      <h2>From user research to interactive prototype</h2>
+      <p>The process began with user interviews targeting both individuals and food-service professionals. These interviews revealed different mental models around food waste — individuals focused on household habits, while businesses thought in terms of supply chains and cost savings.</p>
+      <p>Gamification patterns from apps like Duolingo and Kahoot were studied to understand what makes quiz-based learning sticky. The key insight was that short, daily micro-interactions with immediate feedback created better retention than longer educational sessions.</p>
+
+      <div class="case-two-col">
+        <div class="col-block">
+          <h4>User Interviews</h4>
+          <p>Conducted interviews with individuals and food-service workers to map different mental models, motivations, and knowledge gaps around food waste.</p>
+        </div>
+        <div class="col-block">
+          <h4>Gamification Research</h4>
+          <p>Analysed quiz-based learning apps to identify which gamification mechanics drive sustained engagement without undermining educational goals.</p>
+        </div>
+      </div>
+
+      <div class="case-image">User Journey Map / Wireframe Sketches</div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="case-section">
+    <div class="p-container">
+      <p class="case-label">Solution</p>
+      <h2>Bite-sized quizzes with real-world action prompts</h2>
+      <p>The prototype featured daily quiz sessions of 3–5 questions, each taking under 2 minutes. Questions were contextual — tied to seasons, common shopping habits, and local food culture. After each quiz, users received a single, actionable tip they could apply immediately.</p>
+      <p>A progress system tracked knowledge growth across categories (storage, shopping, cooking, composting) and unlocked new content as users demonstrated understanding. For businesses, a separate track covered supply chain decisions, portion planning, and waste tracking.</p>
+      <p>The visual design used warm, approachable colours and playful illustrations to make the topic feel inviting rather than guilt-inducing. Positive framing emphasized what users were learning and saving, rather than what they were wasting.</p>
+
+      <div class="case-image">App Prototype Screens / Quiz Flow</div>
+    </div>
+  </section>
+
+  <!-- OUTCOME -->
+  <section class="case-section">
+    <div class="p-container">
+      <p class="case-label">Outcome</p>
+      <h2>Engagement through empowerment, not guilt</h2>
+      <p>User testing of the prototype showed strong engagement — testers completed an average of 3 quiz sessions in a single sitting and reported feeling more confident about their food waste knowledge afterward. The actionable tips were rated as the most valuable feature, confirming that users wanted practical guidance over abstract education.</p>
+      <p>The project demonstrated that gamification can be a powerful tool for behaviour change when it respects the user's intelligence and connects learning to real-world actions. The positive framing approach proved more effective than guilt-based messaging.</p>
+
+      <div class="case-highlight">
+        <ul>
+          <li>Testers completed multiple sessions voluntarily, showing strong engagement</li>
+          <li>Actionable tips rated as the most valuable feature by users</li>
+          <li>Positive framing outperformed guilt-based messaging in user testing</li>
+          <li>Demonstrated gamification as a tool for sustainable behaviour change</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT NAV -->
+  <div class="p-container">
+    <div class="case-nav">
+      <a href="anno-pax-romana.html">&larr; Anno Pax Romana</a>
+      <a href="arcade-game.html" class="next">Arcade Game &rarr;</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="p-footer">
+    <div class="p-container">
+      <p>&copy; 2026 — Game UX Designer</p>
+      <ul class="p-footer-links">
+        <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+        <li><a href="https://read.cv" target="_blank">Read.cv</a></li>
+        <li><a href="mailto:hello@example.com">Email</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
