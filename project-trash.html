@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Matsvinskollen – Use Case</title>
+  <title>Project Trash – Use Case</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
 
@@ -40,6 +40,7 @@
       padding-right: var(--px);
     }
 
+    /* NAV */
     .p-nav {
       position: sticky;
       top: 0;
@@ -78,6 +79,7 @@
 
     .p-nav-links a:hover { color: var(--text-primary); }
 
+    /* CASE HERO */
     .case-hero {
       padding-top: clamp(3rem, 10vw, 7rem);
       padding-bottom: clamp(2rem, 6vw, 4rem);
@@ -148,20 +150,22 @@
       color: var(--text-secondary);
     }
 
+    /* CASE COVER */
     .case-cover {
       width: 100%;
       aspect-ratio: 16/9;
-      background: #2a4a35;
+      background: #1a2e1a;
       border: 1px solid var(--border);
       border-radius: 6px;
       margin-top: 2.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--text-primary);
+      color: var(--text-secondary);
       font-size: 0.85rem;
     }
 
+    /* SECTIONS */
     .case-section {
       padding-block: clamp(2.5rem, 6vw, 4rem);
       border-bottom: 1px solid var(--border);
@@ -223,6 +227,7 @@
       color: var(--accent);
     }
 
+    /* IMAGE PLACEHOLDER */
     .case-image {
       width: 100%;
       aspect-ratio: 16/10;
@@ -237,6 +242,7 @@
       font-size: 0.8rem;
     }
 
+    /* TWO-COL */
     .case-two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -265,6 +271,61 @@
       line-height: 1.55;
     }
 
+    /* THREE-COL */
+    .case-three-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .case-three-col .col-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.1rem 1.2rem;
+    }
+
+    /* LINKS SECTION */
+    .case-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .case-links a {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.6rem 1.25rem;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      border-radius: 999px;
+      transition: all 0.2s;
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+
+    .case-links a:hover {
+      border-color: var(--text-secondary);
+      color: var(--text-primary);
+    }
+
+    .case-links a.primary {
+      background: var(--text-primary);
+      color: var(--bg);
+      border: none;
+    }
+
+    .case-links a.primary:hover {
+      background: var(--accent);
+    }
+
+    /* FOOTER */
     .p-footer {
       border-top: 1px solid var(--border);
       padding-block: 2rem;
@@ -291,6 +352,7 @@
 
     .p-footer-links a:hover { color: var(--text-primary); }
 
+    /* NAV PROJECTS */
     .case-nav {
       display: flex;
       justify-content: space-between;
@@ -314,6 +376,7 @@
 
     @media (max-width: 640px) {
       .case-two-col { grid-template-columns: 1fr; }
+      .case-three-col { grid-template-columns: 1fr; }
       .case-meta { gap: 1rem; }
     }
   </style>
@@ -336,30 +399,37 @@
   <section class="case-hero">
     <div class="p-container">
       <a href="index.html#work" class="case-back">&larr; Back to all projects</a>
-      <h1>Matsvinskollen</h1>
-      <p class="case-subtitle">A gamified quiz prototype designed to educate individuals and businesses on reducing food waste through awareness-based decision making.</p>
+      <h1>Project Trash</h1>
+      <p class="case-subtitle">An arcade game built with a green theme in mind, created collaboratively with a team of 14 at Futuregames.</p>
 
       <div class="case-meta">
         <div class="case-meta-item">
           <span class="case-meta-label">Role</span>
-          <span class="case-meta-value">UX Designer</span>
+          <span class="case-meta-value">UX Designer / UX Researcher</span>
         </div>
         <div class="case-meta-item">
-          <span class="case-meta-label">Type</span>
-          <span class="case-meta-value">Mobile App Prototype</span>
+          <span class="case-meta-label">Team Size</span>
+          <span class="case-meta-value">14</span>
         </div>
         <div class="case-meta-item">
           <span class="case-meta-label">Context</span>
-          <span class="case-meta-value">Food Waste Awareness</span>
+          <span class="case-meta-value">School Project – Futuregames</span>
         </div>
         <div class="case-meta-item">
           <span class="case-meta-label">Skills</span>
           <div class="tag-list">
             <span class="tag">UX Design</span>
+            <span class="tag">UX Research</span>
             <span class="tag">Prototyping</span>
-            <span class="tag">Mobile</span>
+            <span class="tag">Game Design</span>
           </div>
         </div>
+      </div>
+
+      <div class="case-links">
+        <a href="https://futuregames.itch.io/projecttrash" target="_blank" class="primary">Play the Game on itch.io</a>
+        <a href="https://www.instagram.com/reel/DSAeWS0AKsR/?utm_source=ig_web_copy_link" target="_blank">Instagram</a>
+        <a href="https://youtu.be/0NN_dksL3Lo?si=3QZgyfJnl3rpnCYR" target="_blank">YouTube</a>
       </div>
 
       <div class="case-cover">Project Cover Image</div>
@@ -370,9 +440,9 @@
   <section class="case-section">
     <div class="p-container">
       <p class="case-label">Overview</p>
-      <h2>Gamifying food waste education for real-world impact</h2>
-      <p>Matsvinskollen is a mobile app concept that uses gamified quizzes to raise awareness about food waste. The app targets both individuals and businesses, helping them understand the scale of food waste and discover practical steps they can take to reduce it.</p>
-      <p>The design challenge was to make an educational topic feel engaging and actionable rather than preachy or overwhelming. Gamification mechanics were used to create motivation loops that kept users returning and learning.</p>
+      <h2>Building an arcade game around a green theme</h2>
+      <p>Project Trash is an arcade game developed at Futuregames with a team of 14. The project centred on creating a fun, engaging arcade experience with an environmental — or "green" — theme woven into the core concept.</p>
+      <p>As the UX Designer and UX Researcher on the team, the focus was on ensuring the game felt intuitive, the green theme was communicated clearly through gameplay, and that the overall player experience remained engaging and cohesive across a larger team collaboration.</p>
     </div>
   </section>
 
@@ -380,16 +450,15 @@
   <section class="case-section">
     <div class="p-container">
       <p class="case-label">Problem</p>
-      <h2>People know food waste is bad — but don't know what to do about it</h2>
-      <p>Research showed that most people are broadly aware that food waste is a problem, but lack specific knowledge about their own contribution to it or what actions would make the biggest difference. Educational content about food waste tends to be either too abstract (global statistics) or too prescriptive (strict meal planning) to create lasting behaviour change.</p>
-      <p>The gap wasn't awareness — it was actionable understanding. People needed to connect abstract knowledge to their own daily decisions in a way that felt achievable, not burdensome.</p>
+      <h2>How do you make a themed arcade game feel cohesive with 14 people?</h2>
+      <p>Working with a large team of 14 introduced coordination challenges. Every contributor needed to share the same vision for the green theme and understand how their work connected to the player experience. The arcade genre demands instant readability and satisfying feedback loops — layering a thematic message on top without compromising gameplay required careful UX thinking.</p>
 
       <div class="case-highlight">
         <ul>
-          <li>Existing food waste education feels abstract and disconnected from daily life</li>
-          <li>Users feel overwhelmed rather than empowered by food waste statistics</li>
-          <li>No engaging, low-commitment way to build food waste literacy over time</li>
-          <li>Businesses and individuals have different knowledge needs and motivations</li>
+          <li>Coordinating a shared vision across a 14-person team</li>
+          <li>Integrating a green/environmental theme without sacrificing arcade fun</li>
+          <li>Ensuring instant readability and intuitive controls for the arcade genre</li>
+          <li>Maintaining design consistency across many contributors</li>
         </ul>
       </div>
     </div>
@@ -399,22 +468,22 @@
   <section class="case-section">
     <div class="p-container">
       <p class="case-label">Process</p>
-      <h2>From user research to interactive prototype</h2>
-      <p>The process began with user interviews targeting both individuals and food-service professionals. These interviews revealed different mental models around food waste — individuals focused on household habits, while businesses thought in terms of supply chains and cost savings.</p>
-      <p>Gamification patterns from apps like Duolingo and Kahoot were studied to understand what makes quiz-based learning sticky. The key insight was that short, daily micro-interactions with immediate feedback created better retention than longer educational sessions.</p>
+      <h2>Research, prototyping, and playtesting at scale</h2>
+      <p>The process began with research into how environmental themes have been successfully incorporated into games without feeling heavy-handed. Competitive analysis of arcade games helped establish best practices for controls, pacing, and feedback.</p>
+      <p>As UX Researcher, playtesting sessions were conducted throughout development to validate design decisions. Working with such a large team meant establishing clear UX guidelines early so that everyone — artists, programmers, and designers — was aligned on the player experience goals.</p>
 
       <div class="case-two-col">
         <div class="col-block">
-          <h4>User Interviews</h4>
-          <p>Conducted interviews with individuals and food-service workers to map different mental models, motivations, and knowledge gaps around food waste.</p>
+          <h4>Research</h4>
+          <p>Studied arcade game conventions and how environmental themes can be embedded into gameplay mechanics and visual design without disrupting the core fun loop.</p>
         </div>
         <div class="col-block">
-          <h4>Gamification Research</h4>
-          <p>Analysed quiz-based learning apps to identify which gamification mechanics drive sustained engagement without undermining educational goals.</p>
+          <h4>Playtesting</h4>
+          <p>Ran iterative playtesting sessions to identify friction points, validate the green theme's clarity, and ensure the controls met arcade-level responsiveness.</p>
         </div>
       </div>
 
-      <div class="case-image">User Journey Map / Wireframe Sketches</div>
+      <div class="case-image">Process Documentation / Playtest Insights</div>
     </div>
   </section>
 
@@ -422,12 +491,11 @@
   <section class="case-section">
     <div class="p-container">
       <p class="case-label">Solution</p>
-      <h2>Bite-sized quizzes with real-world action prompts</h2>
-      <p>The prototype featured daily quiz sessions of 3–5 questions, each taking under 2 minutes. Questions were contextual — tied to seasons, common shopping habits, and local food culture. After each quiz, users received a single, actionable tip they could apply immediately.</p>
-      <p>A progress system tracked knowledge growth across categories (storage, shopping, cooking, composting) and unlocked new content as users demonstrated understanding. For businesses, a separate track covered supply chain decisions, portion planning, and waste tracking.</p>
-      <p>The visual design used warm, approachable colours and playful illustrations to make the topic feel inviting rather than guilt-inducing. Positive framing emphasized what users were learning and saving, rather than what they were wasting.</p>
+      <h2>A themed arcade experience that stays true to its genre</h2>
+      <p>The final game successfully blends the green theme into its arcade mechanics. The environmental message is embedded in the gameplay itself rather than being a layer on top, making it feel natural and integrated. Visual design reinforces the theme through colour palette, environment art, and interactive elements.</p>
+      <p>UX guidelines established early in the project helped maintain consistency across all contributions. Clear visual hierarchy, responsive controls, and satisfying feedback loops kept the arcade feel front and centre while the green theme gave the experience a unique identity.</p>
 
-      <div class="case-image">App Prototype Screens / Quiz Flow</div>
+      <div class="case-image">Final Game Screenshots / UI Design</div>
     </div>
   </section>
 
@@ -435,16 +503,16 @@
   <section class="case-section">
     <div class="p-container">
       <p class="case-label">Outcome</p>
-      <h2>Engagement through empowerment, not guilt</h2>
-      <p>User testing of the prototype showed strong engagement — testers completed an average of 3 quiz sessions in a single sitting and reported feeling more confident about their food waste knowledge afterward. The actionable tips were rated as the most valuable feature, confirming that users wanted practical guidance over abstract education.</p>
-      <p>The project demonstrated that gamification can be a powerful tool for behaviour change when it respects the user's intelligence and connects learning to real-world actions. The positive framing approach proved more effective than guilt-based messaging.</p>
+      <h2>Delivering a cohesive game with a large team</h2>
+      <p>Project Trash was completed and published on itch.io, with additional visibility through Instagram and YouTube. The game demonstrates that a large team can deliver a cohesive, themed arcade experience when aligned through strong UX foundations and iterative playtesting.</p>
+      <p>The project provided valuable experience in scaling UX processes for larger teams, conducting research that informs a shared vision, and balancing thematic goals with genre expectations.</p>
 
       <div class="case-highlight">
         <ul>
-          <li>Testers completed multiple sessions voluntarily, showing strong engagement</li>
-          <li>Actionable tips rated as the most valuable feature by users</li>
-          <li>Positive framing outperformed guilt-based messaging in user testing</li>
-          <li>Demonstrated gamification as a tool for sustainable behaviour change</li>
+          <li>Successfully shipped and published on itch.io</li>
+          <li>Cohesive green theme integrated into core gameplay mechanics</li>
+          <li>Coordinated UX vision across a 14-person team</li>
+          <li>Gained experience scaling UX research and design for larger teams</li>
         </ul>
       </div>
     </div>
@@ -453,8 +521,8 @@
   <!-- PROJECT NAV -->
   <div class="p-container">
     <div class="case-nav">
-      <a href="anno-pax-romana.html">&larr; Anno Pax Romana</a>
-      <a href="project-trash.html" class="next">Project Trash &rarr;</a>
+      <a href="matsvinskollen.html">&larr; Matsvinskollen</a>
+      <a href="arcade-game.html" class="next">Arcade Game &rarr;</a>
     </div>
   </div>
 

@@ -320,6 +320,45 @@
 
     .case-nav .next { margin-left: auto; }
 
+    /* LINK BUTTONS */
+    .case-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.75rem;
+    }
+
+    .case-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.6rem 1.2rem;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--bg);
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .case-link-btn:hover {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .case-link-btn.outline {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .case-link-btn.outline:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
     @media (max-width: 640px) {
       .case-two-col { grid-template-columns: 1fr; }
       .case-meta { gap: 1rem; }
@@ -368,6 +407,12 @@
             <span class="tag">Prototyping</span>
           </div>
         </div>
+      </div>
+
+      <div class="case-links">
+        <a href="https://futuregames.itch.io/projecttrash" target="_blank" rel="noopener" class="case-link-btn">&#9654; Play the Game</a>
+        <a href="https://www.instagram.com/reel/DSAeWS0AKsR/?utm_source=ig_web_copy_link" target="_blank" rel="noopener" class="case-link-btn outline">Instagram Reel</a>
+        <a href="https://youtu.be/0NN_dksL3Lo?si=3QZgyfJnl3rpnCYR" target="_blank" rel="noopener" class="case-link-btn outline">YouTube Video</a>
       </div>
 
       <div class="case-cover">Project Cover Image</div>
@@ -460,7 +505,7 @@
   <!-- PROJECT NAV -->
   <div class="p-container">
     <div class="case-nav">
-      <a href="matsvinskollen.html">&larr; Matsvinskollen</a>
+      <a href="project-trash.html">&larr; Project Trash</a>
       <a href="hack-and-slash.html" class="next">Hack and Slash &rarr;</a>
     </div>
   </div>
