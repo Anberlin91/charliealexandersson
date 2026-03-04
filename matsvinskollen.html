@@ -150,16 +150,10 @@
 
     .case-cover {
       width: 100%;
-      aspect-ratio: 16/9;
-      background: #2a4a35;
       border: 1px solid var(--border);
       border-radius: 6px;
       margin-top: 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-primary);
-      font-size: 0.85rem;
+      display: block;
     }
 
     .case-section {
@@ -225,16 +219,10 @@
 
     .case-image {
       width: 100%;
-      aspect-ratio: 16/10;
-      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 6px;
       margin-top: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-secondary);
-      font-size: 0.8rem;
+      display: block;
     }
 
     .case-two-col {
@@ -406,7 +394,7 @@
     <div class="p-container">
       <a href="index.html#work" class="case-back">&larr; Back to all projects</a>
       <h1>Matsvinskollen</h1>
-      <p class="case-subtitle">A gamified quiz prototype designed to educate individuals and businesses on reducing food waste through awareness-based decision making.</p>
+      <p class="case-subtitle">A three week concept project exploring how gamification could increase awareness around food waste.</p>
 
       <div class="case-meta">
         <div class="case-meta-item">
@@ -435,7 +423,7 @@
         <a href="https://www.figma.com" target="_blank" class="primary">View on Figma</a>
       </div>
 
-      <div class="case-cover">Project Cover Image</div>
+      <img src="Images/Cover_matsvinn.png" alt="Matsvinskollen cover" class="case-cover" style="object-fit:cover;" />
     </div>
   </section>
 
@@ -443,9 +431,10 @@
   <section class="case-section">
     <div class="p-container">
       <p class="case-label">Overview</p>
-      <h2>Gamifying food waste education for real-world impact</h2>
-      <p>Matsvinskollen is a mobile app concept that uses gamified quizzes to raise awareness about food waste. The app targets both individuals and businesses, helping them understand the scale of food waste and discover practical steps they can take to reduce it.</p>
-      <p>The design challenge was to make an educational topic feel engaging and actionable rather than preachy or overwhelming. Gamification mechanics were used to create motivation loops that kept users returning and learning.</p>
+      <h2>Can interactive learning change how people think about food waste?</h2>
+      <p>Matsvinskollen started with a simple question. Can interactive learning change how people think about food waste?</p>
+      <p>Because the project only ran for three weeks, the goal was never to build a finished product. Instead, we focused on research, defining a clear and realistic problem, and building a prototype that allowed us to test one core idea.</p>
+      <p>The result was a quiz based mobile concept designed to make food waste knowledge feel practical and accessible rather than abstract.</p>
     </div>
   </section>
 
@@ -453,18 +442,13 @@
   <section class="case-section">
     <div class="p-container">
       <p class="case-label">Problem</p>
-      <h2>People know food waste is bad — but don't know what to do about it</h2>
-      <p>Research showed that most people are broadly aware that food waste is a problem, but lack specific knowledge about their own contribution to it or what actions would make the biggest difference. Educational content about food waste tends to be either too abstract (global statistics) or too prescriptive (strict meal planning) to create lasting behaviour change.</p>
-      <p>The gap wasn't awareness — it was actionable understanding. People needed to connect abstract knowledge to their own daily decisions in a way that felt achievable, not burdensome.</p>
+      <h2>Awareness was not the issue — the gap was knowledge</h2>
+      <p>Most people know food waste is a problem. What they often lack is practical understanding.</p>
+      <p>Through research we noticed that awareness was not the issue. The gap was knowledge.</p>
+      <p>People were unsure about how long food actually lasts, how to store it properly, and which daily decisions make a real difference.</p>
+      <p>Rather than trying to solve large systemic problems, we narrowed the scope. In three weeks we needed something we could realistically test. We chose to focus on awareness through interaction.</p>
 
-      <div class="case-highlight">
-        <ul>
-          <li>Existing food waste education feels abstract and disconnected from daily life</li>
-          <li>Users feel overwhelmed rather than empowered by food waste statistics</li>
-          <li>No engaging, low-commitment way to build food waste literacy over time</li>
-          <li>Businesses and individuals have different knowledge needs and motivations</li>
-        </ul>
-      </div>
+      <img src="Images/userstories_matsvinn.png" alt="User stories" class="case-image" style="object-fit:contain;" />
     </div>
   </section>
 
@@ -472,22 +456,13 @@
   <section class="case-section">
     <div class="p-container">
       <p class="case-label">Process</p>
-      <h2>From user research to interactive prototype</h2>
-      <p>The process began with user interviews targeting both individuals and food-service professionals. These interviews revealed different mental models around food waste — individuals focused on household habits, while businesses thought in terms of supply chains and cost savings.</p>
-      <p>Gamification patterns from apps like Duolingo and Kahoot were studied to understand what makes quiz-based learning sticky. The key insight was that short, daily micro-interactions with immediate feedback created better retention than longer educational sessions.</p>
+      <h2>Research, synthesis, and focused iteration</h2>
+      <p>The project ran over three weeks.</p>
+      <p>We began with research and conversations to understand different perspectives on food waste. From there we defined a problem that felt realistic within the timeframe.</p>
+      <p>My main contributions were research and synthesis, wireframing, high fidelity mobile design, and structuring the prototype in Figma so it stayed organized as we iterated.</p>
+      <p>The goal was not production readiness. The goal was insight. We wanted to see whether gamified quizzes could influence how users think about food in their daily lives.</p>
 
-      <div class="case-two-col">
-        <div class="col-block">
-          <h4>User Interviews</h4>
-          <p>Conducted interviews with individuals and food-service workers to map different mental models, motivations, and knowledge gaps around food waste.</p>
-        </div>
-        <div class="col-block">
-          <h4>Gamification Research</h4>
-          <p>Analysed quiz-based learning apps to identify which gamification mechanics drive sustained engagement without undermining educational goals.</p>
-        </div>
-      </div>
-
-      <div class="case-image">User Journey Map / Wireframe Sketches</div>
+      <img src="Images/Wireframe_Matsvinn.png" alt="Wireframe sketches" class="case-image" style="object-fit:contain;" />
     </div>
   </section>
 
@@ -495,12 +470,13 @@
   <section class="case-section">
     <div class="p-container">
       <p class="case-label">Solution</p>
-      <h2>Bite-sized quizzes with real-world action prompts</h2>
-      <p>The prototype featured daily quiz sessions of 3–5 questions, each taking under 2 minutes. Questions were contextual — tied to seasons, common shopping habits, and local food culture. After each quiz, users received a single, actionable tip they could apply immediately.</p>
-      <p>A progress system tracked knowledge growth across categories (storage, shopping, cooking, composting) and unlocked new content as users demonstrated understanding. For businesses, a separate track covered supply chain decisions, portion planning, and waste tracking.</p>
-      <p>The visual design used warm, approachable colours and playful illustrations to make the topic feel inviting rather than guilt-inducing. Positive framing emphasized what users were learning and saving, rather than what they were wasting.</p>
+      <h2>Small interactive moments that make information feel personal</h2>
+      <p>We designed short quiz sessions built around relatable everyday scenarios. Each session ended with one practical tip connected to the questions.</p>
+      <p>The idea was simple. Small interactive moments can make abstract information feel personal.</p>
+      <p>The prototype allowed us to test clarity, engagement, and whether users felt more informed after interacting with it.</p>
+      <p>It was not a finished product. It was a concept meant to explore direction and potential.</p>
 
-      <div class="case-image">App Prototype Screens / Quiz Flow</div>
+      <img src="Images/quiz_flow_matsvinn.png" alt="Quiz flow" class="case-image" style="object-fit:contain;" />
     </div>
   </section>
 
@@ -508,18 +484,10 @@
   <section class="case-section">
     <div class="p-container">
       <p class="case-label">Outcome</p>
-      <h2>Engagement through empowerment, not guilt</h2>
-      <p>User testing of the prototype showed strong engagement — testers completed an average of 3 quiz sessions in a single sitting and reported feeling more confident about their food waste knowledge afterward. The actionable tips were rated as the most valuable feature, confirming that users wanted practical guidance over abstract education.</p>
-      <p>The project demonstrated that gamification can be a powerful tool for behaviour change when it respects the user's intelligence and connects learning to real-world actions. The positive framing approach proved more effective than guilt-based messaging.</p>
-
-      <div class="case-highlight">
-        <ul>
-          <li>Testers completed multiple sessions voluntarily, showing strong engagement</li>
-          <li>Actionable tips rated as the most valuable feature by users</li>
-          <li>Positive framing outperformed guilt-based messaging in user testing</li>
-          <li>Demonstrated gamification as a tool for sustainable behaviour change</li>
-        </ul>
-      </div>
+      <h2>Practical language over abstract thinking</h2>
+      <p>During testing, users reported feeling more confident about food storage and waste after completing the quizzes.</p>
+      <p>The most interesting result was not how many questions they answered, but how their language changed. They began talking about food waste in more practical terms rather than abstract ones.</p>
+      <p>For me, the biggest takeaway was about scope. In a short project, defining a focused problem and testing one strong idea was far more valuable than trying to build a complete solution.</p>
     </div>
   </section>
 
