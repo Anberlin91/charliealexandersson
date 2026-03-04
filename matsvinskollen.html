@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Matsvinskollen – Use Case</title>
-  
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
 
@@ -22,7 +21,7 @@
       --max-width: 900px;
       --px: clamp(1.25rem, 5vw, 3rem);
     }
-  
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -374,14 +373,6 @@
       .case-two-col { grid-template-columns: 1fr; }
       .case-meta { gap: 1rem; }
     }
-    .cs-section ul {
-  padding-left: 1.25rem;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
   </style>
 </head>
 <body>
@@ -442,8 +433,7 @@
       <p class="case-label">Overview</p>
       <h2>Can interactive learning change how people think about food waste?</h2>
       <p>Matsvinskollen started with a simple question. Can interactive learning change how people think about food waste?</p>
-      <p>Because the project only ran for three weeks, the goal was never to build a finished product. Instead, we focused on research, defining a clear and realistic problem, and building a prototype that allowed us to test one core idea.</p>
-      <p>The result was a quiz based mobile concept designed to make food waste knowledge feel practical and accessible rather than abstract.</p>
+      <p>We know food waste is a huge problem. But how do we move from awareness to action? The idea was to create a prototype that could test whether gamified quizzes could make food waste information feel more personal and actionable.</p>
     </div>
   </section>
 
@@ -451,18 +441,19 @@
   <section class="case-section">
     <div class="p-container">
       <p class="case-label">Problem</p>
-      <h2>Awareness was not the issue, it was the human factor that need behavior change</h2>
-      <p>Most people know food waste is a problem. However, they often lack the practical knowledge to address it effectively.</p>
-      <p>Through my research there where a lot of articles that highlighted the importance of repeated conversations about food waste and how effective it is especially to talk about it under lunch in schools.</p>
-      <p>People needed to be reminded and work togethether as a team to change the behaviour, both young and adults. the main issues in terms of knowledge were the uncertainty about how long food actually lasts, how to store it properly, and which daily decisions make a real difference.</p>
-      <p>Rather than trying to solve large systemic problems, we narrowed the scope. In three weeks we needed something we could realistically test. We chose to focus on awareness, and how we could use interaction to drive behavior change.</p>
-      <p>The result was a quiz based mobile concept designed to make food waste knowledge fun and engaging</p>
-      <ul>
-  <li>Första punkten</li>
-  <li>Andra punkten</li>
-  <li>Tredje punkten</li>
-</ul>
-      <img src="Images/userstories_matsvinn.png" alt="User stories" class="case-image" style="object-fit:contain;" />
+      <h2>The human factor that need behavior change</h2>
+      <p>Most people know food waste is a problem. However, they often lack the practical knowledge and habits to reduce it in their daily lives. we identified three key areas of uncertainty:</p>
+<div class="case-highlight">
+  <ul>
+    <li>how long food lasts</li>
+    <li>How to store it properly</li>
+    <li>which habits actually reduce waste</li>
+
+    <p>This shifted our focus from raising awareness to building food literacy. </p>
+    
+  </ul>
+</div>
+   
     </div>
   </section>
 
@@ -471,12 +462,19 @@
     <div class="p-container">
       <p class="case-label">Process</p>
       <h2>Research, synthesis, and focused iteration</h2>
-      <p>The project ran over three weeks.</p>
-      <p>We began with research and conversations to understand different perspectives on food waste. From there we defined a problem that felt realistic within the timeframe.</p>
-      <p>My main contributions were research and synthesis, wireframing, high fidelity mobile design, and structuring the prototype in Figma so it stayed organized as we iterated.</p>
+      <p>Exploring quiz based learning with wireframing and user testing</p>
+      <p>We explored how short quiz interactions could translate knowledge into action.</p>
+      <p>The prototype focused on:</p>
+      <div class="case-highlight">
+        <ul>
+          <li>clarity of information</li>
+          <li>engagement of the quiz format</li>
+          <li>whether users felt more informed after interacting with it</li>
+        </ul>
       <p>The goal was not production readiness. The goal was insight. We wanted to see whether gamified quizzes could influence how users think about food in their daily lives.</p>
 
       <img src="Images/Wireframe_Matsvinn.png" alt="Wireframe sketches" class="case-image" style="object-fit:contain;" />
+      
     </div>
   </section>
 
@@ -484,13 +482,16 @@
   <section class="case-section">
     <div class="p-container">
       <p class="case-label">Solution</p>
-      <h2>Small interactive moments that make information feel personal</h2>
-      <p>We designed short quiz sessions built around relatable everyday scenarios. Each session ended with one practical tip connected to the questions.</p>
+      <h2>High fidelity flow</h2>
+      <p>After validating the concept through wireframes, we developed a more complete interaction flow. This helped us test pacing, feedback, and how the quiz experience would feel across multiple questions.</p>
       <p>The idea was simple. Small interactive moments can make abstract information feel personal.</p>
       <p>The prototype allowed us to test clarity, engagement, and whether users felt more informed after interacting with it.</p>
       <p>It was not a finished product. It was a concept meant to explore direction and potential.</p>
 
       <img src="Images/quiz_flow_matsvinn.png" alt="Quiz flow" class="case-image" style="object-fit:contain;" />
+      <p>Quiz flow diagram</p>
+      <img src="Images/structure_matsvinn.png" alt="Wireframe sketches" class="case-image" style="object-fit:contain;" />
+      <p>Game mechanics overview</p>
     </div>
   </section>
 
@@ -500,8 +501,8 @@
       <p class="case-label">Outcome</p>
       <h2>Practical language over abstract thinking</h2>
       <p>During testing, users reported feeling more confident about food storage and waste after completing the quizzes.</p>
-      <p>The most interesting result was not how many questions they answered, but how their language changed. They began talking about food waste in more practical terms rather than abstract ones.</p>
-      <p>For me, the biggest takeaway was about scope. In a short project, defining a focused problem and testing one strong idea was far more valuable than trying to build a complete solution.</p>
+      <p>The most interesting result was how people compared their results to other test objects, and how often they mentioned how fun it was </p>
+      <p>For me, the biggest takeaway was about scope of the gamification aspect, not making it to complicated just easy to interact with. In a short project, defining a focused problem and testing sooner rather then later was far more valuable than trying to build a complete solution right away.</p>
     </div>
   </section>
 
