@@ -1,0 +1,410 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0e0e0e;
+    --surface: #161616;
+    --border: #2a2a2a;
+    --text-primary: #f0ede8;
+    --text-secondary: #888;
+    --accent: #c8f060;
+    --font-display: 'Instrument Serif', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --max-width: 900px;
+    --px: clamp(1.25rem, 5vw, 3rem);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg) !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-body) !important;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #portfolio-root { width: 100%; }
+
+  .p-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding-left: var(--px);
+    padding-right: var(--px);
+  }
+
+  .p-section { padding-block: clamp(3rem, 8vw, 6rem); }
+  .p-section + .p-section { border-top: 1px solid var(--border); }
+
+  /* NAV */
+  .p-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding-block: 1rem;
+  }
+
+  .p-nav .p-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .p-nav-logo {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+
+  .p-nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .p-nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .p-nav-links a:hover { color: var(--text-primary); }
+
+  /* HERO */
+  .p-hero { padding-top: clamp(3rem, 10vw, 7rem); padding-bottom: clamp(3rem, 8vw, 5rem); }
+
+  .p-hero-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .p-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    max-width: 16ch;
+    margin-bottom: 1.25rem;
+    color: var(--text-primary);
+  }
+
+  .p-hero p {
+    color: var(--text-secondary);
+    max-width: 52ch;
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .p-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+  .p-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.25rem;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .p-btn-primary { background: var(--text-primary); color: var(--bg); }
+  .p-btn-primary:hover { background: var(--accent); }
+  .p-btn-ghost { background: transparent; color: var(--text-secondary); border: 1px solid var(--border); }
+  .p-btn-ghost:hover { border-color: var(--text-secondary); color: var(--text-primary); }
+
+  .p-hero-photo {
+    width: clamp(90px, 15vw, 140px);
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    filter: grayscale(20%);
+  }
+
+  /* SECTION LABEL */
+  .p-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+  }
+
+  /* WORK GRID */
+  .p-work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .p-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+
+  .p-card:hover { border-color: #444; transform: translateY(-2px); }
+
+  .p-card-thumb {
+    width: 100%;
+    aspect-ratio: 16/10;
+    display: block;
+    background: #222;
+    object-fit: cover;
+  }
+
+  .p-card-thumb.t-dark  { background: #1a1a1a; }
+  .p-card-thumb.t-pink  { background: #c4a0a8; }
+  .p-card-thumb.t-blue  { background: #1c2d4a; }
+  .p-card-thumb.t-green { background: #2a4a35; }
+
+  .p-card-body { padding: 1rem 1.1rem 1.2rem; }
+
+  .p-card-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+    color: var(--text-primary);
+  }
+
+  .p-card-desc {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .p-tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+  .p-tag {
+    font-size: 0.68rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+  }
+
+  /* ABOUT */
+  .p-about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .p-about-text p { font-size: 0.9rem; color: var(--text-secondary); }
+  .p-about-text p + p { margin-top: 1em; }
+
+  /* SKILLS */
+  .p-skill-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.1rem 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .p-skill-block h4 {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  .p-skill-block p { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.55; }
+
+  /* FOOTER */
+  .p-footer {
+    border-top: 1px solid var(--border);
+    padding-block: 2rem;
+  }
+
+  .p-footer .p-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .p-footer p { font-size: 0.78rem; color: var(--text-secondary); }
+
+  .p-footer-links { display: flex; gap: 1.5rem; list-style: none; }
+
+  .p-footer-links a {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .p-footer-links a:hover { color: var(--text-primary); }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    .p-hero-inner { grid-template-columns: 1fr; }
+    .p-hero-photo { display: none; }
+    .p-about-grid { grid-template-columns: 1fr; }
+    .p-work-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div id="portfolio-root">
+
+  <!-- NAV -->
+  <nav class="p-nav">
+    <div class="p-container">
+      <span class="p-nav-logo">Game UX Designer</span>
+      <ul class="p-nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="mailto:hello@example.com">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="p-section p-hero">
+    <div class="p-container">
+      <div class="p-hero-inner">
+        <div>
+          <h1 class="p-hero-h1" style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(2.4rem,6vw,4rem);font-weight:400;line-height:1.1;letter-spacing:-0.02em;max-width:16ch;margin-bottom:1.25rem;color:#f0ede8;">UX Designer focused on systems, behavior, and games.</h1>
+          <p style="color:#888;max-width:52ch;font-size:0.95rem;margin-bottom:1.75rem;">I specialise in creating UX systems for players — interaction flows and production-ready designs for games. My approach combines design thinking with technical execution.</p>
+          <div class="p-btns">
+            <a href="#work" class="p-btn p-btn-primary">View Projects</a>
+            <a href="mailto:hello@example.com" class="p-btn p-btn-ghost">Get in touch</a>
+          </div>
+        </div>
+        <!-- 替换为你的真实照片 -->
+        <img class="p-hero-photo" src="https://via.placeholder.com/140x190/222/333?text=+" alt="Photo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="p-section" id="work">
+    <div class="p-container">
+      <p class="p-label">Selected Work</p>
+      <div class="p-work-grid">
+
+        <a href="#" class="p-card">
+          <div class="p-card-thumb t-dark"></div>
+          <div class="p-card-body">
+            <p class="p-card-title">Arcade Game – School Project at Futuregames</p>
+            <p class="p-card-desc">Designed a side-scroller game mechanic and complete game experience built under 3 weeks.</p>
+            <ul class="p-tag-list">
+              <li class="p-tag">UX Design</li>
+              <li class="p-tag">UXR</li>
+              <li class="p-tag">Prototyping</li>
+            </ul>
+          </div>
+        </a>
+
+        <a href="#" class="p-card">
+          <div class="p-card-thumb t-pink"></div>
+          <div class="p-card-body">
+            <p class="p-card-title">Hack and Slash – School Project at Futuregames</p>
+            <p class="p-card-desc">A fast-paced action office game where players uncover villainy of price-hacking.</p>
+            <ul class="p-tag-list">
+              <li class="p-tag">UX Research</li>
+              <li class="p-tag">Narrative</li>
+              <li class="p-tag">Prototyping</li>
+            </ul>
+          </div>
+        </a>
+
+        <a href="#" class="p-card">
+          <div class="p-card-thumb t-blue"></div>
+          <div class="p-card-body">
+            <p class="p-card-title">Case Study – Design suggestion for Anno Pax Romana</p>
+            <p class="p-card-desc">A UI redesign suggestion for Anno Pax Romana focused on systems hierarchy and streamlining.</p>
+            <ul class="p-tag-list">
+              <li class="p-tag">UX Design</li>
+              <li class="p-tag">Research</li>
+              <li class="p-tag">Systemdesign</li>
+            </ul>
+          </div>
+        </a>
+
+        <a href="#" class="p-card">
+          <div class="p-card-thumb t-green"></div>
+          <div class="p-card-body">
+            <p class="p-card-title">Matsvinskollen – Food Waste Awareness App</p>
+            <p class="p-card-desc">A gamified quiz prototype designed to educate individuals and businesses on reducing food waste through awareness-based decision making.</p>
+            <ul class="p-tag-list">
+              <li class="p-tag">UX Design</li>
+              <li class="p-tag">Prototyping</li>
+              <li class="p-tag">Mobile</li>
+            </ul>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="p-section" id="about">
+    <div class="p-container">
+      <p class="p-label">About Me</p>
+      <div class="p-about-grid">
+        <div class="p-about-text">
+          <p>Hey, I'm [Ditt namn].</p>
+          <p>A Game UX/UI designer with a background in anthropology, game development, and UX design. Designing products that make sense and create satisfying experiences is what drives me.</p>
+          <p>I've worked with tools like Unity, Maya, Illustrator, and Figma, and I naturally gravitate toward planning, structuring backlogs, and aligning the difference between friction and flow in gameplay.</p>
+          <p>Today, I'm specialising further in Game UX/UI at Futuregames, focusing on designing interfaces that are readable, responsive, and grounded in mechanics.</p>
+          <p>Outside of design, I enjoy building things with my 3D printer, exploring games, concerts, and good conversations. Big dog lover.</p>
+        </div>
+        <div>
+          <p class="p-label" style="margin-bottom:1.25rem;">Special Skills</p>
+          <div class="p-skill-block">
+            <h4>Systems Design</h4>
+            <p>Building scalable UX systems, component hierarchies, and design patterns for complex game interfaces.</p>
+          </div>
+          <div class="p-skill-block">
+            <h4>Prototyping</h4>
+            <p>Rapid iteration in Figma and Framer — from low-fidelity flows to high-fidelity interactive prototypes.</p>
+          </div>
+          <div class="p-skill-block">
+            <h4>User Research</h4>
+            <p>Playtesting facilitation, usability analysis, and translating player feedback into actionable design decisions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="p-footer">
+    <div class="p-container">
+      <p>© 2026 — Game UX Designer</p>
+      <ul class="p-footer-links">
+        <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+        <li><a href="https://read.cv" target="_blank">Read.cv</a></li>
+        <li><a href="mailto:hello@example.com">Email</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</div>
