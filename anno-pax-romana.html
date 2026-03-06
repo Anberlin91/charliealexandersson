@@ -3,404 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anno Pax Romana – Use Case</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #0e0e0e;
-      --surface: #161616;
-      --border: #2a2a2a;
-      --text-primary: #f0ede8;
-      --text-secondary: #888;
-      --accent: #c8f060;
-      --font-display: 'Instrument Serif', Georgia, serif;
-      --font-body: 'DM Sans', sans-serif;
-      --max-width: 900px;
-      --px: clamp(1.25rem, 5vw, 3rem);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text-primary);
-      font-family: var(--font-body);
-      font-size: 15px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .p-container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding-left: var(--px);
-      padding-right: var(--px);
-    }
-
-    .p-nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      padding-block: 1rem;
-    }
-
-    .p-nav .p-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .p-nav-logo {
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      text-decoration: none;
-    }
-
-    .p-nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .p-nav-links a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-      transition: color 0.2s;
-    }
-
-    .p-nav-links a:hover { color: var(--text-primary); }
-
-    .case-hero {
-      padding-top: clamp(3rem, 10vw, 7rem);
-      padding-bottom: clamp(2rem, 6vw, 4rem);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .case-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 0.8rem;
-      margin-bottom: 2rem;
-      transition: color 0.2s;
-    }
-
-    .case-back:hover { color: var(--text-primary); }
-
-    .case-hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 400;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
-    }
-
-    .case-hero .case-subtitle {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      max-width: 60ch;
-      margin-bottom: 1.5rem;
-    }
-
-    .case-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 1.5rem;
-    }
-
-    .case-meta-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .case-meta-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-    }
-
-    .case-meta-value {
-      font-size: 0.85rem;
-      color: var(--text-primary);
-    }
-
-    .tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
-    .tag {
-      font-size: 0.68rem;
-      padding: 0.2rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-    }
-
-    .case-cover {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: #1c2d4a;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      margin-top: 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-primary);
-      font-size: 0.85rem;
-    }
-
-    .case-section {
-      padding-block: clamp(2.5rem, 6vw, 4rem);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .case-section:last-of-type { border-bottom: none; }
-
-    .case-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.25rem;
-    }
-
-    .case-section h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.4rem, 3vw, 1.8rem);
-      font-weight: 400;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-
-    .case-section p {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      max-width: 65ch;
-      margin-bottom: 1rem;
-    }
-
-    .case-section p:last-child { margin-bottom: 0; }
-
-    .case-highlight {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.25rem 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .case-highlight ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .case-highlight li {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      padding-left: 1.2rem;
-      position: relative;
-    }
-
-    .case-highlight li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-    }
-
-    .case-image {
-      width: 100%;
-      aspect-ratio: 16/10;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      margin-top: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-secondary);
-      font-size: 0.8rem;
-    }
-
-    .case-two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .case-two-col .col-block {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.1rem 1.2rem;
-    }
-
-    .col-block h4 {
-      font-size: 0.75rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    .col-block p {
-      font-size: 0.82rem;
-      color: var(--text-secondary);
-      line-height: 1.55;
-    }
-
-    .case-three-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .case-three-col .col-block {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.1rem 1.2rem;
-    }
-
-    .p-footer {
-      border-top: 1px solid var(--border);
-      padding-block: 2rem;
-    }
-
-    .p-footer .p-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .p-footer p { font-size: 0.78rem; color: var(--text-secondary); }
-
-    .p-footer-links { display: flex; gap: 1.5rem; list-style: none; }
-
-    .p-footer-links a {
-      font-size: 0.78rem;
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .p-footer-links a:hover { color: var(--text-primary); }
-
-    .case-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-block: 2.5rem;
-    }
-
-    .case-nav a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 0.82rem;
-      transition: color 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .case-nav a:hover { color: var(--accent); }
-
-    .case-nav .next { margin-left: auto; }
-
-    .case-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1.5rem;
-    }
-
-    .case-links a {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.6rem 1.25rem;
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-decoration: none;
-      border-radius: 999px;
-      transition: all 0.2s;
-      background: transparent;
-      color: var(--text-secondary);
-      border: 1px solid var(--border);
-    }
-
-    .case-links a:hover {
-      border-color: var(--text-secondary);
-      color: var(--text-primary);
-    }
-
-    .case-links a.primary {
-      background: var(--text-primary);
-      color: var(--bg);
-      border: none;
-    }
-
-    .case-links a.primary:hover {
-      background: var(--accent);
-    }
-
-    /* BACK TO TOP */
-    .back-to-top {
-      position: fixed;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s, visibility 0.3s, background 0.2s, border-color 0.2s, color 0.2s;
-      z-index: 99;
-    }
-
-    .back-to-top.visible { opacity: 1; visibility: visible; }
-
-    .back-to-top:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: var(--bg);
-    }
-
-    @media (max-width: 640px) {
-      .case-two-col { grid-template-columns: 1fr; }
-      .case-three-col { grid-template-columns: 1fr; }
-      .case-meta { gap: 1rem; }
-    }
-  </style>
+  <title>Case Study – Charlie Alexandersson</title>
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
 
@@ -411,168 +15,67 @@
       <ul class="p-nav-links">
         <li><a href="index.html#work">Work</a></li>
         <li><a href="index.html#about">About</a></li>
-        <li><a href="mailto:hello@example.com">Contact</a></li>
+        <li><a href="mailto:charlie.alexandersson@hotmail.com">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- CASE HERO -->
+  <!-- HERO — populated by case.js -->
   <section class="case-hero">
     <div class="p-container">
       <a href="index.html#work" class="case-back">&larr; Back to all projects</a>
-      <h1>Anno Pax Romana</h1>
-      <p class="case-subtitle">A UI redesign case study for Anno Pax Romana focused on systems hierarchy, readability, and streamlining complex strategy interfaces.</p>
-
+      <h1 id="cs-title"></h1>
+      <p class="case-subtitle" id="cs-subtitle"></p>
       <div class="case-meta">
         <div class="case-meta-item">
           <span class="case-meta-label">Role</span>
-          <span class="case-meta-value">UX/UI Designer</span>
+          <span class="case-meta-value" id="cs-meta-role"></span>
         </div>
         <div class="case-meta-item">
           <span class="case-meta-label">Type</span>
-          <span class="case-meta-value">Case Study</span>
+          <span class="case-meta-value" id="cs-meta-type"></span>
         </div>
         <div class="case-meta-item">
           <span class="case-meta-label">Context</span>
-          <span class="case-meta-value">Design Suggestion / Redesign</span>
+          <span class="case-meta-value" id="cs-meta-context"></span>
         </div>
         <div class="case-meta-item">
           <span class="case-meta-label">Skills</span>
-          <div class="tag-list">
-            <span class="tag">UX Design</span>
-            <span class="tag">Research</span>
-            <span class="tag">System Design</span>
-          </div>
+          <div class="tag-list" id="cs-meta-skills"></div>
         </div>
       </div>
-
-      <div class="case-links">
-        <a href="https://www.figma.com/make/UHmoIOKVVg00l1kNeSyh9f/Game-Mockup-Creation?fullscreen=1&t=mIihmkQXuiTBJdqv-1" target="_blank" class="primary">View on Figma</a>
-      </div>
-
-      <div img src="Images/cover_pax.png"class="case-cover">Project Cover Image</div>
+      <div class="case-links" id="cs-links"></div>
+      <img id="cs-cover" class="case-cover" src="" alt="" />
     </div>
   </section>
 
-  <!-- OVERVIEW -->
-  <section class="case-section">
-    <div class="p-container">
-      <p class="case-label">Overview</p>
-      <h2>Redesigning complex strategy game interfaces</h2>
-      <p>Anno Pax Romana is a strategy game with deeply layered systems — resource management, city building, trade routes, and diplomacy. This case study explored how the existing UI could be redesigned to improve information hierarchy, reduce cognitive load, and make complex data more accessible to players.</p>
-      <p>The project was self-initiated as a design exercise to apply systems design thinking to an existing game's interface challenges.</p>
-    </div>
-  </section>
+  <!-- SECTIONS — built by case.js -->
+  <div id="cs-sections"></div>
 
-  <!-- PROBLEM -->
-  <section class="case-section">
-    <div class="p-container">
-      <p class="case-label">Problem</p>
-      <h2>Information overload in strategy game interfaces</h2>
-      <p>Strategy games like Anno present players with enormous amounts of data simultaneously — population needs, production chains, trade balances, building queues, and diplomatic relations. When all of this information competes for attention, players struggle to identify what matters most at any given moment.</p>
-      <p>The existing UI treated most information with equal visual weight, making it difficult for players to quickly scan for the data they needed. Nested menus and inconsistent layout patterns added to the cognitive burden.</p>
-
-      <div class="case-highlight">
-        <ul>
-          <li>Too much information presented with equal visual weight</li>
-          <li>Nested menu structures that obscured critical data</li>
-          <li>Inconsistent layout patterns across different game systems</li>
-          <li>High cognitive load especially during time-sensitive gameplay moments</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="case-section">
-    <div class="p-container">
-      <p class="case-label">Process</p>
-      <h2>Systematic analysis of information architecture</h2>
-      <p>The process started with a thorough audit of the existing UI — documenting every screen, panel, and interaction pattern. Each interface element was categorized by frequency of use, criticality during gameplay, and the context in which players needed it.</p>
-      <p>Community feedback from forums and player reviews was analysed to identify the most common pain points. This player-sourced data informed the prioritization of which systems needed the most redesign attention.</p>
-
-      <div class="case-three-col">
-        <div class="col-block">
-          <h4>UI Audit</h4>
-          <p>Documented all existing screens and interaction patterns, mapping information density and visual hierarchy issues.</p>
-        </div>
-        <div class="col-block">
-          <h4>Player Research</h4>
-          <p>Analysed community feedback, forum discussions, and player reviews to identify recurring UX pain points.</p>
-        </div>
-        <div class="col-block">
-          <h4>Systems Mapping</h4>
-          <p>Created relationship diagrams between game systems to understand how information flows between different UI panels.</p>
-        </div>
-      </div>
-
-      <div class="case-image">UI Audit Documentation / Systems Diagram</div>
-    </div>
-  </section>
-
-  <!-- SOLUTION -->
-  <section class="case-section">
-    <div class="p-container">
-      <p class="case-label">Solution</p>
-      <h2>Layered information with clear visual hierarchy</h2>
-      <p>The redesign proposal introduced a layered information architecture — a primary layer showing only the most critical real-time data, with secondary and tertiary layers accessible through progressive disclosure. This allowed players to scan essential information at a glance while diving deeper when needed.</p>
-      <p>Consistent design patterns were applied across all game systems: resource panels, building menus, and trade interfaces all followed the same visual language. Colour coding was standardized to indicate status (healthy, warning, critical) across every system.</p>
-      <p>The HUD was redesigned to be context-sensitive — showing relevant information based on what the player was currently doing rather than displaying everything at once.</p>
-
-      <div class="case-image">Redesigned UI Mockups / Before-After Comparison</div>
-    </div>
-  </section>
-
-  <!-- OUTCOME -->
-  <section class="case-section">
-    <div class="p-container">
-      <p class="case-label">Outcome</p>
-      <h2>A framework for taming complexity</h2>
-      <p>The case study produced a comprehensive redesign proposal with annotated mockups, interaction specifications, and a design rationale document. While this was a design exercise rather than a shipped product, the process yielded valuable insights into designing for information-dense applications.</p>
-      <p>The project reinforced that complex systems don't require complex interfaces — they require thoughtful information architecture that respects the player's attention and adapts to their current context.</p>
-
-      <div class="case-highlight">
-        <ul>
-          <li>Developed a layered information architecture reducing visible data by 40%</li>
-          <li>Created consistent design patterns applicable across all game systems</li>
-          <li>Designed context-sensitive HUD that adapts to player activity</li>
-          <li>Produced actionable redesign documentation with annotated mockups</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECT NAV -->
+  <!-- PROJECT NAV — built by case.js -->
   <div class="p-container">
-    <div class="case-nav">
-      <a href="hack-and-slash.html">&larr; Hack and Slash</a>
-      <a href="matsvinskollen.html" class="next">Matsvinskollen &rarr;</a>
-    </div>
+    <div class="case-nav" id="cs-nav"></div>
   </div>
 
   <!-- FOOTER -->
   <footer class="p-footer">
     <div class="p-container">
-      <p>&copy; 2026 — Game UX Designer</p>
+      <p>&copy; 2026 — Charlie Alexandersson</p>
       <ul class="p-footer-links">
-        <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+        <li><a href="https://se.linkedin.com/in/charlie-alexandersson-ux-designer" target="_blank">LinkedIn</a></li>
         <li><a href="https://read.cv" target="_blank">Read.cv</a></li>
-        <li><a href="mailto:hello@example.com">Email</a></li>
+        <li><a href="mailto:charlie.alexandersson@hotmail.com">Email</a></li>
       </ul>
     </div>
   </footer>
-  <!-- BACK TO TOP -->
+
   <button class="back-to-top" aria-label="Back to top">&uarr;</button>
 
+  <script src="scripts/case.js"></script>
   <script>
     const backToTop = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', () => {
-      backToTop.classList.toggle('visible', window.scrollY > 400);
-    });
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    window.addEventListener('scroll', () => { backToTop.classList.toggle('visible', window.scrollY > 400); });
+    backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
   </script>
-
 </body>
 </html>

@@ -3,389 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hack and Slash – Use Case</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #0e0e0e;
-      --surface: #161616;
-      --border: #2a2a2a;
-      --text-primary: #f0ede8;
-      --text-secondary: #888;
-      --accent: #c8f060;
-      --font-display: 'Instrument Serif', Georgia, serif;
-      --font-body: 'DM Sans', sans-serif;
-      --max-width: 900px;
-      --px: clamp(1.25rem, 5vw, 3rem);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text-primary);
-      font-family: var(--font-body);
-      font-size: 15px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .p-container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding-left: var(--px);
-      padding-right: var(--px);
-    }
-
-    .p-nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      padding-block: 1rem;
-    }
-
-    .p-nav .p-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .p-nav-logo {
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      text-decoration: none;
-    }
-
-    .p-nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .p-nav-links a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-      transition: color 0.2s;
-    }
-
-    .p-nav-links a:hover { color: var(--text-primary); }
-
-    .case-hero {
-      padding-top: clamp(3rem, 10vw, 7rem);
-      padding-bottom: clamp(2rem, 6vw, 4rem);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .case-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 0.8rem;
-      margin-bottom: 2rem;
-      transition: color 0.2s;
-    }
-
-    .case-back:hover { color: var(--text-primary); }
-
-    .case-hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 400;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
-    }
-
-    .case-hero .case-subtitle {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      max-width: 60ch;
-      margin-bottom: 1.5rem;
-    }
-
-    .case-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 1.5rem;
-    }
-
-    .case-meta-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .case-meta-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-    }
-
-    .case-meta-value {
-      font-size: 0.85rem;
-      color: var(--text-primary);
-    }
-
-    .tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
-    .tag {
-      font-size: 0.68rem;
-      padding: 0.2rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-    }
-
-    .case-cover {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: #c4a0a8;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      margin-top: 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--bg);
-      font-size: 0.85rem;
-    }
-
-    .case-section {
-      padding-block: clamp(2.5rem, 6vw, 4rem);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .case-section:last-of-type { border-bottom: none; }
-
-    .case-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.25rem;
-    }
-
-    .case-section h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.4rem, 3vw, 1.8rem);
-      font-weight: 400;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-
-    .case-section p {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      max-width: 65ch;
-      margin-bottom: 1rem;
-    }
-
-    .case-section p:last-child { margin-bottom: 0; }
-
-    .case-highlight {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.25rem 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .case-highlight ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .case-highlight li {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      padding-left: 1.2rem;
-      position: relative;
-    }
-
-    .case-highlight li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-    }
-
-    .case-image {
-      width: 100%;
-      aspect-ratio: 16/10;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      margin-top: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-secondary);
-      font-size: 0.8rem;
-    }
-
-    .case-two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .case-two-col .col-block {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.1rem 1.2rem;
-    }
-
-    .col-block h4 {
-      font-size: 0.75rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    .col-block p {
-      font-size: 0.82rem;
-      color: var(--text-secondary);
-      line-height: 1.55;
-    }
-
-    .p-footer {
-      border-top: 1px solid var(--border);
-      padding-block: 2rem;
-    }
-
-    .p-footer .p-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .p-footer p { font-size: 0.78rem; color: var(--text-secondary); }
-
-    .p-footer-links { display: flex; gap: 1.5rem; list-style: none; }
-
-    .p-footer-links a {
-      font-size: 0.78rem;
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .p-footer-links a:hover { color: var(--text-primary); }
-
-    .case-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-block: 2.5rem;
-    }
-
-    .case-nav a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 0.82rem;
-      transition: color 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .case-nav a:hover { color: var(--accent); }
-
-    .case-nav .next { margin-left: auto; }
-
-    .case-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1.5rem;
-    }
-
-    .case-links a {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.6rem 1.25rem;
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-decoration: none;
-      border-radius: 999px;
-      transition: all 0.2s;
-      background: transparent;
-      color: var(--text-secondary);
-      border: 1px solid var(--border);
-    }
-
-    .case-links a:hover {
-      border-color: var(--text-secondary);
-      color: var(--text-primary);
-    }
-
-    .case-links a.primary {
-      background: var(--text-primary);
-      color: var(--bg);
-      border: none;
-    }
-
-    .case-links a.primary:hover {
-      background: var(--accent);
-    }
-
-    /* BACK TO TOP */
-    .back-to-top {
-      position: fixed;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s, visibility 0.3s, background 0.2s, border-color 0.2s, color 0.2s;
-      z-index: 99;
-    }
-
-    .back-to-top.visible { opacity: 1; visibility: visible; }
-
-    .back-to-top:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: var(--bg);
-    }
-
-    @media (max-width: 640px) {
-      .case-two-col { grid-template-columns: 1fr; }
-      .case-meta { gap: 1rem; }
-    }
-  </style>
+  <title>Case Study – Charlie Alexandersson</title>
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
 
@@ -396,163 +15,67 @@
       <ul class="p-nav-links">
         <li><a href="index.html#work">Work</a></li>
         <li><a href="index.html#about">About</a></li>
-        <li><a href="mailto:hello@example.com">Contact</a></li>
+        <li><a href="mailto:charlie.alexandersson@hotmail.com">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- CASE HERO -->
+  <!-- HERO — populated by case.js -->
   <section class="case-hero">
     <div class="p-container">
       <a href="index.html#work" class="case-back">&larr; Back to all projects</a>
-      <h1>Hack and Slash</h1>
-      <p class="case-subtitle">A fast-paced action office game where players uncover villainy of price-hacking, built at Futuregames.</p>
-
+      <h1 id="cs-title"></h1>
+      <p class="case-subtitle" id="cs-subtitle"></p>
       <div class="case-meta">
         <div class="case-meta-item">
           <span class="case-meta-label">Role</span>
-          <span class="case-meta-value">UX Researcher &amp; Designer</span>
+          <span class="case-meta-value" id="cs-meta-role"></span>
         </div>
         <div class="case-meta-item">
           <span class="case-meta-label">Type</span>
-          <span class="case-meta-value">Action Game</span>
+          <span class="case-meta-value" id="cs-meta-type"></span>
         </div>
         <div class="case-meta-item">
           <span class="case-meta-label">Context</span>
-          <span class="case-meta-value">School Project – Futuregames</span>
+          <span class="case-meta-value" id="cs-meta-context"></span>
         </div>
         <div class="case-meta-item">
           <span class="case-meta-label">Skills</span>
-          <div class="tag-list">
-            <span class="tag">UX Research</span>
-            <span class="tag">Narrative</span>
-            <span class="tag">Prototyping</span>
-          </div>
+          <div class="tag-list" id="cs-meta-skills"></div>
         </div>
       </div>
-
-      <div class="case-links">
-        <a href="https://futuregames.itch.io/hack-and-slash" target="_blank" class="primary">Play the Game on itch.io</a>
-      </div>
-
-      <div class="case-cover">Project Cover Image</div>
+      <div class="case-links" id="cs-links"></div>
+      <img id="cs-cover" class="case-cover" src="" alt="" />
     </div>
   </section>
 
-  <!-- OVERVIEW -->
-  <section class="case-section">
-    <div class="p-container">
-      <p class="case-label">Overview</p>
-      <h2>Blending narrative with fast-paced action gameplay</h2>
-      <p>Hack and Slash is an action game set in an office environment where the player uncovers a price-hacking conspiracy. The project required balancing intense combat mechanics with a compelling narrative thread that motivated players to progress.</p>
-      <p>The UX challenge was twofold: create combat interactions that felt responsive and satisfying, while weaving narrative elements into gameplay without interrupting the flow of action.</p>
-    </div>
-  </section>
+  <!-- SECTIONS — built by case.js -->
+  <div id="cs-sections"></div>
 
-  <!-- PROBLEM -->
-  <section class="case-section">
-    <div class="p-container">
-      <p class="case-label">Problem</p>
-      <h2>How do you tell a story during non-stop action?</h2>
-      <p>Action games often struggle with the tension between narrative and gameplay. Cutscenes break the flow, but without narrative context, combat becomes repetitive. The challenge was finding ways to deliver story beats within the action itself.</p>
-      <p>Additionally, the office setting was unusual for an action game. Players needed environmental cues to understand the world and their role in it, without relying on text-heavy exposition.</p>
-
-      <div class="case-highlight">
-        <ul>
-          <li>Balancing narrative delivery with uninterrupted action gameplay</li>
-          <li>Making an office setting feel like a compelling game environment</li>
-          <li>Communicating player objectives through environmental storytelling</li>
-          <li>Ensuring combat mechanics supported the narrative theme</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="case-section">
-    <div class="p-container">
-      <p class="case-label">Process</p>
-      <h2>Research-driven design with narrative integration</h2>
-      <p>The process began with user research into how action games handle narrative. Competitor analysis of games like Hotline Miami and Katana Zero revealed effective patterns for environmental storytelling in fast-paced contexts.</p>
-      <p>Narrative elements were mapped onto gameplay beats — story reveals tied to boss encounters, environmental clues scattered through level design, and UI elements that reinforced the corporate thriller theme.</p>
-
-      <div class="case-two-col">
-        <div class="col-block">
-          <h4>Narrative Design</h4>
-          <p>Developed a story structure that delivered key plot points through gameplay events rather than cutscenes — boss introductions, environmental clues, and progressive reveals.</p>
-        </div>
-        <div class="col-block">
-          <h4>User Research</h4>
-          <p>Conducted playtesting sessions focused on narrative comprehension — tracking whether players understood the story, their motivations, and the world through gameplay alone.</p>
-        </div>
-      </div>
-
-      <div class="case-image">Narrative Flow Diagram / Playtest Session Documentation</div>
-    </div>
-  </section>
-
-  <!-- SOLUTION -->
-  <section class="case-section">
-    <div class="p-container">
-      <p class="case-label">Solution</p>
-      <h2>Environmental storytelling meets responsive combat</h2>
-      <p>The final design used the office environment itself as a narrative device. Desks had documents hinting at the conspiracy, computer screens showed incriminating data, and level progression moved through increasingly suspicious areas of the building.</p>
-      <p>Combat interactions were designed to feel thematic — using office supplies and equipment as weapons reinforced the setting while maintaining satisfying hack-and-slash mechanics. The UI adopted a corporate aesthetic with clean lines and data-inspired elements.</p>
-
-      <div class="case-image">Final Game UI / Environment Screenshots</div>
-    </div>
-  </section>
-
-  <!-- OUTCOME -->
-  <section class="case-section">
-    <div class="p-container">
-      <p class="case-label">Outcome</p>
-      <h2>Narrative clarity through gameplay integration</h2>
-      <p>Post-playtest analysis showed that players who engaged with environmental storytelling elements had significantly better narrative comprehension without any reduction in action engagement. The office setting, initially seen as a constraint, became one of the game's most distinctive features.</p>
-      <p>The project demonstrated that narrative and action don't have to compete for the player's attention — when integrated thoughtfully, they reinforce each other.</p>
-
-      <div class="case-highlight">
-        <ul>
-          <li>Players successfully followed the narrative through environmental cues alone</li>
-          <li>The office setting became a unique and memorable game element</li>
-          <li>Combat mechanics and narrative delivery complemented each other</li>
-          <li>Learned the value of research-driven narrative design in action games</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECT NAV -->
+  <!-- PROJECT NAV — built by case.js -->
   <div class="p-container">
-    <div class="case-nav">
-      <a href="project-trash.html">&larr; Project Trash</a>
-      <a href="anno-pax-romana.html" class="next">Anno Pax Romana &rarr;</a>
-    </div>
+    <div class="case-nav" id="cs-nav"></div>
   </div>
 
   <!-- FOOTER -->
   <footer class="p-footer">
     <div class="p-container">
-      <p>&copy; 2026 — Game UX Designer</p>
+      <p>&copy; 2026 — Charlie Alexandersson</p>
       <ul class="p-footer-links">
-        <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+        <li><a href="https://se.linkedin.com/in/charlie-alexandersson-ux-designer" target="_blank">LinkedIn</a></li>
         <li><a href="https://read.cv" target="_blank">Read.cv</a></li>
-        <li><a href="mailto:hello@example.com">Email</a></li>
+        <li><a href="mailto:charlie.alexandersson@hotmail.com">Email</a></li>
       </ul>
     </div>
   </footer>
-  <!-- BACK TO TOP -->
+
   <button class="back-to-top" aria-label="Back to top">&uarr;</button>
 
+  <script src="scripts/case.js"></script>
   <script>
     const backToTop = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', () => {
-      backToTop.classList.toggle('visible', window.scrollY > 400);
-    });
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    window.addEventListener('scroll', () => { backToTop.classList.toggle('visible', window.scrollY > 400); });
+    backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
   </script>
-
 </body>
 </html>

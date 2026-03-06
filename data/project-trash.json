@@ -1,0 +1,61 @@
+{
+  "title": "Project Trash",
+  "subtitle": "An arcade game built with a green theme in mind, created collaboratively with a team of 14 at Futuregames.",
+  "cover": "images/cover_trash.png",
+  "meta": {
+    "role": "UX Designer / UX Researcher",
+    "type": "Arcade Game",
+    "context": "School Project – Futuregames",
+    "skills": ["UX Design", "UX Research", "Prototyping", "Game Design"]
+  },
+  "links": [
+    { "label": "Play on itch.io", "url": "https://futuregames.itch.io/projecttrash", "primary": true },
+    { "label": "Instagram", "url": "https://www.instagram.com/reel/DSAeWS0AKsR/?utm_source=ig_web_copy_link", "primary": false },
+    { "label": "YouTube", "url": "https://youtu.be/0NN_dksL3Lo?si=3QZgyfJnl3rpnCYR", "primary": false }
+  ],
+  "sections": {
+    "intro": {
+      "heading": "Building an arcade game around a green theme",
+      "body": "Project Trash is an arcade game developed at Futuregames with a team of 14. The project centred on creating a fun, engaging arcade experience with an environmental — or \"green\" — theme woven into the core concept.\n\nAs the UX Designer and UX Researcher, my focus was on ensuring the game felt intuitive, the green theme was communicated clearly through gameplay, and that the overall player experience remained cohesive across a large team collaboration."
+    },
+    "role": {
+      "heading": "UX Designer & UX Researcher",
+      "body": "I was responsible for establishing UX guidelines early in production so that all 14 contributors — artists, programmers, and designers — were aligned on the player experience goals. I also ran iterative playtesting sessions throughout development and fed findings back into the design process."
+    },
+    "problem": {
+      "heading": "How do you make a themed arcade game feel cohesive with 14 people?",
+      "body": "Working with a large team introduced coordination challenges. Every contributor needed to share the same vision for the green theme and understand how their work connected to the player experience. The arcade genre demands instant readability and satisfying feedback loops — layering a thematic message on top without compromising gameplay required careful UX thinking.",
+      "bullets": [
+        "Coordinating a shared vision across a 14-person team",
+        "Integrating a green/environmental theme without sacrificing arcade fun",
+        "Ensuring instant readability and intuitive controls",
+        "Maintaining design consistency across many contributors"
+      ]
+    },
+    "approach": {
+      "heading": "Research, playtesting, and alignment at scale",
+      "body": "The process began with research into how environmental themes have been successfully incorporated into games without feeling heavy-handed. Competitive analysis of arcade games helped establish best practices for controls, pacing, and feedback.\n\nEstablishing clear UX guidelines early meant that everyone working on the project had a shared reference point. This reduced back-and-forth and kept the player experience front and centre throughout production.",
+      "cards": [
+        { "title": "Research", "body": "Studied arcade game conventions and how environmental themes can be embedded into gameplay mechanics without disrupting the core fun loop." },
+        { "title": "Playtesting", "body": "Ran iterative playtesting sessions to identify friction points, validate the green theme's clarity, and ensure controls met arcade-level responsiveness." }
+      ]
+    },
+    "outcome": {
+      "heading": "Shipped — and the theme stuck",
+      "body": "Project Trash was completed and published on itch.io, with additional visibility through Instagram and YouTube. The game demonstrates that a large team can deliver a cohesive, themed arcade experience when aligned through strong UX foundations and iterative playtesting.",
+      "bullets": [
+        "Successfully shipped and published on itch.io",
+        "Green theme integrated naturally into core gameplay mechanics",
+        "UX vision coordinated across a 14-person team"
+      ]
+    },
+    "keyLearning": {
+      "heading": "Alignment is a UX problem too",
+      "body": "The biggest takeaway was that UX work isn't just about the player — it's also about the team. Establishing shared principles early reduced friction in the process itself, and made the final product more consistent as a result. Working at this scale made me more deliberate about documentation and communication as design tools."
+    }
+  },
+  "nav": {
+    "prev": { "label": "Matsvinskollen", "url": "matsvinskollen.html" },
+    "next": { "label": "Hack and Slash", "url": "hack-and-slash.html" }
+  }
+}

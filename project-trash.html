@@ -3,414 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Trash – Use Case</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #0e0e0e;
-      --surface: #161616;
-      --border: #2a2a2a;
-      --text-primary: #f0ede8;
-      --text-secondary: #888;
-      --accent: #c8f060;
-      --font-display: 'Instrument Serif', Georgia, serif;
-      --font-body: 'DM Sans', sans-serif;
-      --max-width: 900px;
-      --px: clamp(1.25rem, 5vw, 3rem);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text-primary);
-      font-family: var(--font-body);
-      font-size: 15px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .p-container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding-left: var(--px);
-      padding-right: var(--px);
-    }
-
-    /* NAV */
-    .p-nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      padding-block: 1rem;
-    }
-
-    .p-nav .p-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .p-nav-logo {
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      text-decoration: none;
-    }
-
-    .p-nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .p-nav-links a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-      transition: color 0.2s;
-    }
-
-    .p-nav-links a:hover { color: var(--text-primary); }
-
-    /* CASE HERO */
-    .case-hero {
-      padding-top: clamp(3rem, 10vw, 7rem);
-      padding-bottom: clamp(2rem, 6vw, 4rem);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .case-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 0.8rem;
-      margin-bottom: 2rem;
-      transition: color 0.2s;
-    }
-
-    .case-back:hover { color: var(--text-primary); }
-
-    .case-hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 400;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
-    }
-
-    .case-hero .case-subtitle {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      max-width: 60ch;
-      margin-bottom: 1.5rem;
-    }
-
-    .case-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 1.5rem;
-    }
-
-    .case-meta-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .case-meta-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-    }
-
-    .case-meta-value {
-      font-size: 0.85rem;
-      color: var(--text-primary);
-    }
-
-    .tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
-    .tag {
-      font-size: 0.68rem;
-      padding: 0.2rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-    }
-
-    /* CASE COVER */
-    .case-cover {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: #1a2e1a;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      margin-top: 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-    }
-
-    /* SECTIONS */
-    .case-section {
-      padding-block: clamp(2.5rem, 6vw, 4rem);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .case-section:last-of-type { border-bottom: none; }
-
-    .case-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.25rem;
-    }
-
-    .case-section h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.4rem, 3vw, 1.8rem);
-      font-weight: 400;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-
-    .case-section p {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      max-width: 65ch;
-      margin-bottom: 1rem;
-    }
-
-    .case-section p:last-child { margin-bottom: 0; }
-
-    .case-highlight {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.25rem 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .case-highlight ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .case-highlight li {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      padding-left: 1.2rem;
-      position: relative;
-    }
-
-    .case-highlight li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-    }
-
-    /* IMAGE PLACEHOLDER */
-    .case-image {
-      width: 100%;
-      aspect-ratio: 16/10;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      margin-top: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-secondary);
-      font-size: 0.8rem;
-    }
-
-    /* TWO-COL */
-    .case-two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .case-two-col .col-block {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.1rem 1.2rem;
-    }
-
-    .col-block h4 {
-      font-size: 0.75rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    .col-block p {
-      font-size: 0.82rem;
-      color: var(--text-secondary);
-      line-height: 1.55;
-    }
-
-    /* THREE-COL */
-    .case-three-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .case-three-col .col-block {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.1rem 1.2rem;
-    }
-
-    /* LINKS SECTION */
-    .case-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1.5rem;
-    }
-
-    .case-links a {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.6rem 1.25rem;
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-decoration: none;
-      border-radius: 999px;
-      transition: all 0.2s;
-      background: transparent;
-      color: var(--text-secondary);
-      border: 1px solid var(--border);
-    }
-
-    .case-links a:hover {
-      border-color: var(--text-secondary);
-      color: var(--text-primary);
-    }
-
-    .case-links a.primary {
-      background: var(--text-primary);
-      color: var(--bg);
-      border: none;
-    }
-
-    .case-links a.primary:hover {
-      background: var(--accent);
-    }
-
-    /* FOOTER */
-    .p-footer {
-      border-top: 1px solid var(--border);
-      padding-block: 2rem;
-    }
-
-    .p-footer .p-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .p-footer p { font-size: 0.78rem; color: var(--text-secondary); }
-
-    .p-footer-links { display: flex; gap: 1.5rem; list-style: none; }
-
-    .p-footer-links a {
-      font-size: 0.78rem;
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .p-footer-links a:hover { color: var(--text-primary); }
-
-    /* NAV PROJECTS */
-    .case-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-block: 2.5rem;
-    }
-
-    .case-nav a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 0.82rem;
-      transition: color 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .case-nav a:hover { color: var(--accent); }
-
-    .case-nav .next { margin-left: auto; }
-
-    /* BACK TO TOP */
-    .back-to-top {
-      position: fixed;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s, visibility 0.3s, background 0.2s, border-color 0.2s, color 0.2s;
-      z-index: 99;
-    }
-
-    .back-to-top.visible { opacity: 1; visibility: visible; }
-
-    .back-to-top:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: var(--bg);
-    }
-
-    @media (max-width: 640px) {
-      .case-two-col { grid-template-columns: 1fr; }
-      .case-three-col { grid-template-columns: 1fr; }
-      .case-meta { gap: 1rem; }
-    }
-  </style>
+  <title>Case Study – Charlie Alexandersson</title>
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
 
@@ -421,165 +15,67 @@
       <ul class="p-nav-links">
         <li><a href="index.html#work">Work</a></li>
         <li><a href="index.html#about">About</a></li>
-        <li><a href="mailto:hello@example.com">Contact</a></li>
+        <li><a href="mailto:charlie.alexandersson@hotmail.com">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- CASE HERO -->
+  <!-- HERO — populated by case.js -->
   <section class="case-hero">
     <div class="p-container">
       <a href="index.html#work" class="case-back">&larr; Back to all projects</a>
-      <h1>Project Trash</h1>
-      <p class="case-subtitle">An arcade game built with a green theme in mind, created collaboratively with a team of 14 at Futuregames.</p>
-
+      <h1 id="cs-title"></h1>
+      <p class="case-subtitle" id="cs-subtitle"></p>
       <div class="case-meta">
         <div class="case-meta-item">
           <span class="case-meta-label">Role</span>
-          <span class="case-meta-value">UX Designer / UX Researcher</span>
+          <span class="case-meta-value" id="cs-meta-role"></span>
         </div>
         <div class="case-meta-item">
           <span class="case-meta-label">Type</span>
-          <span class="case-meta-value">Arcade Game</span>
+          <span class="case-meta-value" id="cs-meta-type"></span>
         </div>
         <div class="case-meta-item">
           <span class="case-meta-label">Context</span>
-          <span class="case-meta-value">School Project – Futuregames</span>
+          <span class="case-meta-value" id="cs-meta-context"></span>
         </div>
         <div class="case-meta-item">
           <span class="case-meta-label">Skills</span>
-          <div class="tag-list">
-            <span class="tag">UX Design</span>
-            <span class="tag">UX Research</span>
-            <span class="tag">Prototyping</span>
-            <span class="tag">Game Design</span>
-          </div>
+          <div class="tag-list" id="cs-meta-skills"></div>
         </div>
       </div>
-
-      <div class="case-links">
-        <a href="https://futuregames.itch.io/projecttrash" target="_blank" class="primary">Play the Game on itch.io</a>
-        <a href="https://www.instagram.com/reel/DSAeWS0AKsR/?utm_source=ig_web_copy_link" target="_blank">Instagram</a>
-        <a href="https://youtu.be/0NN_dksL3Lo?si=3QZgyfJnl3rpnCYR" target="_blank">YouTube</a>
-      </div>
-
-      <div class="case-cover"> <img src="Images/cover_trash.png"Project Cover Image</div>
+      <div class="case-links" id="cs-links"></div>
+      <img id="cs-cover" class="case-cover" src="" alt="" />
     </div>
   </section>
 
-  <!-- OVERVIEW -->
-  <section class="case-section">
-    <div class="p-container">
-      <p class="case-label">Overview</p>
-      <h2>Building an arcade game around a green theme</h2>
-      <p>Project Trash is an arcade game developed at Futuregames with a team of 14. The project centred on creating a fun, engaging arcade experience with an environmental — or "green" — theme woven into the core concept.</p>
-      <p>As the UX Designer and UX Researcher on the team, the focus was on ensuring the game felt intuitive, the green theme was communicated clearly through gameplay, and that the overall player experience remained engaging and cohesive across a larger team collaboration.</p>
-    </div>
-  </section>
+  <!-- SECTIONS — built by case.js -->
+  <div id="cs-sections"></div>
 
-  <!-- PROBLEM -->
-  <section class="case-section">
-    <div class="p-container">
-      <p class="case-label">Problem</p>
-      <h2>How do you make a themed arcade game feel cohesive with 14 people?</h2>
-      <p>Working with a large team of 14 introduced coordination challenges. Every contributor needed to share the same vision for the green theme and understand how their work connected to the player experience. The arcade genre demands instant readability and satisfying feedback loops — layering a thematic message on top without compromising gameplay required careful UX thinking.</p>
-
-      <div class="case-highlight">
-        <ul>
-          <li>Coordinating a shared vision across a 14-person team</li>
-          <li>Integrating a green/environmental theme without sacrificing arcade fun</li>
-          <li>Ensuring instant readability and intuitive controls for the arcade genre</li>
-          <li>Maintaining design consistency across many contributors</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="case-section">
-    <div class="p-container">
-      <p class="case-label">Process</p>
-      <h2>Research, prototyping, and playtesting at scale</h2>
-      <p>The process began with research into how environmental themes have been successfully incorporated into games without feeling heavy-handed. Competitive analysis of arcade games helped establish best practices for controls, pacing, and feedback.</p>
-      <p>As UX Researcher, playtesting sessions were conducted throughout development to validate design decisions. Working with such a large team meant establishing clear UX guidelines early so that everyone — artists, programmers, and designers — was aligned on the player experience goals.</p>
-
-      <div class="case-two-col">
-        <div class="col-block">
-          <h4>Research</h4>
-          <p>Studied arcade game conventions and how environmental themes can be embedded into gameplay mechanics and visual design without disrupting the core fun loop.</p>
-        </div>
-        <div class="col-block">
-          <h4>Playtesting</h4>
-          <p>Ran iterative playtesting sessions to identify friction points, validate the green theme's clarity, and ensure the controls met arcade-level responsiveness.</p>
-        </div>
-      </div>
-
-      <div class="case-image">Process Documentation / Playtest Insights</div>
-    </div>
-  </section>
-
-  <!-- SOLUTION -->
-  <section class="case-section">
-    <div class="p-container">
-      <p class="case-label">Solution</p>
-      <h2>A themed arcade experience that stays true to its genre</h2>
-      <p>The final game successfully blends the green theme into its arcade mechanics. The environmental message is embedded in the gameplay itself rather than being a layer on top, making it feel natural and integrated. Visual design reinforces the theme through colour palette, environment art, and interactive elements.</p>
-      <p>UX guidelines established early in the project helped maintain consistency across all contributions. Clear visual hierarchy, responsive controls, and satisfying feedback loops kept the arcade feel front and centre while the green theme gave the experience a unique identity.</p>
-
-      <div class="case-image">Final Game Screenshots / UI Design</div>
-    </div>
-  </section>
-
-  <!-- OUTCOME -->
-  <section class="case-section">
-    <div class="p-container">
-      <p class="case-label">Outcome</p>
-      <h2>Delivering a cohesive game with a large team</h2>
-      <p>Project Trash was completed and published on itch.io, with additional visibility through Instagram and YouTube. The game demonstrates that a large team can deliver a cohesive, themed arcade experience when aligned through strong UX foundations and iterative playtesting.</p>
-      <p>The project provided valuable experience in scaling UX processes for larger teams, conducting research that informs a shared vision, and balancing thematic goals with genre expectations.</p>
-
-      <div class="case-highlight">
-        <ul>
-          <li>Successfully shipped and published on itch.io</li>
-          <li>Cohesive green theme integrated into core gameplay mechanics</li>
-          <li>Coordinated UX vision across a 14-person team</li>
-          <li>Gained experience scaling UX research and design for larger teams</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECT NAV -->
+  <!-- PROJECT NAV — built by case.js -->
   <div class="p-container">
-    <div class="case-nav">
-      <a href="matsvinskollen.html">&larr; Matsvinskollen</a>
-      <a href="hack-and-slash.html" class="next">Hack and Slash &rarr;</a>
-    </div>
+    <div class="case-nav" id="cs-nav"></div>
   </div>
 
   <!-- FOOTER -->
   <footer class="p-footer">
     <div class="p-container">
-      <p>&copy; 2026 — Game UX Designer</p>
+      <p>&copy; 2026 — Charlie Alexandersson</p>
       <ul class="p-footer-links">
-        <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+        <li><a href="https://se.linkedin.com/in/charlie-alexandersson-ux-designer" target="_blank">LinkedIn</a></li>
         <li><a href="https://read.cv" target="_blank">Read.cv</a></li>
-        <li><a href="mailto:hello@example.com">Email</a></li>
+        <li><a href="mailto:charlie.alexandersson@hotmail.com">Email</a></li>
       </ul>
     </div>
   </footer>
-  <!-- BACK TO TOP -->
+
   <button class="back-to-top" aria-label="Back to top">&uarr;</button>
 
+  <script src="scripts/case.js"></script>
   <script>
     const backToTop = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', () => {
-      backToTop.classList.toggle('visible', window.scrollY > 400);
-    });
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    window.addEventListener('scroll', () => { backToTop.classList.toggle('visible', window.scrollY > 400); });
+    backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
   </script>
-
 </body>
 </html>

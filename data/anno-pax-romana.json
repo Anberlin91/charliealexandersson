@@ -1,0 +1,61 @@
+{
+  "title": "Anno Pax Romana",
+  "subtitle": "A UI redesign case study focused on systems hierarchy, readability, and streamlining complex strategy interfaces.",
+  "cover": "images/cover_pax.png",
+  "meta": {
+    "role": "UX/UI Designer",
+    "type": "Case Study / Redesign",
+    "context": "Self-initiated Design Exercise",
+    "skills": ["UX Design", "Research", "System Design"]
+  },
+  "links": [
+    { "label": "View on Figma", "url": "https://www.figma.com", "primary": true }
+  ],
+  "sections": {
+    "intro": {
+      "heading": "Redesigning complex strategy game interfaces",
+      "body": "Anno Pax Romana is a strategy game with deeply layered systems — resource management, city building, trade routes, and diplomacy. This case study explored how the existing UI could be redesigned to improve information hierarchy, reduce cognitive load, and make complex data more accessible to players.\n\nThe project was self-initiated as a design exercise to apply systems design thinking to an existing game's interface challenges."
+    },
+    "role": {
+      "heading": "UX/UI Designer",
+      "body": "I led the full process independently — from UI audit and player research through to redesign proposals and annotated mockups. Every design decision was documented with a clear rationale connecting player needs to interface changes."
+    },
+    "problem": {
+      "heading": "Information overload in strategy game interfaces",
+      "body": "Strategy games like Anno present players with enormous amounts of data simultaneously — population needs, production chains, trade balances, building queues, and diplomatic relations. When all of this information competes for attention equally, players struggle to identify what matters most at any given moment.\n\nThe existing UI treated most information with equal visual weight, making it difficult to quickly scan for the data needed. Nested menus and inconsistent layout patterns added to the cognitive burden.",
+      "bullets": [
+        "Too much information presented with equal visual weight",
+        "Nested menu structures that obscured critical data",
+        "Inconsistent layout patterns across different game systems",
+        "High cognitive load especially during time-sensitive gameplay moments"
+      ]
+    },
+    "approach": {
+      "heading": "Systematic analysis of information architecture",
+      "body": "The process started with a thorough audit of the existing UI — documenting every screen, panel, and interaction pattern. Each interface element was categorized by frequency of use, criticality during gameplay, and the context in which players needed it.\n\nCommunity feedback from forums and player reviews was analysed to identify the most common pain points. This player-sourced data informed the prioritization of which systems needed the most redesign attention.",
+      "cards": [
+        { "title": "UI Audit", "body": "Documented all existing screens and interaction patterns, mapping information density and visual hierarchy issues." },
+        { "title": "Player Research", "body": "Analysed community feedback, forum discussions, and player reviews to identify recurring UX pain points." },
+        { "title": "Systems Mapping", "body": "Created relationship diagrams between game systems to understand how information flows between different UI panels." }
+      ]
+    },
+    "outcome": {
+      "heading": "A framework for taming complexity",
+      "body": "The case study produced a comprehensive redesign proposal with annotated mockups, interaction specifications, and a design rationale document. The redesign introduced a layered information architecture — a primary layer showing only the most critical real-time data, with secondary layers accessible through progressive disclosure.",
+      "bullets": [
+        "Layered information architecture reducing visible data by ~40%",
+        "Consistent design patterns applicable across all game systems",
+        "Context-sensitive HUD that adapts to player activity",
+        "Annotated redesign documentation ready for implementation"
+      ]
+    },
+    "keyLearning": {
+      "heading": "Complex systems don't require complex interfaces",
+      "body": "They require thoughtful information architecture that respects the player's attention and adapts to their current context. Doing a self-initiated case study also taught me how to structure a design argument — not just what to change, but why, and how to communicate that clearly."
+    }
+  },
+  "nav": {
+    "prev": { "label": "Hack and Slash", "url": "hack-and-slash.html" },
+    "next": { "label": "Matsvinskollen", "url": "matsvinskollen.html" }
+  }
+}

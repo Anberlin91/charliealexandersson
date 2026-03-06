@@ -1,0 +1,59 @@
+{
+  "title": "Hack and Slash",
+  "subtitle": "A fast-paced action office game where players uncover villainy of price-hacking, built at Futuregames.",
+  "cover": "images/pretty2_cover.png",
+  "meta": {
+    "role": "UX Researcher & Designer",
+    "type": "Action Game",
+    "context": "School Project – Futuregames",
+    "skills": ["UX Research", "Narrative", "Prototyping"]
+  },
+  "links": [
+    { "label": "Play on itch.io", "url": "https://futuregames.itch.io/hack-and-slash", "primary": true }
+  ],
+  "sections": {
+    "intro": {
+      "heading": "Blending narrative with fast-paced action gameplay",
+      "body": "Hack and Slash is an action game set in an office environment where the player uncovers a price-hacking conspiracy. The project required balancing intense combat mechanics with a compelling narrative thread that motivated players to progress.\n\nThe UX challenge was twofold: create combat interactions that felt responsive and satisfying, while weaving narrative elements into gameplay without interrupting the flow of action."
+    },
+    "role": {
+      "heading": "UX Researcher & Designer",
+      "body": "I was responsible for user research, narrative UX, and playtesting. My focus was on how players understood the story through gameplay alone — without cutscenes or heavy text — and how combat mechanics could reinforce the narrative theme."
+    },
+    "problem": {
+      "heading": "How do you tell a story during non-stop action?",
+      "body": "Action games often struggle with the tension between narrative and gameplay. Cutscenes break the flow, but without narrative context, combat becomes repetitive. The challenge was finding ways to deliver story beats within the action itself.\n\nThe office setting was unusual for an action game. Players needed environmental cues to understand the world and their role in it, without relying on text-heavy exposition.",
+      "bullets": [
+        "Balancing narrative delivery with uninterrupted action gameplay",
+        "Making an office setting feel like a compelling game environment",
+        "Communicating player objectives through environmental storytelling",
+        "Ensuring combat mechanics supported the narrative theme"
+      ]
+    },
+    "approach": {
+      "heading": "Research-driven design with narrative integration",
+      "body": "The process began with research into how action games handle narrative. Competitor analysis of games like Hotline Miami and Katana Zero revealed effective patterns for environmental storytelling in fast-paced contexts.\n\nNarrative elements were mapped onto gameplay beats — story reveals tied to boss encounters, environmental clues scattered through level design, and UI elements that reinforced the corporate thriller theme.",
+      "cards": [
+        { "title": "Narrative Design", "body": "Developed a story structure that delivered key plot points through gameplay events rather than cutscenes — boss introductions, environmental clues, and progressive reveals." },
+        { "title": "Playtesting", "body": "Conducted playtesting sessions focused on narrative comprehension — tracking whether players understood the story and their motivations through gameplay alone." }
+      ]
+    },
+    "outcome": {
+      "heading": "Narrative clarity through gameplay integration",
+      "body": "Post-playtest analysis showed that players who engaged with environmental storytelling had significantly better narrative comprehension without any reduction in action engagement. The office setting, initially seen as a constraint, became one of the game's most distinctive features.",
+      "bullets": [
+        "Players followed the narrative through environmental cues alone",
+        "The office setting became a unique and memorable game element",
+        "Combat mechanics and narrative delivery complemented each other"
+      ]
+    },
+    "keyLearning": {
+      "heading": "Narrative and action don't have to compete",
+      "body": "When integrated thoughtfully, story and gameplay reinforce each other. The biggest takeaway was that constraints — like an unusual setting — can become strengths if you design with them rather than against them."
+    }
+  },
+  "nav": {
+    "prev": { "label": "Project Trash", "url": "project-trash.html" },
+    "next": { "label": "Anno Pax Romana", "url": "anno-pax-romana.html" }
+  }
+}

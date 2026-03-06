@@ -1,305 +1,173 @@
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charlie Alexandersson – Game UX Designer</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <style>
+    /* ── INDEX-ONLY STYLES ── */
+    #portfolio-root { width: 100%; }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    .p-section { padding-block: clamp(3rem, 8vw, 6rem); }
+    .p-section + .p-section { border-top: 1px solid var(--border); }
 
-  :root {
-    --bg: #0e0e0e;
-    --surface: #161616;
-    --border: #2a2a2a;
-    --text-primary: #f0ede8;
-    --text-secondary: #888;
-    --accent: #c8f060;
-    --font-display: 'Instrument Serif', Georgia, serif;
-    --font-body: 'DM Sans', sans-serif;
-    --max-width: 900px;
-    --px: clamp(1.25rem, 5vw, 3rem);
-  }
+    .p-hero { padding-top: clamp(3rem, 10vw, 7rem); padding-bottom: clamp(3rem, 8vw, 5rem); }
 
-  html { scroll-behavior: smooth; }
+    .p-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: start;
+    }
 
-  body {
-    background: var(--bg) !important;
-    color: var(--text-primary) !important;
-    font-family: var(--font-body) !important;
-    font-size: 15px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
+    .p-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      max-width: 16ch;
+      margin-bottom: 1.25rem;
+      color: var(--text-primary);
+    }
 
-  #portfolio-root { width: 100%; }
+    .p-hero p {
+      color: var(--text-secondary);
+      max-width: 52ch;
+      font-size: 0.95rem;
+      margin-bottom: 1.75rem;
+    }
 
-  .p-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding-left: var(--px);
-    padding-right: var(--px);
-  }
+    .p-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
-  .p-section { padding-block: clamp(3rem, 8vw, 6rem); }
-  .p-section + .p-section { border-top: 1px solid var(--border); }
+    .p-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.6rem 1.25rem;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      border-radius: 999px;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
 
-  /* NAV */
-  .p-nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    padding-block: 1rem;
-  }
+    .p-btn-primary { background: var(--text-primary); color: var(--bg); }
+    .p-btn-primary:hover { background: var(--accent); }
+    .p-btn-ghost { background: transparent; color: var(--text-secondary); border: 1px solid var(--border); }
+    .p-btn-ghost:hover { border-color: var(--text-secondary); color: var(--text-primary); }
 
-  .p-nav .p-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    .p-hero-photo {
+      width: clamp(90px, 15vw, 140px);
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border: none;
+      border-radius: 16px;
+      filter: grayscale(20%);
+    }
 
-  .p-nav-logo {
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-secondary);
-  }
+    .p-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+    }
 
-  .p-nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
+    .p-work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
 
-  .p-nav-links a {
-    text-decoration: none;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
-    transition: color 0.2s;
-  }
+    .p-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s;
+    }
 
-  .p-nav-links a:hover { color: var(--text-primary); }
+    .p-card:hover { border-color: #444; transform: translateY(-2px); }
 
-  /* HERO */
-  .p-hero { padding-top: clamp(3rem, 10vw, 7rem); padding-bottom: clamp(3rem, 8vw, 5rem); }
+    .p-card-thumb {
+      width: 100%;
+      aspect-ratio: 16/10;
+      display: block;
+      object-fit: cover;
+      background: #222;
+    }
 
-  .p-hero-inner {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 2rem;
-    align-items: start;
-  }
+    .p-card-body { padding: 1rem 1.1rem 1.2rem; }
 
-  .p-hero h1 {
-    font-family: var(--font-display);
-    font-size: clamp(2.4rem, 6vw, 4rem);
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    max-width: 16ch;
-    margin-bottom: 1.25rem;
-    color: var(--text-primary);
-  }
+    .p-card-title {
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 0.35rem;
+      color: var(--text-primary);
+    }
 
-  .p-hero p {
-    color: var(--text-secondary);
-    max-width: 52ch;
-    font-size: 0.95rem;
-    margin-bottom: 1.75rem;
-  }
+    .p-card-desc {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
 
-  .p-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .p-tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
-  .p-btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.6rem 1.25rem;
-    font-family: var(--font-body);
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    text-decoration: none;
-    border-radius: 999px;
-    transition: all 0.2s;
-    cursor: pointer;
-    border: none;
-  }
+    .p-tag {
+      font-size: 0.68rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
 
-  .p-btn-primary { background: var(--text-primary); color: var(--bg); }
-  .p-btn-primary:hover { background: var(--accent); }
-  .p-btn-ghost { background: transparent; color: var(--text-secondary); border: 1px solid var(--border); }
-  .p-btn-ghost:hover { border-color: var(--text-secondary); color: var(--text-primary); }
+    .p-about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
 
-  .p-hero-photo {
-    width: clamp(90px, 15vw, 140px);
-    aspect-ratio: 3/4;
-    object-fit: cover;
-    border: none;
-    border-radius: 16px;
-    filter: grayscale(20%);
-  }
+    .p-about-text p { font-size: 0.9rem; color: var(--text-secondary); }
+    .p-about-text p + p { margin-top: 1em; }
 
-  /* SECTION LABEL */
-  .p-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-secondary);
-    margin-bottom: 2.5rem;
-  }
+    .p-skill-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.1rem 1.2rem;
+      margin-bottom: 1rem;
+    }
 
-  /* WORK GRID */
-  .p-work-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
+    .p-skill-block h4 {
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
 
-  .p-card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    overflow: hidden;
-    transition: border-color 0.25s, transform 0.25s;
-  }
+    .p-skill-block p { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.55; }
 
-  .p-card:hover { border-color: #444; transform: translateY(-2px); }
-
-  .p-card-thumb {
-    width: 100%;
-    aspect-ratio: 16/10;
-    display: block;
-    background: #222;
-    object-fit: cover;
-  }
-
-  .p-card-thumb.t-dark  { background: #1a1a1a; }
-  .p-card-thumb.t-pink  { background: #c4a0a8; }
-  .p-card-thumb.t-blue  { background: #1c2d4a; }
-  .p-card-thumb.t-green { background: #2a4a35; }
-
-  .p-card-body { padding: 1rem 1.1rem 1.2rem; }
-
-  .p-card-title {
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-bottom: 0.35rem;
-    color: var(--text-primary);
-  }
-
-  .p-card-desc {
-    font-size: 0.78rem;
-    color: var(--text-secondary);
-    line-height: 1.5;
-    margin-bottom: 0.75rem;
-  }
-
-  .p-tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
-  .p-tag {
-    font-size: 0.68rem;
-    padding: 0.2rem 0.55rem;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    color: var(--text-secondary);
-  }
-
-  /* ABOUT */
-  .p-about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-  }
-
-  .p-about-text p { font-size: 0.9rem; color: var(--text-secondary); }
-  .p-about-text p + p { margin-top: 1em; }
-
-  /* SKILLS */
-  .p-skill-block {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 1.1rem 1.2rem;
-    margin-bottom: 1rem;
-  }
-
-  .p-skill-block h4 {
-    font-size: 0.75rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.6rem;
-  }
-
-  .p-skill-block p { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.55; }
-
-  /* FOOTER */
-  .p-footer {
-    border-top: 1px solid var(--border);
-    padding-block: 2rem;
-  }
-
-  .p-footer .p-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .p-footer p { font-size: 0.78rem; color: var(--text-secondary); }
-
-  .p-footer-links { display: flex; gap: 1.5rem; list-style: none; }
-
-  .p-footer-links a {
-    font-size: 0.78rem;
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .p-footer-links a:hover { color: var(--text-primary); }
-
-  /* BACK TO TOP */
-  .back-to-top {
-    position: fixed;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s, background 0.2s, border-color 0.2s, color 0.2s;
-    z-index: 99;
-  }
-
-  .back-to-top.visible { opacity: 1; visibility: visible; }
-
-  .back-to-top:hover {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: var(--bg);
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 640px) {
-    .p-hero-inner { grid-template-columns: 1fr; }
-    .p-hero-photo { display: none; }
-    .p-about-grid { grid-template-columns: 1fr; }
-    .p-work-grid { grid-template-columns: 1fr; }
-  }
-</style>
+    @media (max-width: 640px) {
+      .p-hero-inner { grid-template-columns: 1fr; }
+      .p-hero-photo { display: none; }
+      .p-about-grid { grid-template-columns: 1fr; }
+      .p-work-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
 
 <div id="portfolio-root">
 
@@ -310,7 +178,7 @@
       <ul class="p-nav-links">
         <li><a href="#work">Work</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="mailto:hello@example.com">Contact</a></li>
+        <li><a href="mailto:charlie.alexandersson@hotmail.com">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -320,15 +188,14 @@
     <div class="p-container">
       <div class="p-hero-inner">
         <div>
-          <h1 class="p-hero-h1" style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(2.4rem,6vw,4rem);font-weight:400;line-height:1.1;letter-spacing:-0.02em;max-width:16ch;margin-bottom:1.25rem;color:#f0ede8;">UX designer curious about systems and player behavior.</h1>
-          <p style="color:#888;max-width:52ch;font-size:0.95rem;margin-bottom:1.75rem;">I work with interaction flows, UI structure, and research to make things feel clear, playable, and grounded.</p>
+          <h1>UX designer curious about systems and player behavior.</h1>
+          <p>I work with interaction flows, UI structure, and research to make things feel clear, playable, and grounded.</p>
           <div class="p-btns">
             <a href="#work" class="p-btn p-btn-primary">View Projects</a>
-            <a href="mailto:hello@example.com" class="p-btn p-btn-ghost">Get in touch</a>
+            <a href="mailto:charlie.alexandersson@hotmail.com" class="p-btn p-btn-ghost">Get in touch</a>
           </div>
         </div>
-        <!-- 替换为你的真实照片 -->
-        <img class="p-hero-photo" src="profilephoto.png" alt="Photo" />
+        <img class="p-hero-photo" src="profilephoto.png" alt="Charlie Alexandersson" />
       </div>
     </div>
   </section>
@@ -339,8 +206,8 @@
       <p class="p-label">Selected Work</p>
       <div class="p-work-grid">
 
-<a href="hack-and-slash.html" class="p-card">
-          <img class="p-card-thumb" src="images/pretty2_cover.png" alt="Matsvinskollen" />
+        <a href="hack-and-slash.html" class="p-card">
+          <img class="p-card-thumb" src="images/pretty2_cover.png" alt="Hack and Slash" />
           <div class="p-card-body">
             <p class="p-card-title">Hack and Slash – School Project at Futuregames</p>
             <p class="p-card-desc">A fast-paced action office game where players uncover villainy of price-hacking.</p>
@@ -353,7 +220,7 @@
         </a>
 
         <a href="anno-pax-romana.html" class="p-card">
-          <img class="p-card-thumb" src="images/cover_pax.png" alt="Matsvinskollen" />
+          <img class="p-card-thumb" src="images/cover_pax.png" alt="Anno Pax Romana" />
           <div class="p-card-body">
             <p class="p-card-title">Case Study – Design suggestion for Anno Pax Romana</p>
             <p class="p-card-desc">A UI redesign suggestion for Anno Pax Romana focused on systems hierarchy and streamlining.</p>
@@ -369,7 +236,7 @@
           <img class="p-card-thumb" src="Images/Cover_matsvinn.png" alt="Matsvinskollen" />
           <div class="p-card-body">
             <p class="p-card-title">Matsvinskollen – Food Waste Awareness App</p>
-            <p class="p-card-desc">A gamified quiz prototype designed to educate individuals about food waste</p>
+            <p class="p-card-desc">A gamified quiz prototype designed to educate individuals about food waste.</p>
             <ul class="p-tag-list">
               <li class="p-tag">UX Design</li>
               <li class="p-tag">Prototyping</li>
@@ -383,7 +250,6 @@
           <div class="p-card-body">
             <p class="p-card-title">Project Trash – Arcade Game at Futuregames</p>
             <p class="p-card-desc">An arcade game built with a green theme in mind, created collaboratively with a team of 14.</p>
-            
             <ul class="p-tag-list">
               <li class="p-tag">UX Design</li>
               <li class="p-tag">UX Research</li>
@@ -436,10 +302,13 @@
         <li><a href="https://read.cv" target="_blank">Read.cv</a></li>
         <li><a href="mailto:charlie.alexandersson@hotmail.com">Email</a></li>
       </ul>
-  <!-- BACK TO TOP -->
-  <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+    </div>
+  </footer>
 
 </div>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" aria-label="Back to top">&uarr;</button>
 
 <script>
   const backToTop = document.querySelector('.back-to-top');
@@ -450,3 +319,6 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
+
+</body>
+</html>
