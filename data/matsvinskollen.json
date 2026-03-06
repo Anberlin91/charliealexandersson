@@ -1,70 +1,79 @@
 {
-  "title": "Matsvinskollen",
-  "subtitle": "A three week concept project exploring how gamification could help people understand and reduce food waste.",
-  "cover": "Images/Cover_matsvinn.png",
+"title": "Matsvinskollen",
 
-  "meta": {
-    "role": "UX Designer",
-    "type": "Mobile App Prototype",
-    "context": "Food Waste Awareness",
-    "skills": ["UX Design", "Prototyping", "Mobile"]
-  },
+"subtitle": "Designing a quiz-based interaction system using reusable components and feedback states.",
 
-  "links": [
-    {
-      "label": "View Prototype in Figma",
-      "url": "https://embed.figma.com/proto/1KUvwmoD0ltvTGiDSiHHoa/Matsvinnskollen?node-id=34-478&p=f&viewport=305%2C792%2C0.12&scaling=scale-down&content-scaling=fixed&starting-point-node-id=34%3A478&embed-host=share",
-      "primary": true
-    }
-  ],
+"cover": "Images/Cover_matsvinn.png",
 
-  "sections": {
+"meta": {
+"role": "UX Designer",
+"type": "Mobile App Prototype",
+"context": "Interactive learning concept",
+"skills": ["Interaction Design", "Figma Components", "Prototyping"]
+},
 
-    "intro": {
-      "heading": "Can interactive learning change how people think about food waste?",
-      "body": "Matsvinskollen was a three week university project exploring how design could make food waste knowledge more practical and engaging.\n\nRather than building a finished product, we focused on understanding the problem and testing one clear idea. The result was a quiz based mobile concept designed to help users learn practical food storage and waste reduction tips through short interactive challenges."
-    },
+"links": [
+{
+"label": "View Prototype in Figma",
+"url": "https://embed.figma.com/proto/1KUvwmoD0ltvTGiDSiHHoa/Matsvinnskollen?node-id=34-478&p=f&viewport=305%2C792%2C0.12&scaling=scale-down&content-scaling=fixed&starting-point-node-id=34%3A478&embed-host=share",
+"primary": true
+}
+],
 
-    "role": {
-      "heading": "My role",
-      "body": "I worked across the full UX process, from early research to the final prototype.\n\nMy main contributions included conducting research, synthesising insights, designing the wireframes and high fidelity mobile interface, and building the interactive prototype in Figma. I also facilitated the user testing sessions and helped translate the findings into design improvements."
-    },
+"sections": {
 
-    "problem": {
-      "heading": "People know food waste is a problem but struggle to act on it",
-      "body": "Most people are aware that food waste is an issue, but they often lack practical knowledge about how to reduce it in everyday life.\n\nOur research showed that many people were unsure about how long food actually lasts, how to store it correctly, and which small decisions can prevent waste. Conversations around food waste often happened in social environments like school lunches, where group behaviour influences individual habits.",
-      "image": {
-        "src": "Images/userstories_matsvinn.png",
-        "alt": "User stories"
-      }
-    },
+"intro": {
+"heading": "Structuring an interactive learning concept",
+"body": "Matsvinskollen was a three week university project exploring how a quiz-based experience could help people learn practical knowledge about food waste.\n\nInstead of building a complete product, the goal was to prototype a simple interaction that could communicate knowledge through short questions and immediate feedback."
+},
 
-    "approach": {
-      "heading": "Research, synthesis, and rapid iteration",
-      "body": "We started by exploring how people currently think and talk about food waste. From these insights we defined a focused problem that felt realistic within the three week timeframe.\n\nInstead of designing a full product, we built a prototype around one core idea: using short gamified quizzes to make food waste knowledge easier to learn and remember.",
-      "image": {
-        "src": "Images/Wireframe_Matsvinn.png",
-        "alt": "Wireframe sketches"
-      }
-    },
+"role": {
+"heading": "My contribution",
+"body": "My main contribution focused on structuring the interaction and building the prototype in Figma. I designed the quiz interaction, created the visual layout for the mobile interface, and built a reusable component system that allowed the prototype to scale as we added more questions.\n\nI also structured the prototype flow so that feedback, navigation, and interaction states behaved consistently throughout the experience."
+},
 
-    "outcome": {
-      "heading": "Shifting the conversation from abstract to practical",
-      "body": "During testing, users reported feeling more confident about food storage and food waste after completing the quizzes.\n\nWhat stood out most was not how many questions they answered, but how their language changed. Participants began talking about food waste in more practical terms, focusing on storage, shelf life, and everyday decisions rather than the problem in general.",
-      "image": {
-        "src": "Images/quiz_flow_matsvinn.png",
-        "alt": "Quiz flow"
-      }
-    },
+"designChallenge": {
+"heading": "Design challenge",
+"body": "As the quiz grew, the interface needed a clear structure so multiple screens and interactions could be built without becoming inconsistent. Instead of designing each screen separately, the challenge became creating a system where interactions, feedback states, and UI elements could be reused across the prototype."
+},
 
-    "keyLearning": {
-      "heading": "A clear scope creates better insights",
-      "body": "With only three weeks available, trying to design a full solution would have limited what we could learn.\n\nBy focusing on one clear idea and testing it early, we were able to gather useful insights about how interactive learning can influence everyday behaviour."
-    }
-  },
+"componentSystem": {
+"heading": "Designing reusable interaction states",
+"body": "To keep the interface consistent, I built the quiz interactions using reusable components and Figma properties.\n\nEach answer option uses interaction states such as default, hover, correct answer, and incorrect answer. This allowed the prototype to clearly communicate feedback while keeping the interaction logic consistent across the entire quiz.",
+"image": {
+"src": "Images/figma-components-matsvinn.png",
+"alt": "Reusable interaction states for quiz answers"
+}
+},
 
-  "nav": {
-    "prev": { "label": "Anno Pax Romana", "url": "anno-pax-romana.html" },
-    "next": { "label": "Project Trash", "url": "project-trash.html" }
-  }
+"systemStructure": {
+"heading": "Structuring the component system",
+"body": "The interface was organised using reusable components such as answer buttons, progress indicators, and feedback icons. By structuring the design system this way, new quiz screens could be built quickly while maintaining visual and interaction consistency.\n\nThis approach also made the prototype easier to iterate on as the project evolved."
+},
+
+"prototypeFlow": {
+"heading": "Building the quiz flow",
+"body": "I structured the full quiz flow inside Figma so that each question could trigger feedback before moving the user forward.\n\nCorrect answers move the user to the next question, while incorrect answers trigger an overlay explaining the result. This structure allowed the prototype to simulate a learning loop where feedback immediately reinforces the knowledge being tested.",
+"image": {
+"src": "Images/quiz_flow_matsvinn.png",
+"alt": "Quiz interaction flow"
+}
+},
+
+"outcome": {
+"heading": "Outcome",
+"body": "The prototype demonstrated how a simple quiz interaction can turn abstract knowledge about food waste into short learning moments. By combining clear feedback states with a structured interaction flow, the concept made it easier to communicate practical information in an engaging way."
+},
+
+"keyLearning": {
+"heading": "Key learning",
+"body": "Working with a component-based approach made the prototype easier to scale and iterate on. Structuring interactions through reusable states helped maintain clarity across the experience while allowing the design to evolve quickly during the short project timeframe."
+}
+
+},
+
+"nav": {
+"prev": { "label": "Anno Pax Romana", "url": "anno-pax-romana.html" },
+"next": { "label": "Project Trash", "url": "project-trash.html" }
+}
 }
