@@ -1,45 +1,68 @@
 {
   "title": "Matsvinskollen",
-  "subtitle": "A three week concept project exploring how gamification could increase awareness around food waste.",
+  "subtitle": "A three week concept project exploring how gamification could help people understand and reduce food waste.",
   "cover": "Images/Cover_matsvinn.png",
+
   "meta": {
     "role": "UX Designer",
     "type": "Mobile App Prototype",
     "context": "Food Waste Awareness",
     "skills": ["UX Design", "Prototyping", "Mobile"]
   },
+
   "links": [
-    { "label": "View Prototype in Figma", "url": "https://embed.figma.com/proto/1KUvwmoD0ltvTGiDSiHHoa/Matsvinnskollen?node-id=34-478&p=f&viewport=305%2C792%2C0.12&scaling=scale-down&content-scaling=fixed&starting-point-node-id=34%3A478&embed-host=share", "primary": true }
+    {
+      "label": "View Prototype in Figma",
+      "url": "https://embed.figma.com/proto/1KUvwmoD0ltvTGiDSiHHoa/Matsvinnskollen?node-id=34-478&p=f&viewport=305%2C792%2C0.12&scaling=scale-down&content-scaling=fixed&starting-point-node-id=34%3A478&embed-host=share",
+      "primary": true
+    }
   ],
+
   "sections": {
+
     "intro": {
       "heading": "Can interactive learning change how people think about food waste?",
-      "body": "Matsvinskollen started with a simple question. Because the project only ran for three weeks, the goal was never to build a finished product. Instead, we focused on research, defining a clear and realistic problem, and building a prototype that allowed us to test one core idea.\n\nThe result was a quiz-based mobile concept designed to make food waste knowledge feel practical and accessible rather than abstract."
+      "body": "Matsvinskollen was a three week university project exploring how design could make food waste knowledge more practical and engaging.\n\nRather than building a finished product, we focused on understanding the problem and testing one clear idea. The result was a quiz based mobile concept designed to help users learn practical food storage and waste reduction tips through short interactive challenges."
     },
+
     "role": {
-      "heading": "UX Designer",
-      "body": "My main contributions were research and synthesis, wireframing, high-fidelity mobile design, and structuring the prototype in Figma so it stayed organised as we iterated. I also facilitated the user testing sessions and synthesised the findings into design decisions."
+      "heading": "My role",
+      "body": "I worked across the full UX process, from early research to the final prototype.\n\nMy main contributions included conducting research, synthesising insights, designing the wireframes and high fidelity mobile interface, and building the interactive prototype in Figma. I also facilitated the user testing sessions and helped translate the findings into design improvements."
     },
+
     "problem": {
-      "heading": "Awareness was not the issue — behaviour change was",
-      "body": "Most people know food waste is a problem. However, they often lack the practical knowledge to address it effectively. Research highlighted the importance of repeated, social conversations about food waste — particularly in school lunch settings where group behaviour shapes individual habits.\n\nThe main gaps were uncertainty about how long food actually lasts, how to store it properly, and which daily decisions make a real difference.",
-      "image": { "src": "Images/userstories_matsvinn.png", "alt": "User stories" }
+      "heading": "People know food waste is a problem but struggle to act on it",
+      "body": "Most people are aware that food waste is an issue, but they often lack practical knowledge about how to reduce it in everyday life.\n\nOur research showed that many people were unsure about how long food actually lasts, how to store it correctly, and which small decisions can prevent waste. Conversations around food waste often happened in social environments like school lunches, where group behaviour influences individual habits.",
+      "image": {
+        "src": "Images/userstories_matsvinn.png",
+        "alt": "User stories"
+      }
     },
+
     "approach": {
-      "heading": "Research, synthesis, and focused iteration",
-      "body": "We began with research and conversations to understand different perspectives on food waste. From there we defined a problem that felt realistic within the timeframe and built a prototype we could actually test.\n\nThe goal was not production readiness — it was insight. We wanted to see whether gamified quizzes could influence how users think about food in their daily lives.",
-      "image": { "src": "Images/Wireframe_Matsvinn.png", "alt": "Wireframe sketches" }
+      "heading": "Research, synthesis, and rapid iteration",
+      "body": "We started by exploring how people currently think and talk about food waste. From these insights we defined a focused problem that felt realistic within the three week timeframe.\n\nInstead of designing a full product, we built a prototype around one core idea: using short gamified quizzes to make food waste knowledge easier to learn and remember.",
+      "image": {
+        "src": "Images/Wireframe_Matsvinn.png",
+        "alt": "Wireframe sketches"
+      }
     },
+
     "outcome": {
-      "heading": "Practical language over abstract thinking",
-      "body": "During testing, users reported feeling more confident about food storage and waste after completing the quizzes. The most interesting result was not how many questions they answered, but how their language changed — they began talking about food waste in more practical terms rather than abstract ones.",
-      "image": { "src": "Images/quiz_flow_matsvinn.png", "alt": "Quiz flow" }
+      "heading": "Shifting the conversation from abstract to practical",
+      "body": "During testing, users reported feeling more confident about food storage and food waste after completing the quizzes.\n\nWhat stood out most was not how many questions they answered, but how their language changed. Participants began talking about food waste in more practical terms, focusing on storage, shelf life, and everyday decisions rather than the problem in general.",
+      "image": {
+        "src": "Images/quiz_flow_matsvinn.png",
+        "alt": "Quiz flow"
+      }
     },
+
     "keyLearning": {
-      "heading": "Scope is a design decision",
-      "body": "In a short project, defining a focused problem and testing one strong idea was far more valuable than trying to build a complete solution. Constraints forced clarity — and that clarity made the prototype easier to test, easier to evaluate, and easier to learn from."
+      "heading": "A clear scope creates better insights",
+      "body": "With only three weeks available, trying to design a full solution would have limited what we could learn.\n\nBy focusing on one clear idea and testing it early, we were able to gather useful insights about how interactive learning can influence everyday behaviour."
     }
   },
+
   "nav": {
     "prev": { "label": "Anno Pax Romana", "url": "anno-pax-romana.html" },
     "next": { "label": "Project Trash", "url": "project-trash.html" }
