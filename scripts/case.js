@@ -31,12 +31,13 @@ async function loadCase() {
     .join('');
 
   // ── SECTIONS ──────────────────────────────────
-  const sectionOrder = ['intro', 'role', 'problem', 'approach', 'outcome', 'keyLearning'];
+  const sectionOrder = ['intro', 'role', 'problem', 'approach', 'interactionSystem', 'outcome', 'keyLearning'];
   const sectionLabels = {
     intro: 'Intro',
     role: 'Role',
     problem: 'Problem',
     approach: 'Approach',
+    interactionSystem: 'Interaction System',
     outcome: 'Outcome',
     keyLearning: 'Key Learning'
   };

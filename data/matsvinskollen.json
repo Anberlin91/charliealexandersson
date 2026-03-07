@@ -1,79 +1,86 @@
 {
-"title": "Matsvinskollen",
+  "title": "Matsvinskollen",
+  "subtitle": "Designing a quiz-based mobile experience that turns food waste knowledge into interactive learning.",
+  "cover": "Images/Cover_matsvinn.png",
 
-"subtitle": "Designing a quiz-based interaction system using reusable components and feedback states.",
+  "meta": {
+    "role": "UX Designer",
+    "type": "Mobile App Prototype",
+    "context": "Food Waste Awareness",
+    "skills": ["UX Design", "Interaction Design", "Prototyping"]
+  },
 
-"cover": "Images/Cover_matsvinn.png",
+  "links": [
+    {
+      "label": "View Prototype in Figma",
+      "url": "https://embed.figma.com/proto/1KUvwmoD0ltvTGiDSiHHoa/Matsvinnskollen?node-id=34-478&p=f&viewport=305%2C792%2C0.12&scaling=scale-down&content-scaling=fixed&starting-point-node-id=34%3A478&embed-host=share",
+      "primary": true
+    }
+  ],
 
-"meta": {
-"role": "UX Designer",
-"type": "Mobile App Prototype",
-"context": "Interactive learning concept",
-"skills": ["Interaction Design", "Figma Components", "Prototyping"]
-},
+  "sections": {
 
-"links": [
-{
-"label": "View Prototype in Figma",
-"url": "https://embed.figma.com/proto/1KUvwmoD0ltvTGiDSiHHoa/Matsvinnskollen?node-id=34-478&p=f&viewport=305%2C792%2C0.12&scaling=scale-down&content-scaling=fixed&starting-point-node-id=34%3A478&embed-host=share",
-"primary": true
-}
-],
+    "intro": {
+      "heading": "Can interactive learning make food waste easier to understand?",
+      "body": "Matsvinskollen was a three week school project exploring how design could make food waste knowledge easier to understand and apply in everyday situations.\n\nInstead of building a full product, we prototyped and iterated, the goal was to define a clear concept and test to further validate the idea. The result was a quiz-based mobile experience where users learn about food storage and food waste through short interactive questions."
+    },
 
-"sections": {
+    "role": {
+      "heading": "My role",
+      "body": "I worked across research synthesis, interaction design, wireframing, and prototyping.\n\nMy main contribution was defining how the experience should work and how I could define this for easier collaboration. I designed the quiz flow, created the interface, and structured the prototype in Figma using reusable components and interaction states."
+    },
 
-"intro": {
-"heading": "Structuring an interactive learning concept",
-"body": "Matsvinskollen was a three week university project exploring how a quiz-based experience could help people learn practical knowledge about food waste.\n\nInstead of building a complete product, the goal was to prototype a simple interaction that could communicate knowledge through short questions and immediate feedback."
-},
+    "problem": {
+      "heading": "Defining what should actually be built",
+      "body": "Food waste is a broad topic, and one of the main challenges early in the project was defining a solution that could realistically be explored within three weeks.\n\nInstead of designing a complex system, we focused on a smaller interaction concept: helping users learn practical food knowledge through quick questions and immediate feedback.\n\nThis shifted the design challenge from just presenting information to designing a clear interaction that guides users through the experience with gamification feedback in mind.",
+      "bullets": [
+        "Defining a focused concept that could realistically be explored within a three-week project",
+        "Turning abstract food waste knowledge into simple, interactive learning moments",
+        "Designing a quiz interaction that feels engaging without becoming overly complex",
+        "Communicating feedback clearly so users immediately understand the impact of their choices"
+      ]
+    },
 
-"role": {
-"heading": "My contribution",
-"body": "My main contribution focused on structuring the interaction and building the prototype in Figma. I designed the quiz interaction, created the visual layout for the mobile interface, and built a reusable component system that allowed the prototype to scale as we added more questions.\n\nI also structured the prototype flow so that feedback, navigation, and interaction states behaved consistently throughout the experience."
-},
+    "approach": {
+      "heading": "Designing the quiz interaction",
+      "body": "I started by mapping the structure of the experience using wireframes to define how users move through the quiz.\n\nFrom there I designed the interface and built the interactive prototype in Figma. Using Auto Layout and reusable components that helped keep the design consistent and made it easier to iterate as the concept evolved.",
+      "image": {
+        "src": "Images/Wireframe_Matsvinn.png",
+        "alt": "Wireframe of the Matsvinskollen quiz flow"
+      }
+    },
 
-"designChallenge": {
-"heading": "Design challenge",
-"body": "As the quiz grew, the interface needed a clear structure so multiple screens and interactions could be built without becoming inconsistent. Instead of designing each screen separately, the challenge became creating a system where interactions, feedback states, and UI elements could be reused across the prototype."
-},
+    "interactionSystem": {
+      "heading": "Designing the interaction system",
+      "body": "Because the experience revolves around answering questions, clear feedback was essential.\n\nI designed reusable UI components that communicate different interaction states, including default selection, correct answers, and incorrect answers.\n\nStructuring these states as components made the prototype easier to maintain and ensured the interaction stayed consistent throughout the experience.",
+      "image": {
+        "src": "Images/figma-components-matsvinn.png",
+        "alt": "Component-based interaction states designed in Figma"
+      }
+    },
 
-"componentSystem": {
-"heading": "Designing reusable interaction states",
-"body": "To keep the interface consistent, I built the quiz interactions using reusable components and Figma properties.\n\nEach answer option uses interaction states such as default, hover, correct answer, and incorrect answer. This allowed the prototype to clearly communicate feedback while keeping the interaction logic consistent across the entire quiz.",
-"image": {
-"src": "Images/figma-components-matsvinn.png",
-"alt": "Reusable interaction states for quiz answers"
-}
-},
+    "outcome": {
+      "heading": "A structured and testable concept",
+      "body": "The final concept was a mobile quiz experience where users answer questions and receive immediate feedback.\n\nBy defining the interaction flow and building reusable components, the prototype became easier to test and iterate during user sessions.",
+      "image": {
+        "src": "Images/quiz_flow_matsvinn.png",
+        "alt": "Prototype flow of the Matsvinskollen quiz experience"
+      }
+    },
 
-"systemStructure": {
-"heading": "Structuring the component system",
-"body": "The interface was organised using reusable components such as answer buttons, progress indicators, and feedback icons. By structuring the design system this way, new quiz screens could be built quickly while maintaining visual and interaction consistency.\n\nThis approach also made the prototype easier to iterate on as the project evolved."
-},
+    "keyLearning": {
+      "heading": "Structure makes ideas easier to test",
+      "body": "One of the biggest lessons from this project was how important it is to define the structure of a concept early.\n\nEven a simple idea becomes much easier to test and iterate on when the interaction flow, UI states, and system behaviour are clearly designed.",
+      "cards": [
+        { "title": "Structure before detail", "body": "Starting with wireframes and flow mapping helped define how users move through the quiz before focusing on visual design." },
+        { "title": "Components support iteration", "body": "Building reusable components and interaction states in Figma made it easier to adjust layouts and update screens without breaking the overall structure." }
+      ]
+    }
 
-"prototypeFlow": {
-"heading": "Building the quiz flow",
-"body": "I structured the full quiz flow inside Figma so that each question could trigger feedback before moving the user forward.\n\nCorrect answers move the user to the next question, while incorrect answers trigger an overlay explaining the result. This structure allowed the prototype to simulate a learning loop where feedback immediately reinforces the knowledge being tested.",
-"image": {
-"src": "Images/quiz_flow_matsvinn.png",
-"alt": "Quiz interaction flow"
-}
-},
+  },
 
-"outcome": {
-"heading": "Outcome",
-"body": "The prototype demonstrated how a simple quiz interaction can turn abstract knowledge about food waste into short learning moments. By combining clear feedback states with a structured interaction flow, the concept made it easier to communicate practical information in an engaging way."
-},
-
-"keyLearning": {
-"heading": "Key learning",
-"body": "Working with a component-based approach made the prototype easier to scale and iterate on. Structuring interactions through reusable states helped maintain clarity across the experience while allowing the design to evolve quickly during the short project timeframe."
-}
-
-},
-
-"nav": {
-"prev": { "label": "Anno Pax Romana", "url": "anno-pax-romana.html" },
-"next": { "label": "Project Trash", "url": "project-trash.html" }
-}
+  "nav": {
+    "prev": { "label": "Anno Pax Romana", "url": "anno-pax-romana.html" },
+    "next": { "label": "Project Trash", "url": "project-trash.html" }
+  }
 }

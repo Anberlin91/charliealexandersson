@@ -1,59 +1,62 @@
 {
   "title": "Hack and Slash",
-  "subtitle": "A fast-paced action office game where players uncover villainy of price-hacking, built at Futuregames.",
-  "cover": "images/pretty2_cover.png",
+  "subtitle": "Working as a Producer from the start of the project, focusing on creating structure, clarifying workflows, and supporting the team throughout development.",
+  "cover": "Images/pretty2_cover.png",
   "meta": {
-    "role": "UX Researcher & Designer",
-    "type": "Action Game",
-    "context": "School Project – Futuregames",
-    "skills": ["UX Research", "Narrative", "Prototyping"]
+    "role": "Producer",
+    "type": "Game Development Project",
+    "context": "Production & Team Coordination",
+    "skills": ["Production", "Workflow Design", "Team Coordination", "Risk Management"]
   },
   "links": [
-    { "label": "Play on itch.io", "url": "https://futuregames.itch.io/hack-and-slash", "primary": true }
+    { "label": "Play on itch.io", "url": "https://futuregames.itch.io/pretty-little-disaster", "primary": true }
   ],
   "sections": {
     "intro": {
-      "heading": "Blending narrative with fast-paced action gameplay",
-      "body": "Hack and Slash is an action game set in an office environment where the player uncovers a price-hacking conspiracy. The project required balancing intense combat mechanics with a compelling narrative thread that motivated players to progress.\n\nThe UX challenge was twofold: create combat interactions that felt responsive and satisfying, while weaving narrative elements into gameplay without interrupting the flow of action."
+      "heading": "Creating structure for the team",
+      "body": "From the beginning of the project I worked as a Producer. My focus was creating structure, clarifying workflows, and helping the team collaborate effectively across disciplines.\n\nThroughout development I was involved in daily coordination, organizing tasks, facilitating meetings, and ensuring the team had clear processes for building the game."
     },
     "role": {
-      "heading": "UX Researcher & Designer",
-      "body": "I was responsible for user research, narrative UX, and playtesting. My focus was on how players understood the story through gameplay alone — without cutscenes or heavy text — and how combat mechanics could reinforce the narrative theme."
+      "heading": "Producer and team coordinator",
+      "body": "As Producer, I focused on creating structure, i started with making sure we had a proper GDD (Game design document), this became the backlog for jira. I  also worked a lot with and minimizing risks during development.\n\nTo keep consistensy with communicattion i facilitated daily standups, distributed tasks, clarified goals, and tracked progress toward milestones. I also worked on documenting workflows and ensuring the team had clear guidelines for collaboration."
+	"image": {
+        "src": "Images/Planning.png",
+        "alt": "Picture of Figjam and Jira"
+      }
     },
     "problem": {
-      "heading": "How do you tell a story during non-stop action?",
-      "body": "Action games often struggle with the tension between narrative and gameplay. Cutscenes break the flow, but without narrative context, combat becomes repetitive. The challenge was finding ways to deliver story beats within the action itself.\n\nThe office setting was unusual for an action game. Players needed environmental cues to understand the world and their role in it, without relying on text-heavy exposition.",
+      "heading": "Coordination challenges during development",
+      "body": "Game development involves many disciplines working on the same systems. Without clear structure, technical conflicts and coordination issues can easily appear.\n\nAs development progressed and the team approached the Gold milestone, pressure increased and some workflows were no longer consistently followed despite all documentation.",
       "bullets": [
-        "Balancing narrative delivery with uninterrupted action gameplay",
-        "Making an office setting feel like a compelling game environment",
-        "Communicating player objectives through environmental storytelling",
-        "Ensuring combat mechanics supported the narrative theme"
+        "Merge conflicts and scene conflicts caused by multiple people editing the same assets",
+        "Unclear ownership of scenes and prefabs during development",
+        "Communication gaps between programmers, artists, and designers",
+        "Team members focusing on details while core gameplay still needed stabilization"
       ]
     },
     "approach": {
-      "heading": "Research-driven design with narrative integration",
-      "body": "The process began with research into how action games handle narrative. Competitor analysis of games like Hotline Miami and Katana Zero revealed effective patterns for environmental storytelling in fast-paced contexts.\n\nNarrative elements were mapped onto gameplay beats — story reveals tied to boss encounters, environmental clues scattered through level design, and UI elements that reinforced the corporate thriller theme.",
-      "cards": [
-        { "title": "Narrative Design", "body": "Developed a story structure that delivered key plot points through gameplay events rather than cutscenes — boss introductions, environmental clues, and progressive reveals." },
-        { "title": "Playtesting", "body": "Conducted playtesting sessions focused on narrative comprehension — tracking whether players understood the story and their motivations through gameplay alone." }
-      ]
+      "heading": "Reinforcing production structure",
+      "body": "To address these challenges I reinforced the production workflow and clarified ownership within the team.\n\nI introduced stricter rules for scene and prefab ownership, reinforced the Git workflow, and clarified tasks within Jira so the team could stay aligned and focus on stabilizing the game.",
+      "image": {
+        "src": "Images/Workflow.png",
+        "alt": "Some printscreen on documents i used"
+      }
     },
     "outcome": {
-      "heading": "Narrative clarity through gameplay integration",
-      "body": "Post-playtest analysis showed that players who engaged with environmental storytelling had significantly better narrative comprehension without any reduction in action engagement. The office setting, initially seen as a constraint, became one of the game's most distinctive features.",
-      "bullets": [
-        "Players followed the narrative through environmental cues alone",
-        "The office setting became a unique and memorable game element",
-        "Combat mechanics and narrative delivery complemented each other"
-      ]
+      "heading": "Supporting the team toward the Gold milestone",
+      "body": "By reinforcing structure and clarifying responsibilities, the team could reduce technical conflicts and focus on completing the game.\n\nImproved coordination between disciplines helped stabilize development and ensured the project progressed toward the Gold milestone."
     },
     "keyLearning": {
-      "heading": "Narrative and action don't have to compete",
-      "body": "When integrated thoughtfully, story and gameplay reinforce each other. The biggest takeaway was that constraints — like an unusual setting — can become strengths if you design with them rather than against them."
+      "heading": "Structure needs constant reinforcement",
+      "body": "This project taught me that defining workflows is not enough. Structure only works if it is consistently reinforced and supported by clear communication.\n\nI also learned how important clear ownership and collaboration between disciplines are for reducing friction in game development.",
+      "cards": [
+        { "title": "Define and reinforce", "body": "Setting up workflows early is only half the work. Consistently reinforcing them throughout development is what makes the structure actually stick." },
+        { "title": "Ownership reduces friction", "body": "Clarifying who owns which scenes and prefabs significantly reduced technical conflicts and helped the team move faster without stepping on each other." }
+      ]
     }
   },
   "nav": {
     "prev": { "label": "Project Trash", "url": "project-trash.html" },
-    "next": { "label": "Anno Pax Romana", "url": "anno-pax-romana.html" }
+    "next": { "label": "Matsvinskollen", "url": "matsvinskollen.html" }
   }
 }

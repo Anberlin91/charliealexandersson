@@ -1,12 +1,12 @@
 {
   "title": "Project Trash",
-  "subtitle": "An arcade game built with a green theme in mind, created collaboratively with a team of 14 at Futuregames.",
-  "cover": "images/cover_trash.png",
+  "subtitle": "Designing the UX structure and UI architecture for a chaotic physics-based game experience.",
+  "cover": "Images/cover_trash.png",
   "meta": {
-    "role": "UX Designer / UX Researcher",
-    "type": "Arcade Game",
-    "context": "School Project – Futuregames",
-    "skills": ["UX Design", "UX Research", "Prototyping", "Game Design"]
+    "role": "UX Designer",
+    "type": "Game UX & UI Structure",
+    "context": "Unity Game Project",
+    "skills": ["Game UX", "UI Systems", "UX Structure", "Prototyping"]
   },
   "links": [
     { "label": "Play on itch.io", "url": "https://futuregames.itch.io/projecttrash", "primary": true },
@@ -15,47 +15,53 @@
   ],
   "sections": {
     "intro": {
-      "heading": "Building an arcade game around a green theme",
-      "body": "Project Trash is an arcade game developed at Futuregames with a team of 14. The project centred on creating a fun, engaging arcade experience with an environmental — or \"green\" — theme woven into the core concept.\n\nAs the UX Designer and UX Researcher, my focus was on ensuring the game felt intuitive, the green theme was communicated clearly through gameplay, and that the overall player experience remained cohesive across a large team collaboration."
+      "heading": "How do you structure chaos?",
+      "body": "Project Trash is a chaotic physics-based game where players throw trash objects into bins while unpredictable events unfold around them.\n\nThe challenge was creating a gameplay experience that felt playful and chaotic while still remaining readable and understandable for the player.\n\nMy work focused on structuring the gameplay UX and defining how the UI system should support the experience."
     },
     "role": {
-      "heading": "UX Designer & UX Researcher",
-      "body": "I was responsible for establishing UX guidelines early in production so that all 14 contributors — artists, programmers, and designers — were aligned on the player experience goals. I also ran iterative playtesting sessions throughout development and fed findings back into the design process."
+      "heading": "The translator between design and development",
+      "body": "I worked on structuring the gameplay UX and helping translate design ideas into a clear UI architecture.\n\nWorking closely with the UI lead and the UI programmer, I helped define the menu structure, gameplay flow, and reusable UI prefabs so programmers could implement the interface more efficiently inside Unity."
     },
     "problem": {
-      "heading": "How do you make a themed arcade game feel cohesive with 14 people?",
-      "body": "Working with a large team introduced coordination challenges. Every contributor needed to share the same vision for the green theme and understand how their work connected to the player experience. The arcade genre demands instant readability and satisfying feedback loops — layering a thematic message on top without compromising gameplay required careful UX thinking.",
-      "bullets": [
-        "Coordinating a shared vision across a 14-person team",
-        "Integrating a green/environmental theme without sacrificing arcade fun",
-        "Ensuring instant readability and intuitive controls",
-        "Maintaining design consistency across many contributors"
-      ]
+      "heading": "Balancing chaos with clarity",
+      "body": "The core gameplay is intentionally chaotic. Trash objects bounce around, physics interactions create unpredictable situations, and players must react quickly.\n\nWithout clear UX structure this kind of gameplay easily becomes confusing instead of fun. Players need to understand what is happening, what they should focus on, and how they are progressing.\n\nThe challenge therefore became structuring the gameplay experience so the chaos remained entertaining while the interaction stayed readable.",
+      "image": {
+        "src": "Images/trash-ux-structure.png",
+        "alt": "Gameplay UX structure showing player motivations and feature mapping"
+      }
     },
     "approach": {
-      "heading": "Research, playtesting, and alignment at scale",
-      "body": "The process began with research into how environmental themes have been successfully incorporated into games without feeling heavy-handed. Competitive analysis of arcade games helped establish best practices for controls, pacing, and feedback.\n\nEstablishing clear UX guidelines early meant that everyone working on the project had a shared reference point. This reduced back-and-forth and kept the player experience front and centre throughout production.",
-      "cards": [
-        { "title": "Research", "body": "Studied arcade game conventions and how environmental themes can be embedded into gameplay mechanics without disrupting the core fun loop." },
-        { "title": "Playtesting", "body": "Ran iterative playtesting sessions to identify friction points, validate the green theme's clarity, and ensure controls met arcade-level responsiveness." }
-      ]
+      "heading": "Designing a UI system developers could build",
+      "body": "To support the gameplay experience, the interface needed to be modular and easy for programmers to implement.\n\nI helped define a set of reusable UI prefabs and menu structures that could be reused across different parts of the game. This structure allowed developers to build UI screens more efficiently while maintaining consistency across menus, overlays and gameplay elements.",
+      "bullets": [
+        "Clear UI flow connecting menus, gameplay and feedback overlays",
+        "Reusable UI prefabs reduced implementation time for developers",
+        "Gameplay stayed readable despite intentional chaos"
+      ],
+      "image": {
+        "src": "Images/prefabanddoc.png",
+        "alt": "Reusable UI prefabs and menu system structure"
+      }
     },
     "outcome": {
-      "heading": "Shipped — and the theme stuck",
-      "body": "Project Trash was completed and published on itch.io, with additional visibility through Instagram and YouTube. The game demonstrates that a large team can deliver a cohesive, themed arcade experience when aligned through strong UX foundations and iterative playtesting.",
-      "bullets": [
-        "Successfully shipped and published on itch.io",
-        "Green theme integrated naturally into core gameplay mechanics",
-        "UX vision coordinated across a 14-person team"
-      ]
+      "heading": "A structured gameplay and UI flow",
+      "body": "The final result was a clear UI flow connecting menus, gameplay screens and feedback overlays.\n\nBy structuring the experience and defining reusable UI elements early, the team could implement the interface more efficiently while keeping the gameplay readable for players.",
+      "image": {
+        "src": "Images/project-trash-flow.png",
+        "alt": "UI flow showing gameplay screens and interaction structure"
+      }
     },
     "keyLearning": {
-      "heading": "Alignment is a UX problem too",
-      "body": "The biggest takeaway was that UX work isn't just about the player — it's also about the team. Establishing shared principles early reduced friction in the process itself, and made the final product more consistent as a result. Working at this scale made me more deliberate about documentation and communication as design tools."
+      "heading": "UX structure supports development",
+      "body": "One of the most important lessons from this project was how much good UX structure helps development teams.\n\nBy defining interaction flows and UI architecture early, we reduced implementation friction and made it easier for programmers to translate the design into working systems.",
+      "cards": [
+        { "title": "Structure first", "body": "Defining the UI architecture and screen flow early gave developers a clear structure to build from, reducing guesswork during implementation." },
+        { "title": "Design for your team", "body": "By structuring reusable UI prefabs and menu layouts, the team could build new screens consistently without redesigning UI patterns each time." }
+      ]
     }
   },
   "nav": {
     "prev": { "label": "Matsvinskollen", "url": "matsvinskollen.html" },
-    "next": { "label": "Hack and Slash", "url": "hack-and-slash.html" }
+    "next": { "label": "Anno Pax Romana", "url": "anno-pax-romana.html" }
   }
 }
