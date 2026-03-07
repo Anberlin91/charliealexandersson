@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV – Charlie Alexandersson</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <style>
+    .cv-hero {
+      padding-top: clamp(3rem, 10vw, 7rem);
+      padding-bottom: clamp(2rem, 6vw, 4rem);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cv-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .cv-hero p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      max-width: 60ch;
+      margin-bottom: 1.5rem;
+    }
+
+    .cv-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .cv-contact a {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .cv-contact a:hover { color: var(--accent); }
+
+    /* Two-col grid for experience + education */
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 4rem;
+      padding-top: clamp(2rem, 6vw, 4rem);
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cv-col { display: flex; flex-direction: column; }
+
+    .cv-section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cv-entry {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      padding-bottom: 2rem;
+    }
+
+    .cv-entry-title {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .cv-entry-org {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .cv-entry-date {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+      opacity: 0.55;
+      margin-bottom: 0.3rem;
+    }
+
+    .cv-entry-body {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* Skills — full width horizontal grid */
+    .cv-skills-section {
+      padding-block: clamp(2rem, 5vw, 3.5rem);
+    }
+
+    .cv-skills-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .cv-skill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.25rem;
+    }
+
+    .cv-skills-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .cv-skills-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .cv-skills-list li {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      padding-left: 0.9rem;
+      position: relative;
+    }
+
+    .cv-skills-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--border);
+    }
+
+    @media (max-width: 780px) {
+      .cv-skills-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .cv-grid { grid-template-columns: 1fr; gap: 0; }
+      .cv-skills-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="p-nav">
+    <div class="p-container">
+      <a href="index.html" class="p-nav-logo">Game UX Designer</a>
+      <ul class="p-nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="mailto:charlie.alexandersson@hotmail.com">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="cv-hero">
+    <div class="p-container">
+      <a href="index.html" class="case-back">&larr; Back</a>
+      <h1>Charlie Alexandersson</h1>
+      <p>With over 10 years of experience in IT, Tech, Project Management and Sales — and studies in History, Anthropology, Game Development and UX — I bring a broad perspective to every project I work on.</p>
+      <div class="cv-contact">
+        <a href="mailto:charlie.alexandersson@hotmail.com">✉ charlie.alexandersson@hotmail.com</a>
+        <a href="tel:+46735620405">✆ +46 73-562 04 05</a>
+        <a href="https://se.linkedin.com/in/charlie-alexandersson-ux-designer" target="_blank">↗ LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE + EDUCATION -->
+  <div class="p-container">
+    <div class="cv-grid">
+
+      <!-- Work Experience -->
+      <div class="cv-col">
+        <p class="cv-section-label">Work Experience</p>
+
+        <div class="cv-entry">
+          <span class="cv-entry-title">UX/UI Designer — Intern</span>
+          <span class="cv-entry-org">Stardist · Distributor and Wholesaler</span>
+          <span class="cv-entry-date">Jan 2024 – May 2025 · Hybrid</span>
+          <p class="cv-entry-body">Working on internal report system, as well as with developers to build new website. Service Design · UX Research · User Flows · Prototyping</p>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-entry-title">Project Manager — Full-time</span>
+          <span class="cv-entry-org">Eliot Universe · Smart Homes Start Up</span>
+          <span class="cv-entry-date">May 2022 – Oct 2022 · Stockholm</span>
+          <p class="cv-entry-body">Planned and executed an app launch within smart homes. Emphasized UX research and methodologies to translate vision into practice through close collaboration with outsourced software development.</p>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-entry-title">Sales Advisor — Part-time</span>
+          <span class="cv-entry-org">Clas Ohlson · Store Gallerian</span>
+          <span class="cv-entry-date">Jun 2019 – Current · Stockholm</span>
+          <p class="cv-entry-body">Sales and customer service.</p>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-entry-title">IT Support Specialist — Self-employed</span>
+          <span class="cv-entry-date">2016 – · Stockholm</span>
+          <p class="cv-entry-body">Services ranging from advisory and support to physical repair for individuals and SMEs.</p>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-entry-title">Senior Technician — Full-time</span>
+          <span class="cv-entry-org">MacRent · Apple Reseller & Service Provider</span>
+          <span class="cv-entry-date">Apr 2016 – Sep 2018 · Stockholm</span>
+          <p class="cv-entry-body">Troubleshooting and repair with manager responsibility for the workshop. Monitoring results from Apple, ensuring adherence to procedures, and training new personnel.</p>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="cv-col">
+        <p class="cv-section-label">Education</p>
+
+        <div class="cv-entry">
+          <span class="cv-entry-title">AI och Prompt Design för UX/UI-designers — 40 YH-poäng</span>
+          <span class="cv-entry-org">STI – Stockholms Tekniska Institut</span>
+          <span class="cv-entry-date">Completed Jan 2025 · Stockholm</span>
+          <p class="cv-entry-body">Generative AI tools · Prompt Design · AI-supported prototyping · User testing with AI · Research & idea generation · GDPR & ethical AI use</p>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-entry-title">Higher Vocational Education Diploma in Experience Design</span>
+          <span class="cv-entry-org">Changemaker Education</span>
+          <span class="cv-entry-date">Graduated May 2024 · Stockholm · 2 years</span>
+          <p class="cv-entry-body">Gamification · Service Design · Business Development</p>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-entry-title">Game Development & Graphics — 90 credits</span>
+          <span class="cv-entry-org">Södertörn University</span>
+          <span class="cv-entry-date">Graduated Jun 2022 · Stockholm</span>
+          <p class="cv-entry-body">Graphics · Concept Art · Story Boards · 3D Modelling · Rigging and Animation</p>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-entry-title">Anthropology & History — 120 credits</span>
+          <span class="cv-entry-org">Stockholm University</span>
+          <span class="cv-entry-date">Graduated Jun 2019 · Stockholm</span>
+          <p class="cv-entry-body">Social Science · Source Criticism</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SKILLS — full width -->
+    <div class="cv-skills-section">
+      <p class="cv-section-label">Skills</p>
+      <div class="cv-skills-grid">
+
+        <div class="cv-skill-card">
+          <span class="cv-skills-label">Tools</span>
+          <ul class="cv-skills-list">
+            <li>Figma</li>
+            <li>Adobe Suite</li>
+            <li>Blender</li>
+            <li>HTML &amp; CSS</li>
+            <li>Visual Studio</li>
+            <li>Atlassian</li>
+            <li>Unity</li>
+            <li>Unreal Engine</li>
+          </ul>
+        </div>
+
+        <div class="cv-skill-card">
+          <span class="cv-skills-label">UX &amp; Design</span>
+          <ul class="cv-skills-list">
+            <li>UX Research</li>  
+            <li>Customer Journey Mapping</li>
+            <li>Wireframing</li>
+            <li>Prototyping</li>
+            <li>A/B Testing</li>
+            <li>Gamification</li>
+            <li>Service Design</li>
+          </ul>
+        </div>
+
+        <div class="cv-skill-card">
+          <span class="cv-skills-label">Project &amp; Process</span>
+          <ul class="cv-skills-list">
+            <li>Project Leadership</li>
+            <li>Agile Methods</li>
+            <li>Business Analysis</li>
+            <li>Defining Product Specifications</li>
+          </ul>
+        </div>
+
+        <div class="cv-skill-card">
+          <span class="cv-skills-label">Languages</span>
+          <ul class="cv-skills-list">
+            <li>Swedish</li>
+            <li>English</li>
+          </ul>
+        </div>
+
+        <div class="cv-skill-card">
+          <span class="cv-skills-label">Certifications</span>
+          <ul class="cv-skills-list">
+            <li>Certified Electrician</li>
+            <li>Apple Service Technician (ACMT/iOS)</li>
+            <li>Google Analytics</li>
+            <li>Rapid Prototyping</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="p-footer">
+    <div class="p-container">
+      <p>&copy; 2026 — Charlie Alexandersson</p>
+      <ul class="p-footer-links">
+        <li><a href="https://se.linkedin.com/in/charlie-alexandersson-ux-designer" target="_blank">LinkedIn</a></li>
+        <li><a href="https://read.cv" target="_blank">Read.cv</a></li>
+        <li><a href="mailto:charlie.alexandersson@hotmail.com">Email</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+  <script>
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => { backToTop.classList.toggle('visible', window.scrollY > 400); });
+    backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  </script>
+</body>
+</html>

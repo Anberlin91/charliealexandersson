@@ -1,57 +1,78 @@
 {
   "title": "Anno Pax Romana",
-  "subtitle": "A UI redesign case study focused on systems hierarchy, readability, and streamlining complex strategy interfaces.",
-  "cover": "images/cover_pax.png",
+  "subtitle": "A UX redesign exploring how better information visibility and console-friendly workflows can improve complex strategy interfaces.",
+  "cover": "Images/cover_pax.png",
   "meta": {
     "role": "UX/UI Designer",
-    "type": "Case Study / Redesign",
-    "context": "Self-initiated Design Exercise",
-    "skills": ["UX Design", "Research", "System Design"]
+    "type": "Feature Redesign",
+    "context": "Self-initiated Case Study",
+    "skills": ["UX Design", "UI Design", "Systems Thinking", "Rapid Prototyping", "Console UX"]
   },
   "links": [
-    { "label": "View on Figma", "url": "https://www.figma.com", "primary": true }
+    { "label": "View on Figma", "url": "https://www.figma.com/make/UHmoIOKVVg00l1kNeSyh9f/Game-Mockup-Creation?fullscreen=1&t=uHpgORoxpoOGD6Bh-1", "primary": true }
   ],
   "sections": {
     "intro": {
-      "heading": "Redesigning complex strategy game interfaces",
-      "body": "Anno Pax Romana is a strategy game with deeply layered systems — resource management, city building, trade routes, and diplomacy. This case study explored how the existing UI could be redesigned to improve information hierarchy, reduce cognitive load, and make complex data more accessible to players.\n\nThe project was self-initiated as a design exercise to apply systems design thinking to an existing game's interface challenges."
+      "heading": "Reducing friction in complex strategy workflows",
+      "body": "Trade routes are one of the core management systems in Anno Pax Romana. However, on console the interface forces players to repeatedly leave the Route Editor to check information such as ship cargo or island stock levels.\n\nThis redesign explored how better information visibility and console-friendly navigation could reduce friction and help players manage logistics more efficiently."
     },
     "role": {
       "heading": "UX/UI Designer",
-      "body": "I led the full process independently — from UI audit and player research through to redesign proposals and annotated mockups. Every design decision was documented with a clear rationale connecting player needs to interface changes."
+      "body": "This was a self-initiated redesign where I analysed the existing interface, identified workflow issues, and proposed a new UI solution supported by wireframes and interaction prototypes.\n\nThe process included UI analysis, rapid prototyping in Figma, and small usability tests to evaluate whether the redesigned interface improved clarity and reduced workflow interruptions."
     },
     "problem": {
-      "heading": "Information overload in strategy game interfaces",
-      "body": "Strategy games like Anno present players with enormous amounts of data simultaneously — population needs, production chains, trade balances, building queues, and diplomatic relations. When all of this information competes for attention equally, players struggle to identify what matters most at any given moment.\n\nThe existing UI treated most information with equal visual weight, making it difficult to quickly scan for the data needed. Nested menus and inconsistent layout patterns added to the cognitive burden.",
+      "heading": "A fragmented workflow",
+      "body": "Managing trade routes requires players to evaluate ship cargo, island stock levels, and route warnings. However, the current interface spreads this information across multiple menus.\n\nOn console this becomes especially problematic. Players must repeatedly exit the Route Editor and navigate through several menus using controller inputs, interrupting the decision-making flow.",
       "bullets": [
-        "Too much information presented with equal visual weight",
-        "Nested menu structures that obscured critical data",
-        "Inconsistent layout patterns across different game systems",
-        "High cognitive load especially during time-sensitive gameplay moments"
-      ]
+        "Ship cargo cannot be viewed inside the route editor",
+        "Island stock levels are not visible when configuring routes",
+        "Warning icons lack clear explanations for route problems",
+        "Console navigation requires multiple menu transitions"
+      ],
+      "image": {
+        "src": "Images/pax-problem.png",
+        "alt": "Problem areas in the Anno Pax Romana route editor interface"
+      }
     },
     "approach": {
-      "heading": "Systematic analysis of information architecture",
-      "body": "The process started with a thorough audit of the existing UI — documenting every screen, panel, and interaction pattern. Each interface element was categorized by frequency of use, criticality during gameplay, and the context in which players needed it.\n\nCommunity feedback from forums and player reviews was analysed to identify the most common pain points. This player-sourced data informed the prioritization of which systems needed the most redesign attention.",
+      "heading": "Analysing the workflow and rapidly exploring solutions",
+      "body": "I began by auditing the existing route editor and mapping the player's workflow when diagnosing trade route problems.\n\nBased on this analysis I used rapid prototyping in Figma to explore alternative interface structures. The goal was to surface critical information directly within the Route Editor without overwhelming the interface.\n\nThis rapid exploration approach was influenced by methods I studied in the course AI Prompt & Design for UX Designers at Stockholm Technical Institute.",
       "cards": [
-        { "title": "UI Audit", "body": "Documented all existing screens and interaction patterns, mapping information density and visual hierarchy issues." },
-        { "title": "Player Research", "body": "Analysed community feedback, forum discussions, and player reviews to identify recurring UX pain points." },
-        { "title": "Systems Mapping", "body": "Created relationship diagrams between game systems to understand how information flows between different UI panels." }
+        { "title": "UI Audit", "body": "Documented the route editor interface and identified missing information needed for decision-making." },
+        { "title": "Workflow Mapping", "body": "Mapped how players diagnose trade route issues and where workflow interruptions occur." },
+        { "title": "Rapid Prototyping", "body": "Iterated on interface layouts in Figma to test how additional information could be integrated without clutter." }
       ]
     },
     "outcome": {
-      "heading": "A framework for taming complexity",
-      "body": "The case study produced a comprehensive redesign proposal with annotated mockups, interaction specifications, and a design rationale document. The redesign introduced a layered information architecture — a primary layer showing only the most critical real-time data, with secondary layers accessible through progressive disclosure.",
+      "heading": "Route Assistant Panel (RAP)",
+      "body": "The redesign introduces a collapsible side panel inside the Route Editor called the Route Assistant Panel (RAP). The panel surfaces key logistics information without forcing players to navigate away from the editor.",
       "bullets": [
-        "Layered information architecture reducing visible data by ~40%",
-        "Consistent design patterns applicable across all game systems",
-        "Context-sensitive HUD that adapts to player activity",
-        "Annotated redesign documentation ready for implementation"
+        "Ship cargo overview visible directly in the Route Editor",
+        "Island stock levels integrated into the route configuration screen",
+        "Warning and diagnostic, ability to quickly identify and address route problems",
+        "Controller shortcuts designed for fast console navigation"
+      ],
+      "image": {
+        "src": "Images/pax-solution.png",
+        "alt": "Solution areas in the Anno Pax Romana route editor interface"
+      }
+    },
+    "controllerMap": {
+      "heading": "Route Assistant Panel Controls",
+      "controls": [
+        { "button": "□", "action": "Toggle Route Assistant Panel" },
+        { "button": "△", "action": "Focus on ship" },
+        { "button": "L2/R2", "action": "Switch islands or stops" },
+        { "button": "L stick", "action": "Navigate loaded/unloaded goods" }
       ]
     },
     "keyLearning": {
-      "heading": "Complex systems don't require complex interfaces",
-      "body": "They require thoughtful information architecture that respects the player's attention and adapts to their current context. Doing a self-initiated case study also taught me how to structure a design argument — not just what to change, but why, and how to communicate that clearly."
+      "heading": "Designing for workflow and input constraints",
+      "body": "This project reinforced how important it is to design interfaces around player workflows and input constraints. Strategy systems often involve complex information, but surfacing the right data at the right moment can significantly reduce friction and improve decision-making.",
+      "cards": [
+        { "title": "Workflow first", "body": "Understanding the player's decision-making flow before designing the interface made it possible to place information exactly where it was needed." },
+        { "title": "Input constraints shape design", "body": "Designing for console navigation forced clearer priorities — every extra menu transition is a cost, so the interface had to earn its complexity." }
+      ]
     }
   },
   "nav": {

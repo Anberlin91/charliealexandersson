@@ -1,8 +1,6 @@
 // case.js — reads the JSON file for this page and builds the content
 
 async function loadCase() {
-  // Get the JSON filename from the current page name
-  // e.g. hack-and-slash.html → data/hack-and-slash.json
   const page = window.location.pathname.split('/').pop().replace('.html', '');
   const res = await fetch(`data/${page}.json`);
   const d = await res.json();
@@ -14,30 +12,27 @@ async function loadCase() {
   document.getElementById('cs-cover').src = d.cover;
   document.getElementById('cs-cover').alt = d.title;
 
-  // Meta row
   document.getElementById('cs-meta-role').textContent = d.meta.role;
   document.getElementById('cs-meta-type').textContent = d.meta.type;
   document.getElementById('cs-meta-context').textContent = d.meta.context;
 
   const skillsEl = document.getElementById('cs-meta-skills');
-  skillsEl.innerHTML = d.meta.skills
-    .map(s => `<span class="tag">${s}</span>`)
-    .join('');
+  skillsEl.innerHTML = d.meta.skills.map(s => `<span class="tag">${s}</span>`).join('');
 
-  // Links / buttons
   const linksEl = document.getElementById('cs-links');
-  linksEl.innerHTML = d.links
+  linksEl.innerHTML = (d.links || [])
     .map(l => `<a href="${l.url}" target="_blank" class="${l.primary ? 'primary' : ''}">${l.label}</a>`)
     .join('');
 
   // ── SECTIONS ──────────────────────────────────
-  const sectionOrder = ['intro', 'role', 'problem', 'approach', 'interactionSystem', 'outcome', 'keyLearning'];
+  const sectionOrder = ['intro', 'role', 'problem', 'approach', 'interactionSystem', 'controllerMap', 'outcome', 'keyLearning'];
   const sectionLabels = {
     intro: 'Intro',
     role: 'Role',
     problem: 'Problem',
     approach: 'Approach',
     interactionSystem: 'Interaction System',
+    controllerMap: 'Console Mapping',
     outcome: 'Outcome',
     keyLearning: 'Key Learning'
   };
@@ -48,6 +43,25 @@ async function loadCase() {
   sectionOrder.forEach(key => {
     const s = d.sections[key];
     if (!s) return;
+
+    // ── Special: controllerMap ──
+    if (key === 'controllerMap') {
+      const buttons = s.controls.map(c => `
+        <div class="ctrl-row">
+          <span class="ctrl-btn">${c.button}</span>
+          <span class="ctrl-action">${c.action}</span>
+        </div>`).join('');
+      sectionsEl.innerHTML += `
+        <section class="case-section">
+          <div class="p-container">
+            <p class="case-label">Console Mapping</p>
+            <h2>${s.heading}</h2>
+            ${s.body ? `<p>${s.body}</p>` : ''}
+            <div class="ctrl-grid">${buttons}</div>
+          </div>
+        </section>`;
+      return;
+    }
 
     // Split body on \n\n for paragraphs
     const paragraphs = s.body
@@ -69,9 +83,14 @@ async function loadCase() {
       ).join('')}</div>`;
     }
 
-    // Optional image
+    // Optional single image
     const image = s.image
       ? `<img src="${s.image.src}" alt="${s.image.alt}" class="case-image" style="object-fit:contain;" />`
+      : '';
+
+    // Optional multiple images
+    const images = s.images
+      ? s.images.map(img => `<img src="${img.src}" alt="${img.alt}" class="case-image" style="object-fit:contain;" />`).join('')
       : '';
 
     sectionsEl.innerHTML += `
@@ -83,6 +102,7 @@ async function loadCase() {
           ${bullets}
           ${cards}
           ${image}
+          ${images}
         </div>
       </section>`;
   });
