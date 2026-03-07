@@ -66,6 +66,15 @@
         { "button": "L stick", "action": "Navigate loaded/unloaded goods" }
       ]
     },
+    "unrealPrototyping": {
+      "heading": "Prototyping UI directly in Unreal Engine",
+      "body": "Instead of only designing interfaces in static mockups, I also explored how the UI could work directly inside Unreal Engine.\n\nUsing UMG widgets and Blueprint structures, I created small interactive prototypes to test layout, information hierarchy, and interaction behaviour in the actual game environment.\n\nThis allowed me to experiment with how UI elements respond to gameplay systems and helped bridge the gap between design ideas and implementation.",
+      "images": [
+        { "src": "Images/pax-styleguide.png", "alt": "A simple UI style guide used as a reference when building widgets in Unreal." },
+        { "src": "Images/pax-ue-layout.png", "alt": "Early UI layout prototype built in Unreal using UMG widgets." },
+        { "src": "Images/pax-blueprint.png", "alt": "Blueprint structure connecting UI elements and item data for quick testing inside the engine." }
+      ]
+    },
     "keyLearning": {
       "heading": "Designing for workflow and input constraints",
       "body": "This project reinforced how important it is to design interfaces around player workflows and input constraints. Strategy systems often involve complex information, but surfacing the right data at the right moment can significantly reduce friction and improve decision-making.",

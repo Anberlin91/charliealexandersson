@@ -25,7 +25,7 @@ async function loadCase() {
     .join('');
 
   // ── SECTIONS ──────────────────────────────────
-  const sectionOrder = ['intro', 'role', 'problem', 'approach', 'interactionSystem', 'controllerMap', 'outcome', 'keyLearning'];
+  const sectionOrder = ['intro', 'role', 'problem', 'approach', 'interactionSystem', 'controllerMap', 'unrealPrototyping', 'outcome', 'keyLearning'];
   const sectionLabels = {
     intro: 'Intro',
     role: 'Role',
@@ -33,6 +33,7 @@ async function loadCase() {
     approach: 'Approach',
     interactionSystem: 'Interaction System',
     controllerMap: 'Console Mapping',
+    unrealPrototyping: 'Prototyping in Unreal',
     outcome: 'Outcome',
     keyLearning: 'Key Learning'
   };
@@ -88,9 +89,13 @@ async function loadCase() {
       ? `<img src="${s.image.src}" alt="${s.image.alt}" class="case-image" style="object-fit:contain;" />`
       : '';
 
-    // Optional multiple images
+    // Optional multiple images with captions
     const images = s.images
-      ? s.images.map(img => `<img src="${img.src}" alt="${img.alt}" class="case-image" style="object-fit:contain;" />`).join('')
+      ? s.images.map(img => `
+          <figure style="margin-top:1.5rem;">
+            <img src="${img.src}" alt="${img.alt}" class="case-image" style="object-fit:contain; margin-top:0;" />
+            <figcaption style="font-size:0.72rem; letter-spacing:0.08em; color:var(--text-secondary); opacity:0.7; margin-top:0.5rem;">${img.alt}</figcaption>
+          </figure>`).join('')
       : '';
 
     sectionsEl.innerHTML += `
