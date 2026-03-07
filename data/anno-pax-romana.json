@@ -76,11 +76,11 @@
       ]
     },
     "keyLearning": {
-      "heading": "Designing for workflow and input constraints",
-      "body": "This project reinforced how important it is to design interfaces around player workflows and input constraints. Strategy systems often involve complex information, but surfacing the right data at the right moment can significantly reduce friction and improve decision-making.",
+      "heading": "Designing with real constraints in mind",
+      "body": "Working directly in Unreal highlighted how UI decisions are shaped by technical constraints and player input.Instead of designing freely in mockups, I had to consider navigation logic, widget structure, and how UI elements connect to gameplay systems.",
       "cards": [
-        { "title": "Workflow first", "body": "Understanding the player's decision-making flow before designing the interface made it possible to place information exactly where it was needed." },
-        { "title": "Input constraints shape design", "body": "Designing for console navigation forced clearer priorities — every extra menu transition is a cost, so the interface had to earn its complexity." }
+        { "title": "Workflow first", "body": "Understanding how players move through the interface especially with console input helped determine what information should appear first and what could stay hidden." },
+        { "title": "Engine constraints", "body": "Building UI in Unreal made it clear how navigation logic, widget hierarchy, and input limitations affect how interfaces should be structured." }
       ]
     }
   },

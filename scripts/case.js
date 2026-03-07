@@ -25,7 +25,7 @@ async function loadCase() {
     .join('');
 
   // ── SECTIONS ──────────────────────────────────
-  const sectionOrder = ['intro', 'role', 'problem', 'approach', 'interactionSystem', 'controllerMap', 'unrealPrototyping', 'outcome', 'keyLearning'];
+  const sectionOrder = ['intro', 'role', 'problem', 'approach', 'interactionSystem', 'controllerMap', 'outcome', 'unrealPrototyping', 'keyLearning'];
   const sectionLabels = {
     intro: 'Intro',
     role: 'Role',
@@ -33,8 +33,8 @@ async function loadCase() {
     approach: 'Approach',
     interactionSystem: 'Interaction System',
     controllerMap: 'Console Mapping',
-    unrealPrototyping: 'Prototyping in Unreal',
     outcome: 'Outcome',
+    unrealPrototyping: 'Prototyping in Unreal',
     keyLearning: 'Key Learning'
   };
 
