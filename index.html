@@ -181,7 +181,7 @@
       margin-bottom: 0.75rem;
     }
 
-    .p-tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .p-tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; }
 
     .p-tag {
       font-size: 0.68rem;
@@ -261,7 +261,7 @@
         <p>I work with interaction flows, UI structure, and research to make things feel clear, playable, and grounded.</p>
         <div class="p-btns">
           <a href="#work" class="p-btn p-btn-primary">View Projects</a>
-          <a href="mailto:charlie.alexandersson@hotmail.com" class="p-btn p-btn-ghost">Get in touch</a>
+          <a href="/cdn-cgi/l/email-protection#e2818a83908e8b87cc838e879a838c86879091918d8ca28a8d968f838b8ecc818d8f" class="p-btn p-btn-ghost">Get in touch</a>
         </div>
       </div>
     </div>
@@ -281,12 +281,12 @@
         <a href="hack-and-slash.html" class="p-card">
           <img class="p-card-thumb" src="Images/pretty2_cover.png" alt="Hack and Slash" />
           <div class="p-card-body">
-            <p class="p-card-title">Hack and Slash  School Project at Futuregames</p>
-            <p class="p-card-desc">A fast-paced action office game where players uncover villainy of price-hacking.</p>
+            <p class="p-card-title">Hack and Slash — Producer</p>
+            <p class="p-card-desc">Led production on a school game project, turning creative ambition into a structured backlog and keeping a cross-discipline team aligned toward the Gold milestone.</p>
             <ul class="p-tag-list">
-              <li class="p-tag">UX Research</li>
-              <li class="p-tag">Narrative</li>
-              <li class="p-tag">Prototyping</li>
+              <li class="p-tag">Production</li>
+              <li class="p-tag">Workflow Design</li>
+              <li class="p-tag">Team Coordination</li>
             </ul>
           </div>
         </a>
@@ -294,12 +294,12 @@
         <a href="anno-pax-romana.html" class="p-card">
           <img class="p-card-thumb" src="Images/cover_pax.png" alt="Anno Pax Romana" />
           <div class="p-card-body">
-            <p class="p-card-title">Case Study Design suggestion for Anno Pax Romana</p>
-            <p class="p-card-desc">A UI redesign suggestion for Anno Pax Romana focused on systems hierarchy and streamlining.</p>
+            <p class="p-card-title">Anno Pax Romana — Self-initiated Case Study</p>
+            <p class="p-card-desc">Redesigned the console trade route workflow for Anno Pax Romana. One extra click that removed twenty.</p>
             <ul class="p-tag-list">
               <li class="p-tag">UX Design</li>
-              <li class="p-tag">Research</li>
-              <li class="p-tag">Systemdesign</li>
+              <li class="p-tag">Console UX</li>
+              <li class="p-tag">Systems Thinking</li>
             </ul>
           </div>
         </a>
@@ -307,12 +307,12 @@
         <a href="matsvinskollen.html" class="p-card">
           <img class="p-card-thumb" src="Images/Cover_matsvinn.png" alt="Matsvinskollen" />
           <div class="p-card-body">
-            <p class="p-card-title">Matsvinskollen Food Waste Awareness App</p>
-            <p class="p-card-desc">A gamified quiz prototype designed to educate individuals about food waste.</p>
+            <p class="p-card-title">Matsvinskollen — Mobile Prototype</p>
+            <p class="p-card-desc">Designed a quiz-based mobile experience to explore whether gamification could shift how people think about everyday food choices.</p>
             <ul class="p-tag-list">
               <li class="p-tag">UX Design</li>
+              <li class="p-tag">Gamification</li>
               <li class="p-tag">Prototyping</li>
-              <li class="p-tag">Mobile</li>
             </ul>
           </div>
         </a>
@@ -320,12 +320,12 @@
         <a href="project-trash.html" class="p-card">
           <img class="p-card-thumb" src="Images/cover_trash.png" alt="Project Trash" />
           <div class="p-card-body">
-            <p class="p-card-title">Project Trash  Arcade Game at Futuregames</p>
-            <p class="p-card-desc">An arcade game built with a green theme in mind, created collaboratively with a team of 14.</p>
+            <p class="p-card-title">Project Trash — Game UX & UI Structure</p>
+            <p class="p-card-desc">Structured the UX and UI architecture for a chaotic physics-based game across a team of 14 in two cities.</p>
             <ul class="p-tag-list">
-              <li class="p-tag">UX Design</li>
-              <li class="p-tag">UX Research</li>
-              <li class="p-tag">Game Design</li>
+              <li class="p-tag">Game UX</li>
+              <li class="p-tag">UI Systems</li>
+              <li class="p-tag">Cognitive Load</li>
             </ul>
           </div>
         </a>
@@ -382,7 +382,7 @@
 <!-- BACK TO TOP -->
 <button class="back-to-top" aria-label="Back to top">&uarr;</button>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const backToTop = document.querySelector('.back-to-top');
   window.addEventListener('scroll', () => {
     backToTop.classList.toggle('visible', window.scrollY > 400);
@@ -394,10 +394,4 @@
   const avatarBtn = document.getElementById('avatarBtn');
   const lightbox = document.getElementById('photoLightbox');
   avatarBtn.addEventListener('click', () => lightbox.classList.add('open'));
-  lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') lightbox.classList.remove('open');
-  });
-</script>
-</body>
-</html>
+  lightbox.addEventListener('click', () => lightbox.cla
