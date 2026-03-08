@@ -1,6 +1,6 @@
 {
   "title": "Matsvinskollen",
-  "subtitle": "Designing a quiz-based mobile experience that turns food waste knowledge into interactive learning.",
+  "subtitle": "A quiz-based mobile prototype exploring whether gamification can shift how people think about everyday food decisions.",
   "cover": "Images/Cover_matsvinn.png",
 
   "meta": {
@@ -21,18 +21,18 @@
   "sections": {
 
     "intro": {
-      "heading": "Can interactive learning make food waste easier to understand?",
-      "body": "Matsvinskollen was a three week school project exploring how design could make food waste knowledge easier to understand and apply in everyday situations.\n\nInstead of building a full product, we prototyped and iterated, the goal was to define a clear concept and test to further validate the idea. The result was a quiz-based mobile experience where users learn about food storage and food waste through short interactive questions."
+      "heading": "Not a competition, a way to become a food hero",
+      "body": "Matsvinskollen started with a research question: why do people waste food even when they know they shouldn't? What I found was that food waste in schools is often driven by behaviour patterns and cultural norms around food, not lack of awareness.\n\nThe course focused on gamification, so the idea of a lighthearted quiz became the starting point. Not a competition about who knows the most, but a way to become a food hero."
     },
 
     "role": {
       "heading": "My role",
-      "body": "I worked across research synthesis, interaction design, wireframing, and prototyping.\n\nMy main contribution was defining how the experience should work and how I could define this for easier collaboration. I designed the quiz flow, created the interface, and structured the prototype in Figma using reusable components and interaction states."
+      "body": "I worked across research, interaction design, wireframing, and prototyping. My main contribution was defining how the experience should feel and making sure that feeling came through in the structure of the prototype, not just the visuals."
     },
 
     "problem": {
       "heading": "Defining what should actually be built",
-      "body": "Food waste is a broad topic, and one of the main challenges early in the project was defining a solution that could realistically be explored within three weeks.\n\nInstead of designing a complex system, we focused on a smaller interaction concept: helping users learn practical food knowledge through quick questions and immediate feedback.\n\nThis shifted the design challenge from just presenting information to designing a clear interaction that guides users through the experience with gamification feedback in mind.",
+      "body": "The challenge was not just picking a topic, it was finding something specific enough to actually test within three weeks. Food waste is broad. We had to narrow it down to one interaction idea that could realistically show whether gamification could shift how people think about everyday food decisions.",
       "bullets": [
         "Defining a focused concept that could realistically be explored within a three-week project",
         "Turning abstract food waste knowledge into simple, interactive learning moments",
@@ -43,7 +43,7 @@
 
     "approach": {
       "heading": "Designing the quiz interaction",
-      "body": "I started by mapping the structure of the experience using wireframes to define how users move through the quiz.\n\nFrom there I designed the interface and built the interactive prototype in Figma. Using Auto Layout and reusable components that helped keep the design consistent and made it easier to iterate as the concept evolved.",
+      "body": "I started with wireframes to map the flow before touching visuals. One early decision was whether to use photos of real food or illustrations. We tested both, and illustrations won clearly as they were easier to read quickly and felt more consistent with the lighthearted tone we were going for.\n\nI structured the prototype as reusable components in Figma so we could iterate without rebuilding screens each time.",
       "image": {
         "src": "Images/Wireframe_Matsvinn.png",
         "alt": "Wireframe of the Matsvinskollen quiz flow"
@@ -60,8 +60,8 @@
     },
 
     "outcome": {
-      "heading": "A structured and testable concept",
-      "body": "The final concept was a mobile quiz experience where users answer questions and receive immediate feedback.\n\nBy defining the interaction flow and building reusable components, the prototype became easier to test and iterate during user sessions.",
+      "heading": "The tone worked",
+      "body": "What stood out during testing was not how many questions people got right, it was how relaxed they felt doing it. The tone worked. People engaged with the quiz as something fun rather than a test.\n\nIt was also interesting that questions which seemed straightforward, like how long milk actually lasts, caught almost everyone out, including me. That gap between assumed knowledge and actual knowledge was exactly what we were trying to surface.",
       "image": {
         "src": "Images/quiz_flow_matsvinn.png",
         "alt": "Prototype flow of the Matsvinskollen quiz experience"
@@ -69,11 +69,11 @@
     },
 
     "keyLearning": {
-      "heading": "Structure makes ideas easier to test",
-      "body": "One of the biggest lessons from this project was how important it is to define the structure of a concept early.\n\nEven a simple idea becomes much easier to test and iterate on when the interaction flow, UI states, and system behaviour are clearly designed.",
+      "heading": "One level was enough to learn from",
+      "body": "I would have prioritised an English version earlier, both to reach a wider audience and to challenge the copywriting. A lot of what made the quiz work was the tone of the questions, and translating that into another language is its own design problem.\n\nWe also only completed one level. The prototype ends with a short film teasing what comes next. It was intentional, we were testing one idea, not building a product, but finishing it fully would have given a much clearer picture of the whole experience.",
       "cards": [
         { "title": "Structure before detail", "body": "Starting with wireframes and flow mapping helped define how users move through the quiz before focusing on visual design." },
-        { "title": "Components support iteration", "body": "Building reusable components and interaction states in Figma made it easier to adjust layouts and update screens without breaking the overall structure." }
+        { "title": "Test the tone, not just the function", "body": "The most valuable insight from testing was not whether the interaction worked, it was whether people felt the way we intended. Tone is a design decision too." }
       ]
     }
 

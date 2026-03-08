@@ -1,6 +1,6 @@
 {
   "title": "Project Trash",
-  "subtitle": "Designing the UX structure and UI architecture for a chaotic physics-based game experience.",
+  "subtitle": "Designing the UX structure and UI architecture for a chaotic physics-based game, in a team of 14 across two cities.",
   "cover": "Images/cover_trash.png",
   "meta": {
     "role": "UX Designer",
@@ -15,16 +15,16 @@
   ],
   "sections": {
     "intro": {
-      "heading": "How do you structure chaos?",
-      "body": "Project Trash is a chaotic physics-based game where players throw trash objects into bins while unpredictable events unfold around them.\n\nThe challenge was creating a gameplay experience that felt playful and chaotic while still remaining readable and understandable for the player.\n\nMy work focused on structuring the gameplay UX and defining how the UI system should support the experience."
+      "heading": "14 people, two cities, one UI",
+      "body": "Project Trash was my first game development course at Futuregames, a collaboration between our team and students in Warsaw. With 14 people across two cities, the challenge was not just designing a good UI, it was making sure everyone was building toward the same thing."
     },
     "role": {
       "heading": "The translator between design and development",
-      "body": "I worked on structuring the gameplay UX and helping translate design ideas into a clear UI architecture.\n\nWorking closely with the UI lead and the UI programmer, I helped define the menu structure, gameplay flow, and reusable UI prefabs so programmers could implement the interface more efficiently inside Unity."
+      "body": "With multiple UX designers in the group and artists and game designers in Warsaw, I focused on two things: making sure the UI matched the overall art direction, and communicating clearly to our programmer exactly what we needed technically.\n\nI started by researching cognitive load in fast-paced games and pulled together key principles around readability and quick scanning. I shared these with our UI lead with a clear direction: reduce mental strain, keep it fast to read, keep it simple to scan. From there I structured the components and mapped the flow so our UI programmer could build a UI tool in Unity, which he did brilliantly."
     },
     "problem": {
       "heading": "Balancing chaos with clarity",
-      "body": "The core gameplay is intentionally chaotic. Trash objects bounce around, physics interactions create unpredictable situations, and players must react quickly.\n\nWithout clear UX structure this kind of gameplay easily becomes confusing instead of fun. Players need to understand what is happening, what they should focus on, and how they are progressing.\n\nThe challenge therefore became structuring the gameplay experience so the chaos remained entertaining while the interaction stayed readable.",
+      "body": "The core gameplay is intentionally chaotic, and that created a real design tension. Too much visual noise and the chaos becomes frustrating instead of fun. Players need to understand what is happening at a glance, even when everything around them is falling apart.",
       "image": {
         "src": "Images/trash-ux-structure.png",
         "alt": "Gameplay UX structure showing player motivations and feature mapping"
@@ -32,7 +32,7 @@
     },
     "approach": {
       "heading": "Designing a UI system developers could build",
-      "body": "To support the gameplay experience, the interface needed to be modular and easy for programmers to implement.\n\nI helped define a set of reusable UI prefabs and menu structures that could be reused across different parts of the game. This structure allowed developers to build UI screens more efficiently while maintaining consistency across menus, overlays and gameplay elements.",
+      "body": "The hardest design decision was adapting our UI to fit the artists' visual direction. Our first draft did not work, it competed with the game rather than supporting it. We redesigned around a semi-transparent background with clear, high-contrast text, and that single change gave us most of what we were looking for: readability without pulling attention away from the gameplay.\n\nI also structured reusable UI prefabs and defined the menu flow so developers could build new screens consistently without starting from scratch each time.",
       "bullets": [
         "Clear UI flow connecting menus, gameplay and feedback overlays",
         "Reusable UI prefabs reduced implementation time for developers",
@@ -45,18 +45,18 @@
     },
     "outcome": {
       "heading": "A structured gameplay and UI flow",
-      "body": "The final result was a clear UI flow connecting menus, gameplay screens and feedback overlays.\n\nBy structuring the experience and defining reusable UI elements early, the team could implement the interface more efficiently while keeping the gameplay readable for players.",
+      "body": "The result was a UI flow that held together across menus, gameplay screens and feedback overlays. The programmer could build efficiently because the structure was defined early, and the gameplay stayed readable even at its most chaotic.",
       "image": {
         "src": "Images/project-trash-flow.png",
         "alt": "UI flow showing gameplay screens and interaction structure"
       }
     },
     "keyLearning": {
-      "heading": "UX structure supports development",
-      "body": "One of the most important lessons from this project was how much good UX structure helps development teams.\n\nBy defining interaction flows and UI architecture early, we reduced implementation friction and made it easier for programmers to translate the design into working systems.",
+      "heading": "Clarity at the start saves time later",
+      "body": "I would have wanted more playtesting, specifically around game mechanics and player experience. With a team of 14 across two cities that was hard to orchestrate, but it is where the most valuable feedback would have come from.\n\nWhat I took away most was how much clarity at the start saves time later. Defining the cognitive load principles early and communicating them to the UI lead meant we were all solving the same problem, even when we were not in the same room.",
       "cards": [
-        { "title": "Structure first", "body": "Defining the UI architecture and screen flow early gave developers a clear structure to build from, reducing guesswork during implementation." },
-        { "title": "Design for your team", "body": "By structuring reusable UI prefabs and menu layouts, the team could build new screens consistently without redesigning UI patterns each time." }
+        { "title": "Research gives direction", "body": "Starting with cognitive load principles gave the whole team a shared language for what we were trying to achieve, before anyone opened Figma." },
+        { "title": "Design for your team", "body": "Structuring reusable prefabs and a clear menu flow meant developers could build new screens without guesswork, and without coming back to ask questions." }
       ]
     }
   },

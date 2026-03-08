@@ -1,6 +1,6 @@
 {
   "title": "Hack and Slash",
-  "subtitle": "Working as a Producer from the start of the project, focusing on creating structure, clarifying workflows, and supporting the team throughout development.",
+  "subtitle": "Working as Producer on a junior game project, balancing creative ambition with what was actually achievable.",
   "cover": "Images/pretty2_cover.png",
   "meta": {
     "role": "Producer",
@@ -13,20 +13,20 @@
   ],
   "sections": {
     "intro": {
-      "heading": "Creating structure for the team",
-      "body": "From the beginning of the project I worked as a Producer. My focus was creating structure, clarifying workflows, and helping the team collaborate effectively across disciplines.\n\nThroughout development I was involved in daily coordination, organizing tasks, facilitating meetings, and ensuring the team had clear processes for building the game."
+      "heading": "Structure as a design tool",
+      "body": "UX is about building things from a user perspective, but in a junior school project, there's rarely time for proper research or user testing. When people lack industry experience, things get chaotic fast.\n\nThat's where my Producer role came in: guiding the team and balancing creative ambition with what was actually achievable."
     },
     "role": {
       "heading": "Producer and team coordinator",
-      "body": "As Producer, I focused on creating structure, i started with making sure we had a proper GDD (Game design document), this became the backlog for jira. I  also worked a lot with and minimizing risks during development.\n\nTo keep consistensy with communicattion i facilitated daily standups, distributed tasks, clarified goals, and tracked progress toward milestones. I also worked on documenting workflows and ensuring the team had clear guidelines for collaboration.",
+      "body": "As Producer, I focused on translating ambition into structure. I started by building a proper GDD that became the foundation for our Jira backlog, then facilitated daily standups and tracked progress toward milestones.\n\nOne early challenge was that programmers were scoping tasks too broadly the core systems weren't in place yet, but work was already getting complex. I broke tasks like player movement and the attack system into phases from Beta to Gold, so the team could see exactly what needed to happen and when.",
       "image": {
         "src": "Images/Planning.png",
-        "alt": "Picture of Figjam and Jira"
+        "alt": "Figjam planning and Jira backlog structure"
       }
     },
     "problem": {
       "heading": "Coordination challenges during development",
-      "body": "Game development involves many disciplines working on the same systems. Without clear structure, technical conflicts and coordination issues can easily appear.\n\nAs development progressed and the team approached the Gold milestone, pressure increased and some workflows were no longer consistently followed despite all documentation.",
+      "body": "As we approached the Gold milestone, pressure increased and some workflows stopped being followed even with documentation in place.\n\nThe real issue wasn't the tools or the process. It was that people didn't yet have the habit of working within a shared structure.",
       "bullets": [
         "Merge conflicts and scene conflicts caused by multiple people editing the same assets",
         "Unclear ownership of scenes and prefabs during development",
@@ -39,16 +39,16 @@
       "body": "To address these challenges I reinforced the production workflow and clarified ownership within the team.\n\nI introduced stricter rules for scene and prefab ownership, reinforced the Git workflow, and clarified tasks within Jira so the team could stay aligned and focus on stabilizing the game.",
       "image": {
         "src": "Images/Workflow.png",
-        "alt": "Some printscreen on documents i used"
+        "alt": "Workflow documentation and process structure"
       }
     },
     "outcome": {
       "heading": "Supporting the team toward the Gold milestone",
-      "body": "By reinforcing structure and clarifying responsibilities, the team could reduce technical conflicts and focus on completing the game.\n\nImproved coordination between disciplines helped stabilize development and ensured the project progressed toward the Gold milestone."
+      "body": "Reinforcing ownership and workflow created more communication around problems and that shifted something. Instead of frustration building up between people, the team started directing energy toward how we worked together rather than at each other.\n\nImproved coordination between disciplines helped stabilize development and ensured the project progressed toward the Gold milestone."
     },
     "keyLearning": {
-      "heading": "Structure needs constant reinforcement",
-      "body": "This project taught me that defining workflows is not enough. Structure only works if it is consistently reinforced and supported by clear communication.\n\nI also learned how important clear ownership and collaboration between disciplines are for reducing friction in game development.",
+      "heading": "Structure needs to be built early",
+      "body": "I should have made the importance of communication clearer from day one instead of letting people work too freely at the start. Structure introduced late has to fight against habits already formed.\n\nAnd for UX specifically: the same principle applies. If you don't define the process early, everyone builds their own version of it.",
       "cards": [
         { "title": "Define and reinforce", "body": "Setting up workflows early is only half the work. Consistently reinforcing them throughout development is what makes the structure actually stick." },
         { "title": "Ownership reduces friction", "body": "Clarifying who owns which scenes and prefabs significantly reduced technical conflicts and helped the team move faster without stepping on each other." }

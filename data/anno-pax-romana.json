@@ -1,6 +1,6 @@
 {
   "title": "Anno Pax Romana",
-  "subtitle": "A UX redesign exploring how better information visibility and console-friendly workflows can improve complex strategy interfaces.",
+  "subtitle": "A self-initiated redesign exploring how one small addition can remove far more friction than it creates.",
   "cover": "Images/cover_pax.png",
   "meta": {
     "role": "UX/UI Designer",
@@ -13,33 +13,33 @@
   ],
   "sections": {
     "intro": {
-      "heading": "Reducing friction in complex strategy workflows",
-      "body": "Trade routes are one of the core management systems in Anno Pax Romana. However, on console the interface forces players to repeatedly leave the Route Editor to check information such as ship cargo or island stock levels.\n\nThis redesign explored how better information visibility and console-friendly navigation could reduce friction and help players manage logistics more efficiently."
+      "heading": "One extra click that removed twenty",
+      "body": "I love strategy games, but I play them on console. That combination is rare, and it creates a specific kind of friction that PC players rarely notice. Anno Pax Romana handles its console version better than most, but there is still a lot of room to improve how complex systems are navigated with a controller.\n\nThis project started from my own frustration as a player, and became a study in how one small addition can remove far more steps than it adds."
     },
     "role": {
       "heading": "UX/UI Designer",
-      "body": "This was a self-initiated redesign where I analysed the existing interface, identified workflow issues, and proposed a new UI solution supported by wireframes and interaction prototypes.\n\nThe process included UI analysis, rapid prototyping in Figma, and small usability tests to evaluate whether the redesigned interface improved clarity and reduced workflow interruptions."
-    },
-    "problem": {
-      "heading": "A fragmented workflow",
-      "body": "Managing trade routes requires players to evaluate ship cargo, island stock levels, and route warnings. However, the current interface spreads this information across multiple menus.\n\nOn console this becomes especially problematic. Players must repeatedly exit the Route Editor and navigate through several menus using controller inputs, interrupting the decision-making flow.",
-      "bullets": [
-        "Ship cargo cannot be viewed inside the route editor",
-        "Island stock levels are not visible when configuring routes",
-        "Warning icons lack clear explanations for route problems",
-        "Console navigation requires multiple menu transitions"
-      ],
+      "body": "This was a self-initiated redesign. I analysed the existing interface from the perspective of a console player, identified the most recurring workflow pain point, and designed a solution that addressed it without touching the rest of the UI.\n\nI prototyped in Figma and also explored implementation directly in Unreal Engine to understand how the design would behave inside the actual game environment.",
       "image": {
         "src": "Images/pax-problem.png",
         "alt": "Problem areas in the Anno Pax Romana route editor interface"
       }
     },
+    "problem": {
+      "heading": "A fragmented workflow",
+      "body": "The most recurring problem for me was managing trade routes. Warnings would appear constantly, and every time I needed to investigate, I had to jump in and out of menus, wait for loading, and lose my place in whatever I was doing.\n\nAs a UX designer I think in user flows, how many steps does it take to complete an action? The trade route workflow had too many. And the more I mapped it, the clearer it became that the problem was not any single menu, it was that the right information was never in the same place as the decision that needed it.",
+      "bullets": [
+        "Ship cargo cannot be viewed inside the route editor",
+        "Island stock levels are not visible when configuring routes",
+        "Warning icons lack clear explanations for route problems",
+        "Console navigation requires multiple menu transitions"
+      ]
+    },
     "approach": {
-      "heading": "Analysing the workflow and rapidly exploring solutions",
-      "body": "I began by auditing the existing route editor and mapping the player's workflow when diagnosing trade route problems.\n\nBased on this analysis I used rapid prototyping in Figma to explore alternative interface structures. The goal was to surface critical information directly within the Route Editor without overwhelming the interface.\n\nThis rapid exploration approach was influenced by methods I studied in the course AI Prompt & Design for UX Designers at Stockholm Technical Institute.",
+      "heading": "A solution that works for everyone",
+      "body": "What surprised me was that I did not need to redesign the existing UI at all. The interface works well and shares visual language between PC and console, which is important for recognition.\n\nWhat was missing was a single addition. One extra click to open a panel that removed twenty clicks of navigating in and out of menus. I had found a solution that worked equally well on both platforms, not just a console workaround but a genuine improvement for everyone.",
       "cards": [
         { "title": "UI Audit", "body": "Documented the route editor interface and identified missing information needed for decision-making." },
-        { "title": "Workflow Mapping", "body": "Mapped how players diagnose trade route issues and where workflow interruptions occur." },
+        { "title": "Workflow Mapping", "body": "Mapped how players diagnose trade route issues and counted exactly how many steps each action required." },
         { "title": "Rapid Prototyping", "body": "Iterated on interface layouts in Figma to test how additional information could be integrated without clutter." }
       ]
     },
@@ -49,12 +49,12 @@
       "bullets": [
         "Ship cargo overview visible directly in the Route Editor",
         "Island stock levels integrated into the route configuration screen",
-        "Warning and diagnostic, ability to quickly identify and address route problems",
+        "Warning and diagnostic panel, ability to quickly identify and address route problems",
         "Controller shortcuts designed for fast console navigation"
       ],
       "image": {
         "src": "Images/pax-solution.png",
-        "alt": "Solution areas in the Anno Pax Romana route editor interface"
+        "alt": "The Route Assistant Panel in the Anno Pax Romana route editor"
       }
     },
     "controllerMap": {
@@ -76,11 +76,11 @@
       ]
     },
     "keyLearning": {
-      "heading": "Designing with real constraints in mind",
-      "body": "Working directly in Unreal highlighted how UI decisions are shaped by technical constraints and player input.Instead of designing freely in mockups, I had to consider navigation logic, widget structure, and how UI elements connect to gameplay systems.",
+      "heading": "The order of things matters",
+      "body": "The Unreal prototyping taught me something I did not expect: trying to build a full design system in the engine took too long and pulled focus away from the actual interaction. I should have prioritised getting the core mechanic and game flow working first, so I could iterate on what actually mattered.\n\nThe lesson was not that implementation is unimportant. It is that the order matters.",
       "cards": [
-        { "title": "Workflow first", "body": "Understanding how players move through the interface especially with console input helped determine what information should appear first and what could stay hidden." },
-        { "title": "Engine constraints", "body": "Building UI in Unreal made it clear how navigation logic, widget hierarchy, and input limitations affect how interfaces should be structured." }
+        { "title": "Workflow first", "body": "Understanding how players move through the interface, especially with console input, helped determine what information should appear first and what could stay hidden." },
+        { "title": "Don't redesign what works", "body": "The existing UI was good. Recognising that early meant I could focus on what was actually missing rather than rebuilding something that already functioned." }
       ]
     }
   },
