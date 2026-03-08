@@ -12,6 +12,63 @@
       border-bottom: 1px solid var(--border);
     }
 
+    .cv-hero-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .cv-avatar-btn {
+      flex-shrink: 0;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--border);
+      cursor: pointer;
+      background: none;
+      padding: 0;
+      margin-top: 0.25rem;
+      transition: border-color 0.2s;
+    }
+
+    .cv-avatar-btn:hover { border-color: var(--accent); }
+
+    .cv-avatar-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      filter: grayscale(20%);
+      display: block;
+    }
+
+    .cv-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s, visibility 0.25s;
+      cursor: pointer;
+    }
+
+    .cv-lightbox.open { opacity: 1; visibility: visible; }
+
+    .cv-lightbox img {
+      width: clamp(260px, 50vw, 420px);
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: center 15%;
+      border-radius: 12px;
+      filter: grayscale(15%);
+      border: 1px solid var(--border);
+    }
+
     .cv-hero h1 {
       font-family: var(--font-display);
       font-size: clamp(2rem, 5vw, 3.2rem);
@@ -179,15 +236,27 @@
   <section class="cv-hero">
     <div class="p-container">
       <a href="index.html" class="case-back">&larr; Back</a>
-      <h1>Charlie Alexandersson</h1>
-      <p>Game UX Designer with a background that spans IT, project management, anthropology, and game development. I design interfaces and interaction flows that are grounded in how people actually behave, not how we assume they will.</p>
-      <div class="cv-contact">
-        <a href="/cdn-cgi/l/email-protection#7b18131a0917121e551a171e031a151f1e09080814153b13140f161a121755181416">✉ <span class="__cf_email__" data-cfemail="b3d0dbd2c1dfdad69dd2dfd6cbd2ddd7d6c1c0c0dcddf3dbdcc7ded2dadf9dd0dcde">[email&#160;protected]</span></a>
-        <a href="tel:+46735620405">✆ +46 73-562 04 05</a>
-        <a href="https://se.linkedin.com/in/charlie-alexandersson-ux-designer" target="_blank">↗ LinkedIn</a>
+      <div class="cv-hero-inner">
+        <button class="cv-avatar-btn" aria-label="View photo" id="cvAvatarBtn">
+          <img src="profilephoto.png" alt="Charlie Alexandersson" />
+        </button>
+        <div>
+          <h1>Charlie Alexandersson</h1>
+          <p>Game UX Designer with a background that spans IT, project management, anthropology, and game development. I design interfaces and interaction flows that are grounded in how people actually behave, not how we assume they will.</p>
+          <div class="cv-contact">
+            <a href="mailto:charlie.alexandersson@hotmail.com">✉ charlie.alexandersson@hotmail.com</a>
+            <a href="tel:+46735620405">✆ +46 73-562 04 05</a>
+            <a href="https://se.linkedin.com/in/charlie-alexandersson-ux-designer" target="_blank">↗ LinkedIn</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- LIGHTBOX -->
+  <div class="cv-lightbox" id="cvLightbox" role="dialog" aria-label="Profile photo">
+    <img src="profilephoto.png" alt="Charlie Alexandersson" />
+  </div>
 
   <!-- EXPERIENCE + EDUCATION -->
   <div class="p-container">
@@ -201,7 +270,7 @@
           <span class="cv-entry-title">UX/UI Designer — Intern</span>
           <span class="cv-entry-org">Stardist · Distributor and Wholesaler</span>
           <span class="cv-entry-date">Jan 2024 – May 2025 · Hybrid</span>
-          <p class="cv-entry-body">Worked on an internal report system and collaborated with developers to build a new website. Responsibilities spanned service design, UX research, user flows, and prototyping.</p>
+          <p class="cv-entry-body">Working on internal report system, as well as with developers to build new website. Service Design · UX Research · User Flows · Prototyping</p>
         </div>
 
         <div class="cv-entry">
@@ -343,4 +412,18 @@
   </footer>
 
   <button class="back-to-top" aria-label="Back to top">&uarr;</button>
-  <script data-cfasync="false" src="/c
+  <script>
+  const backToTop = document.querySelector('.back-to-top');
+  window.addEventListener('scroll', () => { backToTop.classList.toggle('visible', window.scrollY > 400); });
+  backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  const cvAvatarBtn = document.getElementById('cvAvatarBtn');
+  const cvLightbox = document.getElementById('cvLightbox');
+  cvAvatarBtn.addEventListener('click', () => cvLightbox.classList.add('open'));
+  cvLightbox.addEventListener('click', () => cvLightbox.classList.remove('open'));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') cvLightbox.classList.remove('open');
+  });
+</script>
+</body>
+</html>
